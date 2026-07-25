@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Recall search · Research Memory{% endblock %}
+{% block content %}
+<section class="search-hero">
+  <span class="eyebrow">Approximate recall</span>
+  <h1>Find a paper from whatever you remember</h1>
+  <form method="get" class="search-workbench">
+    <div class="search-query-row">
+      <textarea name="q" rows="2" autofocus placeholder="The paper with about 200 patients where technical success was high but the clinical endpoint was lower…">{{ q }}</textarea>
+      <button class="button button-primary" type="submit">Search</button>
+    </div>
+    <details class="filter-details" {% if selected_source_type or selected_status or year_min or year_max or selected_project_id %}open{% endif %}>
+      <summary>Limit the search</summary>
+      <div class="search-filters">
+        <select name="project_id"><option value="">Entire library</option>{% for project in projects %}<option value="{{ project.id }}" {% if selected_project_id == project.id %}selected{% endif %}>Project: {{ project.name }}</option>{% endfor %}</select>
+        <select name="source_type"><option value="">Any article type</option>{% for item in source_types %}<option value="{{ item }}" {% if selected_source_type == item %}selected{% endif %}>{{ item|replace('_',' ')|title }}</option>{% endfor %}</select>
+        <select name="reading_status"><option value="">Any reading status</option>{% for status in reading_statuses %}<option value="{{ status }}" {% if selected_status == status %}selected{% endif %}>{{ status|title }}</option>{% endfor %}</select>
+        <input name="year_min" value="{{ year_min }}" placeholder="From year">
+        <input name="year_max" value="{{ year_max }}" placeholder="To year">
+      </div>
+    </details>
+  </form>
+</section>
+
+{% if q %}
+<div class="results-heading">
+  <div><span class="eyebrow">Ranked by hybrid relevance</span><h2>{{ results|length }} likely matches</h2></div>
+  <form action="/search/save" method="post" class="inline-form"><input type="hidden" name="query" value="{{ q }}"><input name="name" placeholder="Name this search" required><button class="button button-secondary compact">Save search</button></form>
+</div>
+
+{% if results %}
+<div class="search-results">
+{% for result in results %}
+  <article class="search-result-card">
+    <div class="result-rank">{{ loop.index }}</div>
+    <div class="result-content">
+      <div class="result-topline"><span class="source-type">{{ result.source_type|replace('_',' ') }}</span>{% if result.publication_year %}<span>{{ result.publication_year }}</span>{% endif %}<span class="relevance">{{ result.relevance }} relevance</span></div>
+      <h3><a href="/documents/{{ result.document_id }}{% if result.page_number %}?page={{ result.page_number }}{% endif %}">{{ result.title }}</a></h3>
+      <p class="authors">{{ result.authors|truncate_text(180) }}{% if result.journal %} · {{ result.journal }}{% endif %}</p>
+      <blockquote>{{ result.snippet }}</blockquote>
+      <div class="why-match"><strong>Why this may be the paper</strong>{% for reason in result.match_reasons %}<span>{{ reason }}</span>{% endfor %}{% if result.page_number %}<a href="/documents/{{ result.document_id }}?page={{ result.page_number }}">Open page {{ result.page_number }} →</a>{% endif %}</div>
+      {% if result.why_saved %}<div class="personal-match"><b>Your saved context:</b> {{ result.why_saved|truncate_text(220) }}</div>{% endif %}
+      {% if result.keywords %}<div class="tag-row">{% for keyword in result.keywords[:6] %}<a href="/topics/{{ keyword|urlencode }}">{{ keyword }}</a>{% endfor %}</div>{% endif %}
+    </div>
+    <div class="result-actions"><a class="button button-secondary compact" href="/documents/{{ result.document_id }}{% if result.page_number %}?page={{ result.page_number }}{% endif %}">Open paper</a></div>
+  </article>
+{% endfor %}
+</div>
+{% else %}
+<div class="empty-state panel"><h3>No strong match yet</h3><p>Try the terminology likely used by the authors, remove a filter, or search a smaller remembered fragment.</p></div>
+{% endif %}
+{% else %}
+<section class="panel recall-examples">
+  <div class="panel-header"><div><span class="eyebrow">Examples</span><h2>Search the way memory actually works</h2></div></div>
+  <div class="example-grid">
+    <a href="/search?q={{ 'the study where the complication rate was about 10 percent'|urlencode }}"><strong>Approximate number</strong><span>“The study where the complication rate was about 10%.”</span></a>
+    <a href="/search?q={{ 'prospective study that excluded patients without a bronchus sign'|urlencode }}"><strong>Methodological detail</strong><span>“The prospective study that excluded patients without a bronchus sign.”</span></a>
+    <a href="/search?q={{ 'technical success was high but diagnostic yield was lower'|urlencode }}"><strong>Relationship between findings</strong><span>“Technical success was high but diagnostic yield was lower.”</span></a>
+    <a href="/search?q={{ 'paper I saved because the benign follow up definition was unusual'|urlencode }}"><strong>Your own context</strong><span>“The paper I saved because the benign follow-up definition was unusual.”</span></a>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

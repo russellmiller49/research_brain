@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Import papers · Research Memory{% endblock %}
+{% block content %}
+<div class="page-heading">
+  <div><span class="eyebrow">Library ingestion</span><h1>Add papers without reorganizing your computer</h1><p>Upload copies into the managed library, or index an existing folder in place.</p></div>
+</div>
+
+{% if results %}
+<section class="panel import-results">
+  <div class="panel-header"><h2>Import results</h2></div>
+  {% for result in results %}
+    <div class="result-line {{ result.status }}">
+      <span class="result-symbol">{% if result.status in ['indexed','version'] %}✓{% elif result.status == 'duplicate' %}↺{% else %}!{% endif %}</span>
+      <div><strong>{{ result.file_name }}</strong><p>{{ result.message }}</p></div>
+      {% if result.document_id %}<a href="/documents/{{ result.document_id }}">Open</a>{% endif %}
+    </div>
+  {% endfor %}
+</section>
+{% endif %}
+
+<div class="two-column-layout">
+  <section class="panel">
+    <div class="panel-header"><div><span class="eyebrow">Managed copies</span><h2>Upload PDF files</h2></div></div>
+    <form action="/import/files" method="post" enctype="multipart/form-data" class="stack-form">
+      <label class="drop-zone">
+        <input type="file" name="files" accept="application/pdf,.pdf" multiple required>
+        <span class="drop-icon">⇧</span>
+        <strong>Choose one or more PDFs</strong>
+        <small>Files are copied into your private Research Memory data directory.</small>
+      </label>
+      <label>Optional project
+        <select name="project_id"><option value="">No project</option>{% for project in projects %}<option value="{{ project.id }}">{{ project.name }}</option>{% endfor %}</select>
+      </label>
+      <button class="button button-primary" type="submit">Upload and index</button>
+    </form>
+  </section>
+
+  <section class="panel">
+    <div class="panel-header"><div><span class="eyebrow">Index in place</span><h2>Scan a folder</h2></div></div>
+    <form action="/import/folder" method="post" class="stack-form">
+      <label>Folder path<input name="folder_path" placeholder="/Users/you/Documents/Papers" required></label>
+      <label>Optional project
+        <select name="project_id"><option value="">No project</option>{% for project in projects %}<option value="{{ project.id }}">{{ project.name }}</option>{% endfor %}</select>
+      </label>
+      <div class="check-grid">
+        <label class="check-row"><input type="checkbox" name="recursive" checked><span><strong>Include subfolders</strong><small>Find PDFs in the full directory tree.</small></span></label>
+        <label class="check-row"><input type="checkbox" name="copy_into_library"><span><strong>Copy into managed library</strong><small>Otherwise, files remain in their current locations.</small></span></label>
+        <label class="check-row"><input type="checkbox" name="register_watch" checked><span><strong>Remember this folder</strong><small>Add a one-click rescan from the dashboard.</small></span></label>
+      </div>
+      <button class="button button-primary" type="submit">Scan and index folder</button>
+    </form>
+  </section>
+</div>
+
+<section class="panel section-gap">
+  <div class="panel-header"><div><span class="eyebrow">Folder registry</span><h2>Watched folders</h2></div></div>
+  {% if watched %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Folder</th><th>Scope</th><th>Last scanned</th><th></th></tr></thead>
+    <tbody>{% for watch in watched %}<tr>
+      <td><strong>{{ watch.folder_path }}</strong></td><td>{{ 'Recursive' if watch.recursive else 'Top level only' }}</td><td>{{ watch.last_scanned_at or 'Not yet scanned' }}</td>
+      <td class="actions-cell"><form action="/watch/{{ watch.id }}/scan" method="post"><button class="button button-secondary compact">Scan</button></form><form action="/watch/{{ watch.id }}/delete" method="post"><button class="text-button danger">Remove</button></form></td>
+    </tr>{% endfor %}</tbody>
+  </table></div>
+  {% else %}<p class="muted">No folders have been registered.</p>{% endif %}
+</section>
+
+<div class="privacy-note"><strong>Privacy boundary:</strong> the default server listens only on <code>127.0.0.1</code>. Published literature is the intended content; do not place patient-identifiable records in this MVP.</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Library · Research Memory{% endblock %}
+{% block content %}
+<div class="page-heading horizontal">
+  <div><span class="eyebrow">Personal corpus</span><h1>Library</h1><p>{{ total }} indexed papers</p></div>
+  <a class="button button-primary" href="/import">Add papers</a>
+</div>
+
+<form class="filter-bar" method="get">
+  <input name="q" value="{{ q }}" placeholder="Filter title, author, abstract, or saved context">
+  <select name="reading_status"><option value="">Any status</option>{% for status in reading_statuses %}<option value="{{ status }}" {% if selected_status == status %}selected{% endif %}>{{ status|title }}</option>{% endfor %}</select>
+  <select name="source_type"><option value="">Any article type</option>{% for item in source_types %}<option value="{{ item }}" {% if selected_source_type == item %}selected{% endif %}>{{ item|replace('_',' ')|title }}</option>{% endfor %}</select>
+  <input class="year-input" name="year_min" value="{{ year_min }}" placeholder="From year" inputmode="numeric">
+  <input class="year-input" name="year_max" value="{{ year_max }}" placeholder="To year" inputmode="numeric">
+  <select name="sort"><option value="recent" {% if sort == 'recent' %}selected{% endif %}>Recently added</option><option value="importance" {% if sort == 'importance' %}selected{% endif %}>Importance</option><option value="year_desc" {% if sort == 'year_desc' %}selected{% endif %}>Newest publication</option><option value="year_asc" {% if sort == 'year_asc' %}selected{% endif %}>Oldest publication</option><option value="title" {% if sort == 'title' %}selected{% endif %}>Title</option></select>
+  <button class="button button-secondary" type="submit">Apply</button>
+</form>
+
+<section class="panel no-padding">
+  {% if documents %}
+  <div class="library-list">
+  {% for document in documents %}
+    <a class="library-item" href="/documents/{{ document.id }}">
+      <div class="paper-type-icon large">PDF</div>
+      <div class="library-main">
+        <div class="library-title-row"><strong>{{ document.title }}</strong><span class="status-pill {{ document.reading_status }}">{{ document.reading_status }}</span></div>
+        <p>{{ document.authors|truncate_text(180) }}</p>
+        <div class="meta-line"><span>{{ document.journal or 'Journal not identified' }}</span>{% if document.publication_year %}<span>{{ document.publication_year }}</span>{% endif %}<span>{{ document.source_type|replace('_',' ') }}</span><span>{{ document.page_count }} pages</span>{% if document.file_count > 1 %}<span>{{ document.file_count }} versions</span>{% endif %}</div>
+        {% if document.why_saved %}<div class="saved-context"><b>Why saved:</b> {{ document.why_saved|truncate_text(180) }}</div>{% elif document.abstract %}<div class="abstract-preview">{{ document.abstract|truncate_text(220) }}</div>{% endif %}
+      </div>
+      <div class="importance-stars" title="Importance {{ document.importance }} of 5">{% for i in range(1,6) %}<span class="{% if i <= document.importance %}filled{% endif %}">★</span>{% endfor %}</div>
+    </a>
+  {% endfor %}
+  </div>
+  {% else %}<div class="empty-state"><h3>No papers match these filters</h3><p>Clear a filter or use Recall Search for approximate full-text retrieval.</p><a class="button button-secondary" href="/library">Clear filters</a></div>{% endif %}
+</section>
+
+{% if total > page_size %}
+<nav class="pagination">
+  {% if page > 1 %}<a href="?q={{ q|urlencode }}&reading_status={{ selected_status }}&source_type={{ selected_source_type }}&year_min={{ year_min }}&year_max={{ year_max }}&sort={{ sort }}&page={{ page-1 }}">← Previous</a>{% endif %}
+  <span>Page {{ page }} of {{ ((total - 1) // page_size) + 1 }}</span>
+  {% if page * page_size < total %}<a href="?q={{ q|urlencode }}&reading_status={{ selected_status }}&source_type={{ selected_source_type }}&year_min={{ year_min }}&year_max={{ year_max }}&sort={{ sort }}&page={{ page+1 }}">Next →</a>{% endif %}
+</nav>
+{% endif %}
+{% endblock %}

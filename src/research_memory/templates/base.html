@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>{% block title %}Research Memory{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+  <script defer src="{{ url_for('static', path='/app.js') }}"></script>
+</head>
+<body>
+  <header class="app-header">
+    <a class="brand" href="/" aria-label="Research Memory home">
+      <span class="brand-mark">RM</span>
+      <span>
+        <strong>Research Memory</strong>
+        <small>Your literature, made recallable</small>
+      </span>
+    </a>
+    <form class="header-search" action="/search" method="get">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.4-4.4m2.4-5.1a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+      <input name="q" value="{{ q|default('') }}" placeholder="Find the paper you half remember…" aria-label="Search library">
+      <kbd>↵</kbd>
+    </form>
+    <a class="button button-primary compact" href="/import">Add papers</a>
+  </header>
+
+  <div class="app-shell">
+    <nav class="sidebar" aria-label="Primary navigation">
+      <a href="/" class="nav-item {% if request.url.path == '/' %}active{% endif %}">
+        <span class="nav-icon">⌂</span><span>Home</span>
+      </a>
+      <a href="/library" class="nav-item {% if request.url.path.startswith('/library') %}active{% endif %}">
+        <span class="nav-icon">▤</span><span>Library</span>
+      </a>
+      <a href="/search" class="nav-item {% if request.url.path.startswith('/search') %}active{% endif %}">
+        <span class="nav-icon">⌕</span><span>Recall search</span>
+      </a>
+      <a href="/topics" class="nav-item {% if request.url.path.startswith('/topics') %}active{% endif %}">
+        <span class="nav-icon">◌</span><span>Topics</span>
+      </a>
+      <a href="/projects" class="nav-item {% if request.url.path.startswith('/projects') %}active{% endif %}">
+        <span class="nav-icon">▦</span><span>Projects</span>
+      </a>
+      <a href="/ask" class="nav-item {% if request.url.path.startswith('/ask') %}active{% endif %}">
+        <span class="nav-icon">✦</span><span>Ask my library</span>
+      </a>
+      <div class="sidebar-spacer"></div>
+      <a href="/import" class="nav-item {% if request.url.path.startswith('/import') %}active{% endif %}">
+        <span class="nav-icon">＋</span><span>Import & folders</span>
+      </a>
+      <div class="local-badge" title="The application is bound to your local computer by default.">
+        <span class="status-dot"></span>
+        <div><strong>Local-first</strong><small>{{ embedding_backend }}</small></div>
+      </div>
+    </nav>
+
+    <main class="main-content {% block main_class %}{% endblock %}">
+      {% if notice %}<div class="flash success">{{ notice }}</div>{% endif %}
+      {% if error %}<div class="flash error">{{ error }}</div>{% endif %}
+      {% if embedding_warning %}<div class="flash warning">{{ embedding_warning }}</div>{% endif %}
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</body>
+</html>

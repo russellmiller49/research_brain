@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}{{ document.title }} · Research Memory{% endblock %}
+{% block main_class %}document-main{% endblock %}
+{% block content %}
+<div class="document-header">
+  <div class="document-heading-main">
+    <div class="breadcrumb"><a href="/library">Library</a><span>›</span><span>{{ document.source_type|replace('_',' ') }}</span></div>
+    <h1>{{ document.title }}</h1>
+    <p>{{ document.authors }}</p>
+    <div class="citation-line">{% if document.journal %}<span>{{ document.journal }}</span>{% endif %}{% if document.publication_year %}<span>{{ document.publication_year }}</span>{% endif %}{% if document.doi %}<span>DOI {{ document.doi }}</span>{% endif %}{% if document.pmid %}<span>PMID {{ document.pmid }}</span>{% endif %}</div>
+  </div>
+  <div class="document-header-actions">
+    <span class="status-pill {{ document.reading_status }}">{{ document.reading_status }}</span>
+    <a class="button button-secondary compact" href="/documents/{{ document.id }}/export.ris">RIS</a>
+    <a class="button button-secondary compact" href="/documents/{{ document.id }}/export.bib">BibTeX</a>
+    <a class="button button-primary compact" href="/documents/{{ document.id }}/pdf" target="_blank">Open PDF</a>
+  </div>
+</div>
+
+{% if document.extraction_status == 'needs_ocr' %}<div class="flash warning">This PDF contains little extractable text and needs OCR before reliable full-text retrieval.</div>{% endif %}
+
+<div class="document-workspace">
+  <section class="pdf-panel">
+    {% if files %}
+      <div class="pdf-toolbar"><span>{{ files[0].file_name }}</span><div><a href="/documents/{{ document.id }}/pdf" target="_blank">New window ↗</a></div></div>
+      <iframe id="pdf-frame" title="PDF viewer" src="/documents/{{ document.id }}/pdf#page={{ initial_page }}&zoom=page-width"></iframe>
+    {% else %}<div class="empty-state"><h3>PDF unavailable</h3><p>The record remains searchable, but no file is attached.</p></div>{% endif %}
+  </section>
+
+  <aside class="paper-inspector">
+    <div class="tab-bar" role="tablist">
+      <button class="tab-button active" data-tab="study">Study card</button>
+      <button class="tab-button" data-tab="notes">My context</button>
+      <button class="tab-button" data-tab="details">Details</button>
+    </div>
+
+    <section class="tab-panel active" id="tab-study">
+      <div class="inspector-intro"><strong>Machine-extracted study clues</strong><p>Every extracted field links back to the page where it was found. Verify before reuse.</p></div>
+      {% if study_card %}
+      <div class="study-fields">
+        {% for key, item in study_card.items() %}
+          {% if key == 'key_findings' and item %}
+            <div class="study-field"><label>Key numerical passages</label>{% for finding in item %}<a class="evidence-card" href="?page={{ finding.page }}"><span>{{ finding.value }}</span><small>Page {{ finding.page }} · confidence {{ '%.0f'|format(finding.confidence * 100) }}%</small></a>{% endfor %}</div>
+          {% elif item is mapping %}
+            <div class="study-field"><label>{{ key|replace('_',' ')|title }}</label><a class="evidence-card" href="?page={{ item.page or 1 }}"><span>{{ item.value }}</span><small>{% if item.page %}Page {{ item.page }} · {% endif %}confidence {{ '%.0f'|format(item.confidence * 100) }}%</small></a></div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% else %}<p class="muted">No study fields were detected.</p>{% endif %}
+      {% if keywords %}<div class="study-field"><label>Topic signals</label><div class="tag-row">{% for keyword in keywords %}<a href="/topics/{{ keyword|urlencode }}">{{ keyword }}</a>{% endfor %}</div></div>{% endif %}
+    </section>
+
+    <section class="tab-panel" id="tab-notes">
+      <form action="/documents/{{ document.id }}/update" method="post" class="stack-form compact-form">
+        <input type="hidden" name="title" value="{{ document.title }}"><input type="hidden" name="authors" value="{{ document.authors }}"><input type="hidden" name="journal" value="{{ document.journal }}"><input type="hidden" name="publication_year" value="{{ document.publication_year or '' }}"><input type="hidden" name="doi" value="{{ document.doi }}"><input type="hidden" name="pmid" value="{{ document.pmid }}">
+        <div class="form-row"><label>Reading status<select name="reading_status">{% for status in reading_statuses %}<option value="{{ status }}" {% if document.reading_status == status %}selected{% endif %}>{{ status|title }}</option>{% endfor %}</select></label><label>Importance<select name="importance">{% for i in range(0,6) %}<option value="{{ i }}" {% if document.importance == i %}selected{% endif %}>{{ i }}{% if i %} / 5{% endif %}</option>{% endfor %}</select></label></div>
+        <label>Why I saved this<textarea name="why_saved" rows="4" placeholder="Useful definition, unexpected complication rate, possible citation…">{{ document.why_saved }}</textarea></label>
+        <label>My current summary<textarea name="user_summary" rows="6" placeholder="What this paper means to me, how I interpret it, and where I may use it…">{{ document.user_summary }}</textarea></label>
+        <button class="button button-primary" type="submit">Save personal context</button>
+      </form>
+      <hr>
+      <form action="/documents/{{ document.id }}/notes" method="post" class="stack-form compact-form">
+        <div class="form-row"><label>Note type<select name="note_type"><option>note</option><option>critique</option><option>teaching point</option><option>research idea</option><option>quotation</option><option>question</option></select></label><label>Page<input name="page_number" inputmode="numeric" placeholder="Optional"></label></div>
+        <label>Add a note<textarea name="body" rows="4" required></textarea></label><button class="button button-secondary" type="submit">Add note</button>
+      </form>
+      <div class="note-list">{% for note in notes %}<article class="note-card"><div><span>{{ note.note_type }}</span>{% if note.page_number %}<a href="?page={{ note.page_number }}">page {{ note.page_number }}</a>{% endif %}<small>{{ note.created_at }}</small></div><p>{{ note.body }}</p><form action="/documents/{{ document.id }}/notes/{{ note.id }}/delete" method="post"><button class="text-button danger">Delete</button></form></article>{% else %}<p class="muted">No notes yet.</p>{% endfor %}</div>
+    </section>
+
+    <section class="tab-panel" id="tab-details">
+      <form action="/documents/{{ document.id }}/update" method="post" class="stack-form compact-form">
+        <label>Title<input name="title" value="{{ document.title }}" required></label>
+        <label>Authors<textarea name="authors" rows="3">{{ document.authors }}</textarea></label>
+        <div class="form-row"><label>Journal<input name="journal" value="{{ document.journal }}"></label><label>Year<input name="publication_year" value="{{ document.publication_year or '' }}"></label></div>
+        <div class="form-row"><label>DOI<input name="doi" value="{{ document.doi }}"></label><label>PMID<input name="pmid" value="{{ document.pmid }}"></label></div>
+        <input type="hidden" name="reading_status" value="{{ document.reading_status }}"><input type="hidden" name="importance" value="{{ document.importance }}"><input type="hidden" name="why_saved" value="{{ document.why_saved }}"><input type="hidden" name="user_summary" value="{{ document.user_summary }}">
+        <button class="button button-secondary" type="submit">Save bibliographic details</button>
+      </form>
+      <hr>
+      <div class="study-field"><label>Files and versions</label>{% for file in files %}<a class="file-version" href="/documents/{{ document.id }}/pdf?file_id={{ file.id }}" target="_blank"><span>{{ file.file_name }}</span><small>{{ 'Primary' if file.is_primary else 'Alternate version' }}</small></a>{% endfor %}</div>
+      <div class="study-field"><label>Add to project</label>{% if projects %}<form action="/documents/{{ document.id }}/projects" method="post" class="inline-project-form"><select name="project_id">{% for project in projects %}<option value="{{ project.id }}">{{ '✓ ' if project.attached else '' }}{{ project.name }}</option>{% endfor %}</select><select name="status">{% for status in project_statuses %}<option value="{{ status }}">{{ status|replace('_',' ')|title }}</option>{% endfor %}</select><button class="button button-secondary compact">Add/update</button></form>{% else %}<p class="muted"><a href="/projects">Create a project</a> to organize focused work.</p>{% endif %}</div>
+    </section>
+  </aside>
+</div>
+
+{% if related %}
+<section class="panel section-gap">
+  <div class="panel-header"><div><span class="eyebrow">Library relationships</span><h2>Possibly related papers</h2></div></div>
+  <div class="related-grid">{% for item in related %}<a href="/documents/{{ item.document_id }}"><span>{{ item.source_type|replace('_',' ') }}{% if item.publication_year %} · {{ item.publication_year }}{% endif %}</span><strong>{{ item.title }}</strong><small>{{ item.match_reasons|join(' · ') }}</small></a>{% endfor %}</div>
+</section>
+{% endif %}
+{% endblock %}

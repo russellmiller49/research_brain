@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}Research Memory{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <span class="eyebrow">Personal research memory</span>
+    <h1>What are you trying to remember?</h1>
+    <p>Search by a number, an unusual complication, a vague method, a note you wrote, or any fragment that stayed with you.</p>
+  </div>
+  <form class="memory-search" action="/search" method="get">
+    <textarea name="q" rows="2" placeholder="The bronchoscopy paper where navigation success was high but strict diagnostic yield was much lower…"></textarea>
+    <div class="memory-search-footer">
+      <span>Searches full text, metadata, study clues, and your notes</span>
+      <button class="button button-primary" type="submit">Search my library</button>
+    </div>
+  </form>
+</section>
+
+<section class="metric-grid">
+  <a class="metric-card" href="/library">
+    <span>Indexed papers</span><strong>{{ counts.documents }}</strong><small>searchable records</small>
+  </a>
+  <a class="metric-card" href="/library?reading_status=unread">
+    <span>Unread</span><strong>{{ counts.unread }}</strong><small>papers to revisit</small>
+  </a>
+  <a class="metric-card" href="/projects">
+    <span>Projects</span><strong>{{ counts.projects }}</strong><small>active workspaces</small>
+  </a>
+  <a class="metric-card {% if counts.needs_ocr %}attention{% endif %}" href="/library">
+    <span>Needs OCR</span><strong>{{ counts.needs_ocr }}</strong><small>image-only or sparse PDFs</small>
+  </a>
+</section>
+
+<div class="dashboard-grid">
+  <section class="panel span-2">
+    <div class="panel-header">
+      <div><span class="eyebrow">Recently added</span><h2>Your research inbox</h2></div>
+      <a href="/library">View all →</a>
+    </div>
+    {% if recent %}
+      <div class="paper-list">
+      {% for document in recent %}
+        <a class="paper-row" href="/documents/{{ document.id }}">
+          <div class="paper-type-icon">PDF</div>
+          <div class="paper-row-main">
+            <strong>{{ document.title }}</strong>
+            <span>{{ document.authors|truncate_text(100) }}{% if document.publication_year %} · {{ document.publication_year }}{% endif %}</span>
+            <small>{{ document.source_type|replace('_', ' ')|title }} · {{ document.page_count }} pages{% if document.file_name %} · {{ document.file_name|truncate_text(45) }}{% endif %}</small>
+          </div>
+          <span class="status-pill {{ document.reading_status }}">{{ document.reading_status }}</span>
+        </a>
+      {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty-state">
+        <div class="empty-icon">⇧</div>
+        <h3>Bring in your first papers</h3>
+        <p>Upload PDFs or point Research Memory at an existing folder. Your original files can remain where they are.</p>
+        <a class="button button-primary" href="/import">Import a library</a>
+      </div>
+    {% endif %}
+  </section>
+
+  <section class="panel">
+    <div class="panel-header"><div><span class="eyebrow">Concept map</span><h2>Frequent topics</h2></div><a href="/topics">All topics →</a></div>
+    {% if topics %}
+      <div class="topic-cloud">
+      {% for topic, count in topics %}
+        <a href="/topics/{{ topic|urlencode }}"><span>{{ topic }}</span><small>{{ count }}</small></a>
+      {% endfor %}
+      </div>
+    {% else %}
+      <p class="muted">Topics will emerge automatically as papers are indexed.</p>
+    {% endif %}
+  </section>
+
+  <section class="panel span-2">
+    <div class="panel-header"><div><span class="eyebrow">Focused work</span><h2>Projects</h2></div><a href="/projects">Manage →</a></div>
+    {% if projects %}
+      <div class="project-cards">
+      {% for project in projects %}
+        <a class="project-card" href="/projects/{{ project.id }}">
+          <span class="project-type">{{ project.project_type|replace('_', ' ') }}</span>
+          <strong>{{ project.name }}</strong>
+          <p>{{ project.central_question or project.description or 'A focused literature workspace.' }}</p>
+          <small>{{ project.paper_count }} papers</small>
+        </a>
+      {% endfor %}
+      </div>
+    {% else %}
+      <div class="inline-empty"><p>Create a project for a manuscript, guideline, lecture, or review.</p><a class="button button-secondary compact" href="/projects">Create project</a></div>
+    {% endif %}
+  </section>
+
+  <section class="panel">
+    <div class="panel-header"><div><span class="eyebrow">Passive ingestion</span><h2>Watched folders</h2></div><a href="/import">Configure →</a></div>
+    {% if watched %}
+      <div class="watch-list">
+      {% for watch in watched %}
+        <div class="watch-row">
+          <div><strong>{{ watch.folder_path|truncate_text(42) }}</strong><small>Last scan: {{ watch.last_scanned_at or 'not yet' }}</small></div>
+          <form action="/watch/{{ watch.id }}/scan" method="post"><button class="text-button">Scan</button></form>
+        </div>
+      {% endfor %}
+      </div>
+    {% else %}
+      <p class="muted">Register a folder and rescan it whenever you add PDFs.</p>
+    {% endif %}
+  </section>
+</div>
+{% endblock %}

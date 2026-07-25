@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}{{ project.name }} · Research Memory{% endblock %}
+{% block content %}
+<div class="project-hero">
+  <div><div class="breadcrumb"><a href="/projects">Projects</a><span>›</span><span>{{ project.project_type|replace('_',' ') }}</span></div><h1>{{ project.name }}</h1><p>{{ project.central_question or project.description or 'No central question entered.' }}</p></div>
+  <div class="project-actions"><a class="button button-secondary" href="/search?project_id={{ project.id }}">Search this project</a><a class="button button-secondary" href="/projects/{{ project.id }}/export.bib">BibTeX</a><a class="button button-secondary" href="/projects/{{ project.id }}/export.ris">RIS</a><a class="button button-secondary" href="/projects/{{ project.id }}/export.md">Markdown</a><a class="button button-primary" href="/projects/{{ project.id }}/export.csv">Evidence CSV</a></div>
+</div>
+
+<div class="status-strip">{% for item in status_counts %}<div><strong>{{ item.count_value }}</strong><span>{{ item.status|replace('_',' ') }}</span></div>{% else %}<div><strong>0</strong><span>papers</span></div>{% endfor %}</div>
+
+<div class="project-detail-grid">
+  <section class="panel span-3 no-padding">
+    <div class="project-table-header"><div><span class="eyebrow">Evidence board</span><h2>{{ papers|length }} papers</h2></div><a class="button button-secondary compact" href="/search">Find papers to add</a></div>
+    {% if papers %}
+    <div class="project-paper-list">{% for paper in papers %}<article class="project-paper">
+      <div class="paper-type-icon">PDF</div>
+      <div class="project-paper-main"><span class="source-type">{{ paper.source_type|replace('_',' ') }}{% if paper.publication_year %} · {{ paper.publication_year }}{% endif %}</span><h3><a href="/documents/{{ paper.id }}">{{ paper.title }}</a></h3><p>{{ paper.authors|truncate_text(180) }}</p>{% if paper.why_saved %}<small><b>Why saved:</b> {{ paper.why_saved|truncate_text(180) }}</small>{% endif %}</div>
+      <form action="/projects/{{ project.id }}/documents/{{ paper.id }}/update" method="post" class="project-paper-controls"><select name="status">{% for status in project_statuses %}<option value="{{ status }}" {% if paper.project_status == status %}selected{% endif %}>{{ status|replace('_',' ')|title }}</option>{% endfor %}</select><input name="exclusion_reason" value="{{ paper.exclusion_reason }}" placeholder="Exclusion reason, if applicable"><button class="button button-secondary compact">Save</button></form>
+      <form action="/projects/{{ project.id }}/documents/{{ paper.id }}/remove" method="post"><button class="text-button danger">Remove</button></form>
+    </article>{% endfor %}</div>
+    {% else %}<div class="empty-state"><h3>This project has no papers</h3><p>Use Recall Search, open a paper, and add it from the Details tab.</p><a class="button button-primary" href="/search">Search library</a></div>{% endif %}
+  </section>
+
+  <aside class="panel project-settings">
+    <div class="panel-header"><div><span class="eyebrow">Definition</span><h2>Project settings</h2></div></div>
+    <form action="/projects/{{ project.id }}/update" method="post" class="stack-form compact-form">
+      <label>Name<input name="name" value="{{ project.name }}" required></label>
+      <label>Type<select name="project_type">{% for item in project_types %}<option value="{{ item }}" {% if project.project_type == item %}selected{% endif %}>{{ item|replace('_',' ')|title }}</option>{% endfor %}</select></label>
+      <label>Central question<textarea name="central_question" rows="4">{{ project.central_question }}</textarea></label>
+      <label>Description<textarea name="description" rows="6">{{ project.description }}</textarea></label>
+      <button class="button button-secondary" type="submit">Save project</button>
+    </form>
+    <hr>
+    <a class="ask-project" href="/ask?project_id={{ project.id }}"><span>✦</span><div><strong>Ask this project</strong><small>Retrieve source-linked passages across the included corpus.</small></div></a>
+  </aside>
+</div>
+{% endblock %}

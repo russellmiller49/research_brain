@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Projects · Research Memory{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">Focused evidence workspaces</span><h1>Projects</h1><p>Move papers from a general library into manuscripts, reviews, guidelines, lectures, and curricula.</p></div></div>
+
+<div class="project-page-grid">
+  <section class="panel span-2">
+    <div class="panel-header"><div><span class="eyebrow">Your workspaces</span><h2>All projects</h2></div></div>
+    {% if projects %}<div class="project-list">{% for project in projects %}<a class="project-list-item" href="/projects/{{ project.id }}"><div class="project-glyph">{{ project.project_type[:2]|upper }}</div><div><span>{{ project.project_type|replace('_',' ') }}</span><strong>{{ project.name }}</strong><p>{{ project.central_question or project.description or 'No project question entered.' }}</p></div><div class="project-numbers"><strong>{{ project.paper_count }}</strong><span>papers</span><small>{{ project.included_count or 0 }} included</small></div></a>{% endfor %}</div>{% else %}<div class="empty-state"><h3>No projects yet</h3><p>Create a focused workspace for your next manuscript, review, guideline, or lecture.</p></div>{% endif %}
+  </section>
+
+  <section class="panel sticky-card">
+    <div class="panel-header"><div><span class="eyebrow">New workspace</span><h2>Create a project</h2></div></div>
+    <form action="/projects" method="post" class="stack-form">
+      <label>Name<input name="name" placeholder="EBUS false-negative staging review" required></label>
+      <label>Project type<select name="project_type">{% for item in project_types %}<option value="{{ item }}">{{ item|replace('_',' ')|title }}</option>{% endfor %}</select></label>
+      <label>Central question<textarea name="central_question" rows="3" placeholder="What question should this body of evidence answer?"></textarea></label>
+      <label>Description<textarea name="description" rows="4" placeholder="Scope, inclusion logic, intended output, collaborators…"></textarea></label>
+      <button class="button button-primary" type="submit">Create project</button>
+    </form>
+  </section>
+</div>
+{% endblock %}
