@@ -118,23 +118,27 @@ def node_packages(project_dir: Path) -> list[dict[str, str]]:
 
 
 def rust_packages(project_dir: Path) -> list[dict[str, str]]:
-    cargo = os.environ.get("RESEARCH_MEMORY_CARGO", "cargo")
-    completed = subprocess.run(
-        [
-            cargo,
-            "metadata",
-            "--locked",
-            "--format-version",
-            "1",
-            "--filter-platform",
-            "aarch64-apple-darwin",
-        ],
-        cwd=project_dir / "desktop" / "src-tauri",
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    metadata: dict[str, Any] = json.loads(completed.stdout)
+    metadata_path = os.environ.get("RESEARCH_MEMORY_CARGO_METADATA")
+    if metadata_path:
+        metadata: dict[str, Any] = json.loads(Path(metadata_path).read_text(encoding="utf-8"))
+    else:
+        cargo = os.environ.get("RESEARCH_MEMORY_CARGO", "cargo")
+        completed = subprocess.run(
+            [
+                cargo,
+                "metadata",
+                "--locked",
+                "--format-version",
+                "1",
+                "--filter-platform",
+                "aarch64-apple-darwin",
+            ],
+            cwd=project_dir / "desktop" / "src-tauri",
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        metadata = json.loads(completed.stdout)
     return [
         {
             "ecosystem": "rust",

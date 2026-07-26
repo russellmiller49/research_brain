@@ -106,8 +106,15 @@ jobs:
       - run: rustup run 1.97.1 cargo install cargo-audit --locked --version 0.22.2
       - run: rustup run 1.97.1 cargo audit
         working-directory: desktop/src-tauri
-      - name: Retain pinned Cargo path
-        run: echo "RESEARCH_MEMORY_CARGO=$(rustup which --toolchain 1.97.1 cargo)" >> "$GITHUB_ENV"
+      - name: Prepare pinned Rust inventory
+        working-directory: desktop/src-tauri
+        run: |
+          rustup run 1.97.1 cargo metadata \
+            --locked \
+            --format-version 1 \
+            --filter-platform aarch64-apple-darwin \
+            > "$RUNNER_TEMP/research-memory-cargo-metadata.json"
+          echo "RESEARCH_MEMORY_CARGO_METADATA=$RUNNER_TEMP/research-memory-cargo-metadata.json" >> "$GITHUB_ENV"
       - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
         with:
           version: "0.11.32"
