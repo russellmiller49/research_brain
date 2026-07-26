@@ -28,7 +28,7 @@ dependencies = [
 [project.optional-dependencies]
 semantic = [
   "fastembed>=0.7,<1.0",
-  "onnxruntime>=1.17,<1.24",
+  "onnxruntime>=1.17,<1.29",
   "scipy>=1.11,<1.18",
   "usearch>=2.15,<3.0",
 ]
