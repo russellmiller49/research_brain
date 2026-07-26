@@ -53,7 +53,7 @@ select isnt(
 select isnt(
   has_table_privilege(
     'authenticated',
-    'private.cloud_connection_secrets',
+    'research_memory_private.cloud_connection_secrets',
     'select'
   ),
   true,
@@ -63,7 +63,7 @@ select isnt(
 select ok(
   has_table_privilege(
     'service_role',
-    'private.cloud_connection_secrets',
+    'research_memory_private.cloud_connection_secrets',
     'select'
   ),
   'the connector service can read encrypted provider credentials'
@@ -211,7 +211,7 @@ values
     'device_upload'
   );
 
-insert into private.article_chunks (
+insert into research_memory_private.article_chunks (
   article_id,
   asset_id,
   library_id,

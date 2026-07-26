@@ -76,6 +76,8 @@ const PdfReader = lazy(() =>
 const macDownloadUrl =
   import.meta.env.VITE_MAC_DOWNLOAD_URL?.trim() ||
   "https://github.com/russellmiller49/research_brain/releases";
+const socialAuthEnabled =
+  import.meta.env.VITE_SOCIAL_AUTH_ENABLED?.trim().toLowerCase() === "true";
 
 interface CloudAppProps {
   service?: CloudLibraryService;
@@ -274,30 +276,36 @@ function AuthScreen({
             </span>
           </div>
         )}
-        <div className="cloud-auth-divider"><span>or continue with</span></div>
-        <div className="cloud-provider-grid">
-          <button
-            className="button secondary"
-            disabled={sending}
-            onClick={() => void signInWith("google")}
-          >
-            Google
-          </button>
-          <button
-            className="button secondary"
-            disabled={sending}
-            onClick={() => void signInWith("apple")}
-          >
-            Apple
-          </button>
-          <button
-            className="button secondary"
-            disabled={sending}
-            onClick={() => void signInWith("azure")}
-          >
-            Microsoft
-          </button>
-        </div>
+        {socialAuthEnabled && (
+          <>
+            <div className="cloud-auth-divider">
+              <span>or continue with</span>
+            </div>
+            <div className="cloud-provider-grid">
+              <button
+                className="button secondary"
+                disabled={sending}
+                onClick={() => void signInWith("google")}
+              >
+                Google
+              </button>
+              <button
+                className="button secondary"
+                disabled={sending}
+                onClick={() => void signInWith("apple")}
+              >
+                Apple
+              </button>
+              <button
+                className="button secondary"
+                disabled={sending}
+                onClick={() => void signInWith("azure")}
+              >
+                Microsoft
+              </button>
+            </div>
+          </>
+        )}
         {error && <div className="error-banner" role="alert">{error}</div>}
         <small className="cloud-auth-footnote">
           PDFs are private by default and served through short-lived signed

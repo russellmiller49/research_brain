@@ -66,6 +66,7 @@ Copy `desktop/.env.cloud.example` to `desktop/.env.cloud.local`, then set:
 ```dotenv
 VITE_SUPABASE_URL=http://127.0.0.1:54321
 VITE_SUPABASE_PUBLISHABLE_KEY=<PUBLISHABLE_KEY from supabase status>
+VITE_SOCIAL_AUTH_ENABLED=false
 ```
 
 Only a publishable key belongs in this file. Never put a Supabase secret key
@@ -95,7 +96,7 @@ cp supabase/functions/.env.example supabase/functions/.env.local
 openssl rand -base64 32 | tr '+/' '-_' | tr -d '='
 ```
 
-Paste the generated value into `CONNECTOR_TOKEN_ENCRYPTION_KEY`. The local
+Paste the generated value into `RESEARCH_MEMORY_CONNECTOR_TOKEN_ENCRYPTION_KEY`. The local
 connector can run without provider credentials so the app can report its setup
 state, but an account cannot be attached until that provider's OAuth client ID
 and secret are present.
@@ -116,7 +117,7 @@ npm run dev:connectors
 
 For hosted environments, place the same values in Supabase Edge Function
 secrets, use the hosted function callback URL, and list the deployed web
-origins in `CLOUD_APP_ORIGINS`. Google authorization requests read-only Drive
+origins in `RESEARCH_MEMORY_CLOUD_APP_ORIGINS`. Google authorization requests read-only Drive
 access for selecting existing PDFs plus app-file access for the backup folder.
 Microsoft requests delegated `Files.ReadWrite` and `offline_access`.
 
