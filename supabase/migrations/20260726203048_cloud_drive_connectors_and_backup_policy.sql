@@ -151,7 +151,7 @@ create index backup_replications_queue_idx
 create index backup_replications_library_idx
   on public.backup_replications (library_id, updated_at desc);
 
-create table private.cloud_connection_secrets (
+create table research_memory_private.cloud_connection_secrets (
   connection_id uuid primary key,
   library_id uuid not null,
   owner_id uuid not null,
@@ -165,7 +165,7 @@ create table private.cloud_connection_secrets (
       on delete cascade
 );
 
-create table private.cloud_oauth_states (
+create table research_memory_private.cloud_oauth_states (
   state_hash text primary key
     check (state_hash ~ '^[0-9a-f]{64}$'),
   owner_id uuid not null references auth.users(id) on delete cascade,
@@ -181,23 +181,23 @@ create table private.cloud_oauth_states (
 );
 
 create index cloud_oauth_states_expiry_idx
-  on private.cloud_oauth_states (expires_at);
+  on research_memory_private.cloud_oauth_states (expires_at);
 
 create trigger cloud_connections_touch_sync_row
 before update on public.cloud_connections
-for each row execute function private.touch_sync_row();
+for each row execute function research_memory_private.touch_sync_row();
 create trigger backup_targets_touch_sync_row
 before update on public.backup_targets
-for each row execute function private.touch_sync_row();
+for each row execute function research_memory_private.touch_sync_row();
 create trigger backup_replications_touch_sync_row
 before update on public.backup_replications
-for each row execute function private.touch_sync_row();
+for each row execute function research_memory_private.touch_sync_row();
 
 alter table public.cloud_connections enable row level security;
 alter table public.backup_targets enable row level security;
 alter table public.backup_replications enable row level security;
-alter table private.cloud_connection_secrets enable row level security;
-alter table private.cloud_oauth_states enable row level security;
+alter table research_memory_private.cloud_connection_secrets enable row level security;
+alter table research_memory_private.cloud_oauth_states enable row level security;
 
 create policy cloud_connections_select_own
 on public.cloud_connections for select
@@ -238,9 +238,9 @@ grant select, insert, update, delete
 grant select, insert, update, delete
   on table public.backup_replications to service_role;
 grant select, insert, update, delete
-  on table private.cloud_connection_secrets to service_role;
+  on table research_memory_private.cloud_connection_secrets to service_role;
 grant select, insert, update, delete
-  on table private.cloud_oauth_states to service_role;
+  on table research_memory_private.cloud_oauth_states to service_role;
 
 create or replace function public.queue_library_backups(
   p_asset_id uuid default null
@@ -361,7 +361,7 @@ begin
       'MaxWords=35, MinWords=12, MaxFragments=2'
     ),
     ts_rank_cd(chunk.search_vector, parsed_query)::real
-  from private.article_chunks as chunk
+  from research_memory_private.article_chunks as chunk
   join public.articles as article
     on article.id = chunk.article_id
    and article.library_id = chunk.library_id
@@ -398,7 +398,7 @@ language sql
 security definer
 set search_path = ''
 as $$
-  insert into private.cloud_oauth_states (
+  insert into research_memory_private.cloud_oauth_states (
     state_hash,
     owner_id,
     library_id,
@@ -432,7 +432,7 @@ language sql
 security definer
 set search_path = ''
 as $$
-  delete from private.cloud_oauth_states
+  delete from research_memory_private.cloud_oauth_states
   where state_hash = p_state_hash
     and expires_at > timezone('utc', now())
   returning
@@ -455,7 +455,7 @@ language sql
 security definer
 set search_path = ''
 as $$
-  insert into private.cloud_connection_secrets (
+  insert into research_memory_private.cloud_connection_secrets (
     connection_id,
     library_id,
     owner_id,
@@ -498,7 +498,7 @@ as $$
     secret.encrypted_token_payload,
     secret.token_expires_at,
     secret.token_version
-  from private.cloud_connection_secrets as secret
+  from research_memory_private.cloud_connection_secrets as secret
   where secret.connection_id = p_connection_id;
 $$;
 

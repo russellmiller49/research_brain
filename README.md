@@ -89,6 +89,7 @@ realtime changes, and Edge Functions. Railway variables are compiled into the Vi
 VITE_SUPABASE_URL=https://<project-ref>.supabase.co
 VITE_SUPABASE_PUBLISHABLE_KEY=<publishable-key>
 VITE_MAC_DOWNLOAD_URL=https://github.com/russellmiller49/research_brain/releases
+VITE_SOCIAL_AUTH_ENABLED=false
 ```
 
 The root [`Dockerfile`](Dockerfile), [`Caddyfile`](Caddyfile), and

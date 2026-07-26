@@ -82,7 +82,7 @@ function adminClient(): SupabaseClient {
 }
 
 function allowedOrigins(): Set<string> {
-  const configured = Deno.env.get("CLOUD_APP_ORIGINS") ??
+  const configured = Deno.env.get("RESEARCH_MEMORY_CLOUD_APP_ORIGINS") ??
     [
       "http://127.0.0.1:1420",
       "http://127.0.0.1:1421",
@@ -166,12 +166,12 @@ async function sha256Hex(value: string): Promise<string> {
 
 async function encryptionKey(): Promise<CryptoKey> {
   const bytes = base64UrlToBytes(
-    environment("CONNECTOR_TOKEN_ENCRYPTION_KEY"),
+    environment("RESEARCH_MEMORY_CONNECTOR_TOKEN_ENCRYPTION_KEY"),
   );
   if (bytes.byteLength !== 32) {
     throw new ConnectorError(
       "invalid_encryption_key",
-      "CONNECTOR_TOKEN_ENCRYPTION_KEY must decode to exactly 32 bytes.",
+      "RESEARCH_MEMORY_CONNECTOR_TOKEN_ENCRYPTION_KEY must decode to exactly 32 bytes.",
       503,
     );
   }
@@ -233,8 +233,8 @@ async function decrypt<T>(envelope: string): Promise<T> {
 function providerConfiguration(provider: Provider): ProviderConfiguration {
   if (provider === "google_drive") {
     return {
-      clientId: environment("GOOGLE_DRIVE_CLIENT_ID"),
-      clientSecret: environment("GOOGLE_DRIVE_CLIENT_SECRET"),
+      clientId: environment("RESEARCH_MEMORY_GOOGLE_DRIVE_CLIENT_ID"),
+      clientSecret: environment("RESEARCH_MEMORY_GOOGLE_DRIVE_CLIENT_SECRET"),
       authorizationEndpoint: "https://accounts.google.com/o/oauth2/v2/auth",
       tokenEndpoint: "https://oauth2.googleapis.com/token",
       scopes: [
@@ -245,17 +245,17 @@ function providerConfiguration(provider: Provider): ProviderConfiguration {
       ],
     };
   }
-  const tenant = Deno.env.get("MICROSOFT_DRIVE_TENANT")?.trim() || "common";
+  const tenant = Deno.env.get("RESEARCH_MEMORY_MICROSOFT_DRIVE_TENANT")?.trim() || "common";
   if (!/^[A-Za-z0-9.-]+$/.test(tenant)) {
     throw new ConnectorError(
       "invalid_microsoft_tenant",
-      "MICROSOFT_DRIVE_TENANT contains unsupported characters.",
+      "RESEARCH_MEMORY_MICROSOFT_DRIVE_TENANT contains unsupported characters.",
       503,
     );
   }
   return {
-    clientId: environment("MICROSOFT_DRIVE_CLIENT_ID"),
-    clientSecret: environment("MICROSOFT_DRIVE_CLIENT_SECRET"),
+    clientId: environment("RESEARCH_MEMORY_MICROSOFT_DRIVE_CLIENT_ID"),
+    clientSecret: environment("RESEARCH_MEMORY_MICROSOFT_DRIVE_CLIENT_SECRET"),
     authorizationEndpoint:
       `https://login.microsoftonline.com/${tenant}/oauth2/v2.0/authorize`,
     tokenEndpoint:
@@ -271,7 +271,7 @@ function providerConfiguration(provider: Provider): ProviderConfiguration {
 }
 
 function validEncryptionEnvironment(): boolean {
-  const value = Deno.env.get("CONNECTOR_TOKEN_ENCRYPTION_KEY")?.trim();
+  const value = Deno.env.get("RESEARCH_MEMORY_CONNECTOR_TOKEN_ENCRYPTION_KEY")?.trim();
   if (!value) return false;
   try {
     return base64UrlToBytes(value).byteLength === 32;
@@ -282,14 +282,14 @@ function validEncryptionEnvironment(): boolean {
 
 function providerEnvironmentConfigured(provider: Provider): boolean {
   const variables = provider === "google_drive"
-    ? ["GOOGLE_DRIVE_CLIENT_ID", "GOOGLE_DRIVE_CLIENT_SECRET"]
-    : ["MICROSOFT_DRIVE_CLIENT_ID", "MICROSOFT_DRIVE_CLIENT_SECRET"];
+    ? ["RESEARCH_MEMORY_GOOGLE_DRIVE_CLIENT_ID", "RESEARCH_MEMORY_GOOGLE_DRIVE_CLIENT_SECRET"]
+    : ["RESEARCH_MEMORY_MICROSOFT_DRIVE_CLIENT_ID", "RESEARCH_MEMORY_MICROSOFT_DRIVE_CLIENT_SECRET"];
   return validEncryptionEnvironment() &&
     variables.every((name) => Boolean(Deno.env.get(name)?.trim()));
 }
 
 function callbackUrl(): string {
-  return Deno.env.get("CLOUD_CONNECTOR_CALLBACK_URL")?.trim() ||
+  return Deno.env.get("RESEARCH_MEMORY_CLOUD_CONNECTOR_CALLBACK_URL")?.trim() ||
     `${environment("SUPABASE_URL")}/functions/v1/cloud-connectors/callback`;
 }
 
@@ -325,7 +325,7 @@ function safeReturnTo(value: unknown): URL {
   ) {
     throw new ConnectorError(
       "return_url_not_allowed",
-      "The app return URL is not in CLOUD_APP_ORIGINS.",
+      "The app return URL is not in RESEARCH_MEMORY_CLOUD_APP_ORIGINS.",
     );
   }
   return url;

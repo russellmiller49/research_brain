@@ -6,19 +6,14 @@
 
 create extension if not exists vector with schema extensions;
 
-create schema if not exists private;
-revoke all on schema private from public, anon, authenticated;
+create schema if not exists research_memory_private;
+revoke all on schema research_memory_private from public, anon, authenticated;
 
-alter default privileges for role postgres in schema public
-  revoke select, insert, update, delete on tables from anon, authenticated, service_role;
-alter default privileges for role postgres in schema public
-  revoke execute on functions from anon, authenticated, service_role;
-alter default privileges for role postgres in schema public
-  revoke usage, select on sequences from anon, authenticated, service_role;
-alter default privileges for role postgres in schema public
-  revoke execute on functions from public;
+-- Keep this migration safe in a Supabase project shared with other apps.
+-- Every Research Memory object receives explicit grants and revokes below;
+-- do not change project-wide default privileges for the public schema.
 
-create or replace function private.touch_sync_row()
+create or replace function research_memory_private.touch_sync_row()
 returns trigger
 language plpgsql
 security invoker
@@ -228,7 +223,7 @@ create table public.jobs (
 create index jobs_library_updated_idx
   on public.jobs (library_id, updated_at desc);
 
-create table private.article_pages (
+create table research_memory_private.article_pages (
   article_id uuid not null,
   asset_id uuid not null,
   library_id uuid not null,
@@ -245,7 +240,7 @@ create table private.article_pages (
     references public.article_assets(id, article_id, library_id, owner_id) on delete cascade
 );
 
-create table private.article_chunks (
+create table research_memory_private.article_chunks (
   id uuid primary key default gen_random_uuid(),
   article_id uuid not null,
   asset_id uuid not null,
@@ -266,32 +261,32 @@ create table private.article_chunks (
 );
 
 create index article_chunks_fts_idx
-  on private.article_chunks using gin (search_vector);
+  on research_memory_private.article_chunks using gin (search_vector);
 create index article_chunks_owner_idx
-  on private.article_chunks (owner_id, article_id);
+  on research_memory_private.article_chunks (owner_id, article_id);
 create index article_chunks_embedding_idx
-  on private.article_chunks
+  on research_memory_private.article_chunks
   using hnsw (embedding vector_cosine_ops)
   where embedding is not null;
 
 create trigger libraries_touch_sync_row
 before update on public.libraries
-for each row execute function private.touch_sync_row();
+for each row execute function research_memory_private.touch_sync_row();
 create trigger articles_touch_sync_row
 before update on public.articles
-for each row execute function private.touch_sync_row();
+for each row execute function research_memory_private.touch_sync_row();
 create trigger article_assets_touch_sync_row
 before update on public.article_assets
-for each row execute function private.touch_sync_row();
+for each row execute function research_memory_private.touch_sync_row();
 create trigger annotations_touch_sync_row
 before update on public.annotations
-for each row execute function private.touch_sync_row();
+for each row execute function research_memory_private.touch_sync_row();
 create trigger projects_touch_sync_row
 before update on public.projects
-for each row execute function private.touch_sync_row();
+for each row execute function research_memory_private.touch_sync_row();
 create trigger jobs_touch_sync_row
 before update on public.jobs
-for each row execute function private.touch_sync_row();
+for each row execute function research_memory_private.touch_sync_row();
 
 alter table public.libraries enable row level security;
 alter table public.articles enable row level security;
@@ -300,8 +295,8 @@ alter table public.annotations enable row level security;
 alter table public.projects enable row level security;
 alter table public.project_articles enable row level security;
 alter table public.jobs enable row level security;
-alter table private.article_pages enable row level security;
-alter table private.article_chunks enable row level security;
+alter table research_memory_private.article_pages enable row level security;
+alter table research_memory_private.article_chunks enable row level security;
 
 create policy libraries_select_own
 on public.libraries for select
@@ -445,7 +440,7 @@ grant select, insert, update, delete on table public.projects to authenticated;
 grant select, insert, update, delete on table public.project_articles to authenticated;
 grant select, insert, update, delete on table public.jobs to authenticated;
 
-grant usage on schema private to service_role;
+grant usage on schema research_memory_private to service_role;
 grant select, insert, update, delete on table public.libraries to service_role;
 grant select, insert, update, delete on table public.articles to service_role;
 grant select, insert, update, delete on table public.article_assets to service_role;
@@ -453,8 +448,8 @@ grant select, insert, update, delete on table public.annotations to service_role
 grant select, insert, update, delete on table public.projects to service_role;
 grant select, insert, update, delete on table public.project_articles to service_role;
 grant select, insert, update, delete on table public.jobs to service_role;
-grant select, insert, update, delete on table private.article_pages to service_role;
-grant select, insert, update, delete on table private.article_chunks to service_role;
+grant select, insert, update, delete on table research_memory_private.article_pages to service_role;
+grant select, insert, update, delete on table research_memory_private.article_chunks to service_role;
 
 do $$
 declare

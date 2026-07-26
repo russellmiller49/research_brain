@@ -147,7 +147,7 @@ afterEach(() => {
   vi.clearAllMocks();
 });
 
-test("offers passwordless and provider sign-in without accessibility violations", async () => {
+test("offers scoped passwordless sign-in without accessibility violations", async () => {
   const service = fakeService(null);
   const interaction = userEvent.setup();
   const { container } = render(<CloudApp service={service} />);
@@ -173,6 +173,12 @@ test("offers passwordless and provider sign-in without accessibility violations"
     );
   });
   expect(screen.getByRole("status")).toHaveTextContent("Check your email");
+  expect(
+    screen.queryByRole("button", { name: "Google" }),
+  ).not.toBeInTheDocument();
+  expect(
+    screen.queryByRole("button", { name: "Microsoft" }),
+  ).not.toBeInTheDocument();
   const result = await axe.run(container, {
     rules: { "color-contrast": { enabled: false } },
   });

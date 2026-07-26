@@ -561,7 +561,10 @@ export class SupabaseCloudLibraryService implements CloudLibraryService {
     ).toString();
     const { error } = await this.supabase.auth.signInWithOtp({
       email,
-      options: { emailRedirectTo: redirectTo },
+      options: {
+        emailRedirectTo: redirectTo,
+        data: { app_scope: "research_memory" },
+      },
     });
     if (error) throw new Error(error.message);
   }
