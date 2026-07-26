@@ -34,13 +34,12 @@
   <article class="search-result-card">
     <div class="result-rank">{{ loop.index }}</div>
     <div class="result-content">
-      <div class="result-topline"><span class="source-type">{{ result.source_type|replace('_',' ') }}</span>{% if result.publication_year %}<span>{{ result.publication_year }}</span>{% endif %}<span class="relevance">{{ result.relevance }} relevance</span></div>
+      <div class="result-topline"><span class="source-type">{{ result.source_type|replace('_',' ') }}</span>{% if result.publication_year %}<span>{{ result.publication_year }}</span>{% endif %}<span class="relevance">Rank {{ loop.index }}</span></div>
       <h3><a href="/documents/{{ result.document_id }}{% if result.page_number %}?page={{ result.page_number }}{% endif %}">{{ result.title }}</a></h3>
       <p class="authors">{{ result.authors|truncate_text(180) }}{% if result.journal %} · {{ result.journal }}{% endif %}</p>
       <blockquote>{{ result.snippet }}</blockquote>
       <div class="why-match"><strong>Why this may be the paper</strong>{% for reason in result.match_reasons %}<span>{{ reason }}</span>{% endfor %}{% if result.page_number %}<a href="/documents/{{ result.document_id }}?page={{ result.page_number }}">Open page {{ result.page_number }} →</a>{% endif %}</div>
       {% if result.why_saved %}<div class="personal-match"><b>Your saved context:</b> {{ result.why_saved|truncate_text(220) }}</div>{% endif %}
-      {% if result.keywords %}<div class="tag-row">{% for keyword in result.keywords[:6] %}<a href="/topics/{{ keyword|urlencode }}">{{ keyword }}</a>{% endfor %}</div>{% endif %}
     </div>
     <div class="result-actions"><a class="button button-secondary compact" href="/documents/{{ result.document_id }}{% if result.page_number %}?page={{ result.page_number }}{% endif %}">Open paper</a></div>
   </article>

@@ -1,8 +1,0 @@
-{% extends "base.html" %}
-{% block title %}Topics · Research Memory{% endblock %}
-{% block content %}
-<div class="page-heading"><div><span class="eyebrow">Emergent organization</span><h1>Topics</h1><p>Automatically extracted terms provide a lightweight concept map across your private corpus.</p></div></div>
-{% if topics %}
-<section class="panel"><div class="topic-index">{% for topic, count in topics %}<a href="/topics/{{ topic|urlencode }}"><strong>{{ topic }}</strong><span>{{ count }} paper{{ '' if count == 1 else 's' }}</span></a>{% endfor %}</div></section>
-{% else %}<div class="empty-state panel"><h3>No topics yet</h3><p>Import papers and topic signals will be extracted from titles, abstracts, and early full text.</p><a class="button button-primary" href="/import">Import papers</a></div>{% endif %}
-{% endblock %}

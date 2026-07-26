@@ -1,0 +1,3 @@
+# ONNX Runtime 1.20+ arm64 wheels contain a macOS 13.3+ deployment target.
+# The 1.19.2 CPython 3.12 wheel is compatible with the macOS 13.0 beta floor.
+onnxruntime==1.19.2

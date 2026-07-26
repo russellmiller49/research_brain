@@ -29,28 +29,11 @@
 
   <aside class="paper-inspector">
     <div class="tab-bar" role="tablist">
-      <button class="tab-button active" data-tab="study">Study card</button>
-      <button class="tab-button" data-tab="notes">My context</button>
+      <button class="tab-button active" data-tab="notes">My context</button>
       <button class="tab-button" data-tab="details">Details</button>
     </div>
 
-    <section class="tab-panel active" id="tab-study">
-      <div class="inspector-intro"><strong>Machine-extracted study clues</strong><p>Every extracted field links back to the page where it was found. Verify before reuse.</p></div>
-      {% if study_card %}
-      <div class="study-fields">
-        {% for key, item in study_card.items() %}
-          {% if key == 'key_findings' and item %}
-            <div class="study-field"><label>Key numerical passages</label>{% for finding in item %}<a class="evidence-card" href="?page={{ finding.page }}"><span>{{ finding.value }}</span><small>Page {{ finding.page }} · confidence {{ '%.0f'|format(finding.confidence * 100) }}%</small></a>{% endfor %}</div>
-          {% elif item is mapping %}
-            <div class="study-field"><label>{{ key|replace('_',' ')|title }}</label><a class="evidence-card" href="?page={{ item.page or 1 }}"><span>{{ item.value }}</span><small>{% if item.page %}Page {{ item.page }} · {% endif %}confidence {{ '%.0f'|format(item.confidence * 100) }}%</small></a></div>
-          {% endif %}
-        {% endfor %}
-      </div>
-      {% else %}<p class="muted">No study fields were detected.</p>{% endif %}
-      {% if keywords %}<div class="study-field"><label>Topic signals</label><div class="tag-row">{% for keyword in keywords %}<a href="/topics/{{ keyword|urlencode }}">{{ keyword }}</a>{% endfor %}</div></div>{% endif %}
-    </section>
-
-    <section class="tab-panel" id="tab-notes">
+    <section class="tab-panel active" id="tab-notes">
       <form action="/documents/{{ document.id }}/update" method="post" class="stack-form compact-form">
         <input type="hidden" name="title" value="{{ document.title }}"><input type="hidden" name="authors" value="{{ document.authors }}"><input type="hidden" name="journal" value="{{ document.journal }}"><input type="hidden" name="publication_year" value="{{ document.publication_year or '' }}"><input type="hidden" name="doi" value="{{ document.doi }}"><input type="hidden" name="pmid" value="{{ document.pmid }}">
         <div class="form-row"><label>Reading status<select name="reading_status">{% for status in reading_statuses %}<option value="{{ status }}" {% if document.reading_status == status %}selected{% endif %}>{{ status|title }}</option>{% endfor %}</select></label><label>Importance<select name="importance">{% for i in range(0,6) %}<option value="{{ i }}" {% if document.importance == i %}selected{% endif %}>{{ i }}{% if i %} / 5{% endif %}</option>{% endfor %}</select></label></div>

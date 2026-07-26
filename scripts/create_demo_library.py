@@ -5,13 +5,15 @@ import asyncio
 import shutil
 from pathlib import Path
 
-import fitz
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.utils import simpleSplit
+from reportlab.pdfgen import canvas
 
 from research_memory.config import Settings
 from research_memory.db import Database
 from research_memory.services.embeddings import create_embedder
 from research_memory.services.ingest import IngestionService
-
 
 DEMO_PAPERS = [
     {
@@ -122,35 +124,50 @@ Outcome-definition heterogeneity can create differences in reported performance 
 
 
 def create_pdf(path: Path, title: str, author: str, pages: list[str]) -> None:
-    document = fitz.open()
-    document.set_metadata({"title": title, "author": author})
+    document = canvas.Canvas(str(path), pagesize=letter)
+    document.setTitle(title)
+    document.setAuthor(author)
+    styles = getSampleStyleSheet()
+    body = styles["BodyText"]
+    page_width, page_height = letter
     for text in pages:
-        page = document.new_page(width=612, height=792)
-        page.insert_textbox(
-            fitz.Rect(54, 54, 558, 738),
-            text,
-            fontsize=10.5,
-            lineheight=1.25,
-            fontname="helv",
-        )
-    document.save(path)
-    document.close()
+        y = page_height - 54
+        for paragraph in text.splitlines():
+            if not paragraph.strip():
+                y -= body.leading
+                continue
+            for line in simpleSplit(paragraph, body.fontName, body.fontSize, page_width - 108):
+                document.drawString(54, y, line)
+                y -= body.leading
+        document.showPage()
+    document.save()
 
 
 async def build_demo(data_dir: Path, reset: bool) -> None:
+    data_dir = data_dir.expanduser().resolve()
+    marker = data_dir / ".research-memory-demo"
     if reset and data_dir.exists():
+        if not marker.is_file():
+            raise RuntimeError(
+                f"Refusing to reset {data_dir}: the directory is not marked as demo data"
+            )
         shutil.rmtree(data_dir)
     settings = Settings(data_dir=data_dir, chunk_chars=900, chunk_overlap=120)
     settings.ensure_directories()
+    marker.write_text("Research Memory disposable demo library\n", encoding="utf-8")
     source_dir = data_dir / "demo-source-pdfs"
     source_dir.mkdir(parents=True, exist_ok=True)
 
     db = Database(settings.database_path)
     db.initialize()
-    embedder = create_embedder(settings.embedding_backend, settings.embedding_model)
+    embedder = create_embedder(
+        settings.embedding_backend,
+        settings.embedding_model,
+        settings.resolved_model_dir,
+    )
     ingestion = IngestionService(db, settings, embedder)
 
-    project_cursor = db.execute(
+    db.execute(
         """
         INSERT INTO projects(name, description, project_type, central_question)
         SELECT ?, ?, ?, ? WHERE NOT EXISTS (SELECT 1 FROM projects WHERE name = ?)
@@ -172,7 +189,7 @@ async def build_demo(data_dir: Path, reset: bool) -> None:
         path = source_dir / item["file"]
         if not path.exists():
             create_pdf(path, item["title"], item["author"], item["pages"])
-        result = await ingestion.ingest_path(path, copy_into_library=False)
+        result = await ingestion.ingest_path(path, copy_into_library=True)
         if result.document_id:
             db.execute(
                 "UPDATE documents SET why_saved = ?, importance = ? WHERE id = ?",
@@ -197,7 +214,7 @@ async def build_demo(data_dir: Path, reset: bool) -> None:
         (str(source_dir),),
     )
     print(f"\nDemo library ready at {data_dir}")
-    print("Run: RESEARCH_MEMORY_DATA_DIR=%s research-memory" % data_dir)
+    print(f"Run: RESEARCH_MEMORY_DATA_DIR={data_dir} research-memory")
 
 
 def main() -> None:

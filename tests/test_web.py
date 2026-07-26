@@ -7,21 +7,21 @@ from research_memory.main import create_app
 
 
 def test_core_pages_and_health(tmp_path):
-    settings = Settings(data_dir=tmp_path / "web-data")
+    settings = Settings(data_dir=tmp_path / "web-data", allow_legacy_web=True)
     app = create_app(settings)
     with TestClient(app) as client:
         health = client.get("/health")
         assert health.status_code == 200
         assert health.json()["status"] == "ok"
 
-        for path in ["/", "/library", "/search", "/import", "/projects", "/topics", "/ask"]:
+        for path in ["/", "/library", "/search", "/import", "/projects"]:
             response = client.get(path)
             assert response.status_code == 200, path
             assert "Research Memory" in response.text
 
 
 def test_edit_and_export_routes(tmp_path):
-    settings = Settings(data_dir=tmp_path / "export-data")
+    settings = Settings(data_dir=tmp_path / "export-data", allow_legacy_web=True)
     app = create_app(settings)
     db = app.state.db
     cursor = db.execute(

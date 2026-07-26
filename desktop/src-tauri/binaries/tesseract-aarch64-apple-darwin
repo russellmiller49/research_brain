@@ -1,0 +1,8 @@
+#!/bin/sh
+for candidate in /opt/homebrew/bin/tesseract /usr/local/bin/tesseract; do
+  if [ -x "$candidate" ]; then
+    exec "$candidate" "$@"
+  fi
+done
+echo "Tesseract is not installed for the development build." >&2
+exit 1

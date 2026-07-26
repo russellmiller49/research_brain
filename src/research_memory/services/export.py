@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import json
 import re
 from collections.abc import Iterable, Mapping
 from typing import Any
@@ -42,9 +41,7 @@ def document_to_bibtex(row: Mapping[str, Any]) -> str:
         ("year", _value(row, "publication_year")),
         ("doi", _value(row, "doi")),
     ]
-    body = ",\n".join(
-        f"  {name} = {{{_bibtex_escape(value)}}}" for name, value in fields if value
-    )
+    body = ",\n".join(f"  {name} = {{{_bibtex_escape(value)}}}" for name, value in fields if value)
     return f"@article{{{citation_key(row)},\n{body}\n}}"
 
 
@@ -88,28 +85,16 @@ def project_to_markdown(project: Mapping[str, Any], rows: Iterable[Mapping[str, 
     if _value(project, "description"):
         output.extend(["", str(_value(project, "description"))])
     output.extend(["", "## Evidence table", ""])
-    output.append(
-        "| Study | Year | Type | Project status | Key extracted clues | DOI |"
-    )
+    output.append("| Paper | Year | Type | Project status | Why saved | DOI |")
     output.append("|---|---:|---|---|---|---|")
     detail_sections: list[str] = []
     for row in rows:
-        try:
-            card = json.loads(_value(row, "study_card_json", "{}") or "{}")
-        except json.JSONDecodeError:
-            card = {}
-        clues: list[str] = []
-        for key in ("study_design", "sample_size", "primary_endpoint"):
-            item = card.get(key)
-            if isinstance(item, dict) and item.get("value"):
-                page = f" (p. {item.get('page')})" if item.get("page") else ""
-                clues.append(f"{item['value']}{page}")
-        clue_text = "<br>".join(clues).replace("|", "\\|")
         title = str(_value(row, "title")).replace("|", "\\|")
+        why_saved = str(_value(row, "why_saved")).replace("|", "\\|")
         output.append(
             f"| {title} | {_value(row, 'publication_year', '') or ''} | "
             f"{str(_value(row, 'source_type')).replace('_', ' ')} | "
-            f"{str(_value(row, 'project_status')).replace('_', ' ')} | {clue_text} | "
+            f"{str(_value(row, 'project_status')).replace('_', ' ')} | {why_saved} | "
             f"{_value(row, 'doi')} |"
         )
         detail_sections.extend(

@@ -1,0 +1,5 @@
+{"query":"The study where navigation success was about 94 percent but strict diagnostic yield was closer to 70 percent","expected":{"doi":"10.5555/rb.2024.218"},"tags":["numerical","methods"]}
+{"query":"The nodal staging paper with a roughly five percent missed metastasis rate","expected":{"doi":"10.5555/ebus.2022.604"},"tags":["numerical","outcome"]}
+{"query":"Randomized pleural infection trial where the imaging endpoint was not very patient centered","expected":{"doi":"10.5555/pleura.2019.192"},"tags":["design","personal-context"]}
+{"query":"ECMO review where bleeding definitions differed too much across studies","expected":{"doi":"10.5555/ecmo.2025.2431"},"tags":["methods","limitations"]}
+{"query":"Review showing twelve different definitions of diagnostic yield","expected":{"doi":"10.5555/yield.2023.78"},"tags":["numerical","outcome-definition"]}

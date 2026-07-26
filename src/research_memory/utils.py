@@ -5,7 +5,6 @@ import re
 import unicodedata
 from pathlib import Path
 
-
 WORD_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9'\-]{1,}")
 
 
@@ -34,6 +33,16 @@ def safe_filename(value: str) -> str:
     return value[:180] or "document.pdf"
 
 
+def resolve_external_destination(path: str | Path, forbidden_root: str | Path) -> Path:
+    """Resolve parent symlinks and reject writes into app-managed storage."""
+
+    candidate = Path(path).expanduser().resolve()
+    root = Path(forbidden_root).expanduser().resolve()
+    if candidate == root or root in candidate.parents:
+        raise ValueError("Choose a destination outside the managed Research Memory library")
+    return candidate
+
+
 def query_terms(query: str) -> list[str]:
     seen: set[str] = set()
     terms: list[str] = []
@@ -53,8 +62,9 @@ def build_fts_query(query: str) -> str:
         return '""'
     escaped = [term.replace('"', '""') for term in terms[:24]]
     if len(escaped) == 1:
-        return f'"{escaped[0]}"*'
-    return " OR ".join(f'"{term}"*' for term in escaped)
+        suffix = "*" if len(escaped[0]) >= 4 else ""
+        return f'"{escaped[0]}"{suffix}'
+    return " OR ".join(f'"{term}"{"*" if len(term) >= 4 else ""}' for term in escaped)
 
 
 def compact_whitespace(value: str) -> str:

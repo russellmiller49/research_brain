@@ -1,0 +1,28 @@
+[package]
+name = "research-memory-desktop"
+version = "0.2.0"
+description = "Private, local-first research paper recall"
+authors = ["Research Memory Contributors"]
+edition = "2024"
+rust-version = "1.88"
+license = "MIT"
+
+[lib]
+name = "research_memory_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+notify = "8"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+rfd = "0.15"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2", features = [] }
+tauri-plugin-shell = "2"
+tauri-plugin-updater = "2"
+tokio = { version = "1", features = ["time"] }
+urlencoding = "2"
+uuid = { version = "1", features = ["v4"] }

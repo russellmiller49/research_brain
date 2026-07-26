@@ -10,7 +10,7 @@
   <form class="memory-search" action="/search" method="get">
     <textarea name="q" rows="2" placeholder="The bronchoscopy paper where navigation success was high but strict diagnostic yield was much lower…"></textarea>
     <div class="memory-search-footer">
-      <span>Searches full text, metadata, study clues, and your notes</span>
+      <span>Searches full text, metadata, approximate numbers, and your notes</span>
       <button class="button button-primary" type="submit">Search my library</button>
     </div>
   </form>
@@ -58,19 +58,6 @@
         <p>Upload PDFs or point Research Memory at an existing folder. Your original files can remain where they are.</p>
         <a class="button button-primary" href="/import">Import a library</a>
       </div>
-    {% endif %}
-  </section>
-
-  <section class="panel">
-    <div class="panel-header"><div><span class="eyebrow">Concept map</span><h2>Frequent topics</h2></div><a href="/topics">All topics →</a></div>
-    {% if topics %}
-      <div class="topic-cloud">
-      {% for topic, count in topics %}
-        <a href="/topics/{{ topic|urlencode }}"><span>{{ topic }}</span><small>{{ count }}</small></a>
-      {% endfor %}
-      </div>
-    {% else %}
-      <p class="muted">Topics will emerge automatically as papers are indexed.</p>
     {% endif %}
   </section>
 

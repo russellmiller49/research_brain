@@ -1,8 +1,13 @@
 from __future__ import annotations
 
+import asyncio
 import csv
 import io
 import json
+import os
+import secrets
+import signal
+from contextlib import asynccontextmanager, suppress
 from pathlib import Path
 from urllib.parse import quote
 
@@ -10,16 +15,27 @@ from fastapi import FastAPI, File, Form, HTTPException, Query, Request, UploadFi
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from starlette.middleware.trustedhost import TrustedHostMiddleware
 
+from research_memory.api import router as production_api
 from research_memory.config import Settings, get_settings
 from research_memory.db import Database
-from research_memory.services.embeddings import create_embedder
+from research_memory.services.annotations import AnnotationService
+from research_memory.services.assets import AssetStore
+from research_memory.services.backup import BackupService
+from research_memory.services.embeddings import create_embedder, install_fastembed_model
+from research_memory.services.export import (
+    documents_to_bibtex,
+    documents_to_ris,
+    project_to_markdown,
+)
 from research_memory.services.ingest import IngestionService
-from research_memory.services.export import documents_to_bibtex, documents_to_ris, project_to_markdown
-from research_memory.services.qna import QuestionAnsweringService
+from research_memory.services.jobs import BackgroundJobManager, JobContext, JobStore
+from research_memory.services.library import LibraryService
 from research_memory.services.search import SearchFilters, SearchService
+from research_memory.services.support import SupportBundleService
+from research_memory.services.zotero import ZoteroImporter
 from research_memory.utils import normalize_title, safe_filename, truncate
-
 
 PACKAGE_DIR = Path(__file__).resolve().parent
 SOURCE_TYPES = [
@@ -66,32 +82,249 @@ def _parse_int(value: str | int | None) -> int | None:
     if value in (None, ""):
         return None
     try:
-        return int(value)
+        return int(str(value))
     except (TypeError, ValueError):
         return None
 
 
 def create_app(settings: Settings | None = None) -> FastAPI:
     settings = settings or get_settings()
+    desktop_parent_pid = os.getppid() if settings.ipc_token else None
+    # The sidecar needs the session token once at startup, but OCR/model child
+    # processes must not inherit it.
+    if settings.ipc_token:
+        os.environ.pop("RESEARCH_MEMORY_IPC_TOKEN", None)
     settings.ensure_directories()
-    db = Database(settings.database_path)
+    db = Database(settings.database_path, settings.backups_dir)
     db.initialize()
-    embedder = create_embedder(settings.embedding_backend, settings.embedding_model)
-    ingestion = IngestionService(db, settings, embedder)
-    search = SearchService(db, embedder)
-    qna = QuestionAnsweringService(db, search, settings)
+    # Reader capabilities are scoped to one desktop-core session. A stale URL
+    # copied from a prior process must never become valid after restart.
+    db.execute("DELETE FROM asset_access_tokens")
+    for key in ("enable_network_metadata", "diagnostics_enabled"):
+        persisted = db.scalar("SELECT value FROM app_settings WHERE key = ?", (key,))
+        if persisted is not None:
+            setattr(settings, key, str(persisted).lower() == "true")
+    embedder = create_embedder(
+        settings.embedding_backend,
+        settings.embedding_model,
+        settings.resolved_model_dir,
+    )
+    assets = AssetStore(settings)
+    ingestion = IngestionService(db, settings, embedder, assets)
+    search = SearchService(db, embedder, settings.data_dir / "indexes")
+    annotations = AnnotationService(db)
+    backups = BackupService(db, settings)
+    support = SupportBundleService(db, settings)
+    library_service = LibraryService(db, assets)
+    jobs = JobStore(db)
+    job_manager = BackgroundJobManager(jobs, settings.worker_count)
+    backup_lock = asyncio.Lock()
+    zotero = ZoteroImporter(db, ingestion)
+    job_manager.register("import", ingestion.handle_import_job)
+    job_manager.register("reindex", ingestion.handle_reindex_job)
+    job_manager.register("zotero_sync", zotero.handle_job)
+
+    def enqueue_reindex(document_id: int) -> bool:
+        existing = db.fetch_one(
+            """
+            SELECT id FROM jobs
+            WHERE type = 'reindex'
+              AND json_extract(input_json, '$.document_id') = ?
+              AND status IN ('queued', 'running')
+            ORDER BY created_at DESC LIMIT 1
+            """,
+            (document_id,),
+        )
+        if existing:
+            job_manager.enqueue(str(existing["id"]))
+            return False
+        reindex_id = jobs.create(
+            "reindex",
+            f"Article {document_id}",
+            {"document_id": document_id},
+            progress_total=1,
+        )
+        job_manager.enqueue(reindex_id)
+        return True
+
+    async def migrate_assets_handler(
+        context: JobContext, _payload: dict[str, object]
+    ) -> dict[str, int]:
+        context.update("copying_legacy_assets", current=0, total=1)
+        migrated = await asyncio.to_thread(ingestion.migrate_legacy_assets)
+        queued = 0
+        for row in db.fetch_all(
+            """
+            SELECT DISTINCT d.id
+            FROM documents d
+            JOIN document_files f ON f.document_id = d.id
+            WHERE d.deleted_at IS NULL
+              AND d.extraction_status = 'reindex_required'
+              AND f.availability = 'available'
+            ORDER BY d.id
+            """
+        ):
+            queued += int(enqueue_reindex(int(row["id"])))
+        context.update("complete", current=1, total=1)
+        return {"migrated": migrated, "reindex_jobs_queued": queued}
+
+    job_manager.register("migrate_assets", migrate_assets_handler, exclusive=True)
+
+    async def install_model_handler(
+        context: JobContext, _payload: dict[str, object]
+    ) -> dict[str, object]:
+        nonlocal embedder, search
+        context.update("downloading_model", current=0, total=2)
+        installed = await asyncio.to_thread(
+            install_fastembed_model,
+            settings.embedding_model,
+            settings.resolved_model_dir,
+        )
+        context.update("verifying_model", current=1, total=2)
+        embedder = installed
+        ingestion.embedder = installed
+        search = SearchService(db, installed, settings.data_dir / "indexes")
+        app.state.embedder = installed
+        app.state.search = search
+        db.execute(
+            """
+            INSERT INTO app_settings(key, value) VALUES ('embedding_backend', 'fastembed')
+            ON CONFLICT(key) DO UPDATE SET value = excluded.value
+            """
+        )
+        queued = 0
+        for row in db.fetch_all("SELECT id FROM documents WHERE deleted_at IS NULL ORDER BY id"):
+            queued += int(enqueue_reindex(int(row["id"])))
+        context.update("complete", current=2, total=2)
+        return {"backend": installed.backend_name, "reindex_jobs_queued": queued}
+
+    job_manager.register("install_model", install_model_handler, exclusive=True)
+
+    @asynccontextmanager
+    async def lifespan(_application: FastAPI):
+        async def stop_if_desktop_parent_exits(parent_pid: int) -> None:
+            while True:
+                await asyncio.sleep(1)
+                if os.getppid() != parent_pid:
+                    os.kill(os.getpid(), signal.SIGTERM)
+                    return
+
+        parent_monitor = (
+            asyncio.create_task(stop_if_desktop_parent_exits(desktop_parent_pid))
+            if desktop_parent_pid is not None
+            else None
+        )
+        jobs.reconcile_duplicate_import_failures()
+        await job_manager.start()
+        legacy_count = int(
+            db.scalar(
+                """
+                SELECT COUNT(*) FROM document_files
+                WHERE object_path = '' OR source_kind = 'legacy'
+                """
+            )
+            or 0
+        )
+        migration_active = int(
+            db.scalar(
+                """
+                SELECT COUNT(*) FROM jobs
+                WHERE type = 'migrate_assets'
+                  AND status IN ('queued', 'running', 'paused')
+                """
+            )
+            or 0
+        )
+        if legacy_count and not migration_active:
+            migration_id = jobs.create(
+                "migrate_assets",
+                "v0.1 managed files",
+                {},
+                progress_total=1,
+            )
+            job_manager.enqueue(migration_id)
+        await asyncio.to_thread(library_service.purge_expired)
+        try:
+            yield
+        finally:
+            if parent_monitor is not None:
+                parent_monitor.cancel()
+                with suppress(asyncio.CancelledError):
+                    await parent_monitor
+            await job_manager.stop()
 
     app = FastAPI(
         title="Research Memory",
-        version="0.1.0",
+        version="0.2.0",
         description="A private, local-first literature index and research workspace.",
+        lifespan=lifespan,
+        docs_url="/docs" if settings.allow_legacy_web else None,
+        redoc_url="/redoc" if settings.allow_legacy_web else None,
+        openapi_url="/openapi.json" if settings.allow_legacy_web else None,
+    )
+    app.add_middleware(
+        TrustedHostMiddleware,
+        allowed_hosts=["127.0.0.1", "localhost", "testserver"],
     )
     app.state.settings = settings
     app.state.db = db
     app.state.embedder = embedder
     app.state.ingestion = ingestion
     app.state.search = search
-    app.state.qna = qna
+    app.state.assets = assets
+    app.state.annotations = annotations
+    app.state.backups = backups
+    app.state.support = support
+    app.state.library = library_service
+    app.state.jobs = jobs
+    app.state.job_manager = job_manager
+    app.state.backup_lock = backup_lock
+    app.state.zotero = zotero
+
+    @app.middleware("http")
+    async def private_ipc_boundary(request: Request, call_next):
+        path = request.url.path
+        opaque_asset_access = path.startswith("/api/v1/assets/access/")
+        response: Response
+        client_host = request.client.host if request.client else ""
+        if client_host not in {"127.0.0.1", "::1", "testclient"}:
+            response = JSONResponse(
+                {"detail": "Research Memory accepts loopback clients only"},
+                status_code=403,
+            )
+        elif (
+            path.startswith("/api/v1")
+            and not opaque_asset_access
+            and settings.ipc_token
+            and not secrets.compare_digest(
+                request.headers.get("X-Research-Memory-Token", ""),
+                settings.ipc_token,
+            )
+        ):
+            response = JSONResponse(
+                {"detail": "Invalid desktop IPC session"},
+                status_code=401,
+            )
+        elif job_manager.in_maintenance:
+            response = JSONResponse(
+                {"detail": "The library is temporarily unavailable during restore"},
+                status_code=503,
+                headers={"Retry-After": "2"},
+            )
+        elif not settings.allow_legacy_web and not path.startswith("/api/v1") and path != "/health":
+            response = JSONResponse({"detail": "Desktop API only"}, status_code=404)
+        else:
+            response = await call_next(request)
+        response.headers.setdefault("X-Content-Type-Options", "nosniff")
+        response.headers.setdefault("X-Frame-Options", "DENY")
+        response.headers.setdefault("Referrer-Policy", "no-referrer")
+        response.headers.setdefault(
+            "Permissions-Policy",
+            "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+        )
+        return response
+
+    app.include_router(production_api)
 
     templates = Jinja2Templates(directory=str(PACKAGE_DIR / "templates"))
     templates.env.filters["truncate_text"] = truncate
@@ -145,15 +378,6 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             GROUP BY p.id ORDER BY p.updated_at DESC LIMIT 6
             """
         )
-        topic_counts: dict[str, int] = {}
-        for row in db.fetch_all("SELECT keywords_json FROM documents"):
-            try:
-                keywords = json.loads(row["keywords_json"] or "[]")
-            except json.JSONDecodeError:
-                keywords = []
-            for keyword in keywords[:8]:
-                topic_counts[keyword] = topic_counts.get(keyword, 0) + 1
-        topics = sorted(topic_counts.items(), key=lambda item: (-item[1], item[0]))[:12]
         watched = db.fetch_all("SELECT * FROM watched_folders WHERE enabled = 1 ORDER BY id")
         return render_template(
             "dashboard.html",
@@ -162,7 +386,6 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                 counts=counts,
                 recent=recent,
                 projects=projects,
-                topics=topics,
                 watched=watched,
             ),
         )
@@ -189,9 +412,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             temp_path = settings.import_dir / safe_filename(upload.filename)
             counter = 1
             while temp_path.exists():
-                temp_path = settings.import_dir / (
-                    f"{temp_path.stem}-{counter}{temp_path.suffix}"
-                )
+                temp_path = settings.import_dir / (f"{temp_path.stem}-{counter}{temp_path.suffix}")
                 counter += 1
             size = 0
             try:
@@ -403,14 +624,6 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             """,
             (document_id,),
         )
-        try:
-            study_card = json.loads(document["study_card_json"] or "{}")
-        except json.JSONDecodeError:
-            study_card = {}
-        try:
-            keywords = json.loads(document["keywords_json"] or "[]")
-        except json.JSONDecodeError:
-            keywords = []
         related = search.search(document["title"], limit=6)
         related = [item for item in related if item.document_id != document_id][:5]
         return render_template(
@@ -421,8 +634,6 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                 files=files,
                 notes=notes,
                 projects=projects,
-                study_card=study_card,
-                keywords=keywords,
                 related=related,
                 initial_page=page or 1,
             ),
@@ -647,7 +858,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         if not row:
             raise HTTPException(404, "Document not found")
         return Response(
-            documents_to_bibtex([row]),
+            documents_to_bibtex([dict(row)]),
             media_type="application/x-bibtex",
             headers={"Content-Disposition": f'attachment; filename="paper-{document_id}.bib"'},
         )
@@ -658,7 +869,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         if not row:
             raise HTTPException(404, "Document not found")
         return Response(
-            documents_to_ris([row]),
+            documents_to_ris([dict(row)]),
             media_type="application/x-research-info-systems",
             headers={"Content-Disposition": f'attachment; filename="paper-{document_id}.ris"'},
         )
@@ -671,8 +882,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         rows = db.fetch_all(
             """
             SELECT d.title, d.authors, d.journal, d.publication_year, d.doi, d.pmid,
-                   d.source_type, pd.status, pd.exclusion_reason, d.why_saved, d.user_summary,
-                   d.study_card_json
+                   d.source_type, pd.status, pd.exclusion_reason, d.why_saved, d.user_summary
             FROM project_documents pd JOIN documents d ON d.id = pd.document_id
             WHERE pd.project_id = ? ORDER BY d.publication_year DESC, d.title
             """,
@@ -693,7 +903,6 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                 "exclusion_reason",
                 "why_saved",
                 "user_summary",
-                "study_card_json",
             ]
         )
         for row in rows:
@@ -720,9 +929,11 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             (project_id,),
         )
         return Response(
-            project_to_markdown(project, rows),
+            project_to_markdown(dict(project), [dict(row) for row in rows]),
             media_type="text/markdown",
-            headers={"Content-Disposition": f'attachment; filename="project-{project_id}-evidence.md"'},
+            headers={
+                "Content-Disposition": f'attachment; filename="project-{project_id}-evidence.md"'
+            },
         )
 
     @app.get("/projects/{project_id}/export.bib")
@@ -733,7 +944,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             (project_id,),
         )
         return Response(
-            documents_to_bibtex(rows),
+            documents_to_bibtex([dict(row) for row in rows]),
             media_type="application/x-bibtex",
             headers={"Content-Disposition": f'attachment; filename="project-{project_id}.bib"'},
         )
@@ -746,85 +957,9 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             (project_id,),
         )
         return Response(
-            documents_to_ris(rows),
+            documents_to_ris([dict(row) for row in rows]),
             media_type="application/x-research-info-systems",
             headers={"Content-Disposition": f'attachment; filename="project-{project_id}.ris"'},
-        )
-
-    @app.get("/topics", response_class=HTMLResponse)
-    async def topics_page(request: Request):
-        topic_counts: dict[str, int] = {}
-        for row in db.fetch_all("SELECT keywords_json FROM documents"):
-            try:
-                keywords = json.loads(row["keywords_json"] or "[]")
-            except json.JSONDecodeError:
-                keywords = []
-            for keyword in keywords:
-                topic_counts[keyword] = topic_counts.get(keyword, 0) + 1
-        topics = sorted(topic_counts.items(), key=lambda item: (-item[1], item[0]))
-        return render_template("topics.html", context(request, topics=topics))
-
-    @app.get("/topics/{topic}", response_class=HTMLResponse)
-    async def topic_detail(request: Request, topic: str):
-        results = search.search(topic, limit=80)
-        years: dict[int, int] = {}
-        source_type_counts: dict[str, int] = {}
-        for result in results:
-            if result.publication_year:
-                years[result.publication_year] = years.get(result.publication_year, 0) + 1
-            source_type_counts[result.source_type] = source_type_counts.get(result.source_type, 0) + 1
-        return render_template(
-            "topic.html",
-            context(
-                request,
-                topic=topic,
-                results=results,
-                years=sorted(years.items()),
-                source_type_counts=sorted(
-                    source_type_counts.items(), key=lambda item: -item[1]
-                ),
-            ),
-        )
-
-    @app.get("/ask", response_class=HTMLResponse)
-    async def ask_page(request: Request, project_id: str = ""):
-        projects = db.fetch_all("SELECT id, name FROM projects ORDER BY name")
-        return render_template(
-            "ask.html",
-            context(
-                request,
-                projects=projects,
-                question="",
-                answer=None,
-                selected_project_id=_parse_int(project_id),
-                primary_sources_only=False,
-            ),
-        )
-
-    @app.post("/ask", response_class=HTMLResponse)
-    async def ask_library(
-        request: Request,
-        question: str = Form(...),
-        project_id: str = Form(""),
-        primary_sources_only: bool = Form(False),
-    ):
-        parsed_project_id = _parse_int(project_id)
-        answer = await qna.answer(
-            question,
-            project_id=parsed_project_id,
-            primary_sources_only=primary_sources_only,
-        )
-        projects = db.fetch_all("SELECT id, name FROM projects ORDER BY name")
-        return render_template(
-            "ask.html",
-            context(
-                request,
-                projects=projects,
-                question=question,
-                answer=answer,
-                selected_project_id=parsed_project_id,
-                primary_sources_only=primary_sources_only,
-            ),
         )
 
     @app.get("/api/search")

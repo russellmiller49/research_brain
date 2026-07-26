@@ -1,0 +1,42 @@
+{
+  "name": "research-memory-desktop",
+  "private": true,
+  "version": "0.2.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:web": "node scripts/dev-cloud.mjs",
+    "dev:web-only": "vite --mode cloud",
+    "dev:connectors": "node scripts/dev-connectors.mjs",
+    "build": "tsc -b && vite build",
+    "build:web": "tsc -b && vite build --mode cloud",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:a11y": "vitest run src/test/accessibility.test.tsx",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.110.8",
+    "@tauri-apps/api": "^2.8.0",
+    "lucide-react": "^0.544.0",
+    "pdfjs-dist": "^5.4.149",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tus-js-client": "4.3.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.11.4",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "axe-core": "^4.10.3",
+    "jsdom": "^27.0.0",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.5",
+    "vitest": "^3.2.4"
+  }
+}
