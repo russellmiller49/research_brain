@@ -88,6 +88,7 @@ function allowedOrigins(): Set<string> {
       "http://127.0.0.1:1421",
       "http://localhost:1420",
       "http://localhost:1421",
+      "https://research-brain-web-production.up.railway.app",
     ].join(",");
   return new Set(
     configured
