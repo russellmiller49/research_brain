@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import importlib.metadata
 import json
+import os
 import re
 import subprocess
 import uuid
@@ -97,9 +98,10 @@ def node_components(project_dir: Path) -> list[dict[str, Any]]:
 
 
 def rust_components(project_dir: Path) -> list[dict[str, Any]]:
+    cargo = os.environ.get("RESEARCH_MEMORY_CARGO", "cargo")
     completed = subprocess.run(
         [
-            "cargo",
+            cargo,
             "metadata",
             "--locked",
             "--format-version",

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import importlib.metadata
 import json
+import os
 import re
 import subprocess
 from pathlib import Path
@@ -19,6 +20,14 @@ PACKAGE_EXCEPTIONS = {
     # executable produced from a non-GPL application.
     "pyinstaller",
     "pyinstaller-hooks-contrib",
+}
+NODE_LICENSE_OVERRIDES = {
+    # Version 3.0.3 omits the license field from its published package
+    # manifest, but the maintainer's matching source tag declares MIT.
+    ("combine-errors", "3.0.3"): (
+        "MIT",
+        "https://github.com/MatthewMueller/combine-errors/tree/3.0.3#license",
+    ),
 }
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 
@@ -90,24 +99,29 @@ def node_packages(project_dir: Path) -> list[dict[str, str]]:
             value = json.loads(manifest.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
             continue
-        license_value = value.get("license") or "UNKNOWN"
+        name = str(value.get("name") or manifest.parent.name)
+        version = str(value.get("version") or "")
+        override = NODE_LICENSE_OVERRIDES.get((name, version))
+        license_value = value.get("license") or (override[0] if override else "UNKNOWN")
         if isinstance(license_value, dict):
             license_value = license_value.get("type") or "UNKNOWN"
-        packages.append(
-            {
-                "ecosystem": "node",
-                "name": str(value.get("name") or manifest.parent.name),
-                "version": str(value.get("version") or ""),
-                "license": str(license_value),
-            }
-        )
+        package = {
+            "ecosystem": "node",
+            "name": name,
+            "version": version,
+            "license": str(license_value),
+        }
+        if override and not value.get("license"):
+            package["license_source"] = override[1]
+        packages.append(package)
     return packages
 
 
 def rust_packages(project_dir: Path) -> list[dict[str, str]]:
+    cargo = os.environ.get("RESEARCH_MEMORY_CARGO", "cargo")
     completed = subprocess.run(
         [
-            "cargo",
+            cargo,
             "metadata",
             "--locked",
             "--format-version",
