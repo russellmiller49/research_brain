@@ -61,8 +61,8 @@ jobs:
       - run: pip-audit -r requirements.lock --no-deps
       - run: npm audit --omit=dev --audit-level=high
         working-directory: desktop
-      - run: cargo install cargo-audit --locked --version 0.22.2
-      - run: cargo audit
+      - run: rustup run 1.97.1 cargo install cargo-audit --locked --version 0.22.2
+      - run: rustup run 1.97.1 cargo audit
         working-directory: desktop/src-tauri
       - name: Retain audited tooling path
         run: echo "RESEARCH_MEMORY_PIP_AUDIT=$(command -v pip-audit)" >> "$GITHUB_ENV"

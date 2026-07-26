@@ -4,6 +4,7 @@ import csv
 import io
 import re
 import subprocess
+import threading
 from collections import Counter
 from dataclasses import asdict, dataclass
 from datetime import UTC, datetime
@@ -28,6 +29,7 @@ EXPLICIT_DOI_RE = re.compile(
 )
 PMID_RE = re.compile(r"\bPMID\s*[:#]?\s*(\d{6,9})\b", re.IGNORECASE)
 YEAR_RE = re.compile(r"\b(19\d{2}|20\d{2})\b")
+_PDFIUM_LOCK = threading.RLock()
 
 
 class PdfExtractionError(RuntimeError):
@@ -324,6 +326,18 @@ def _tag_repeated_margins(pages: list[ExtractedPage]) -> None:
 
 
 def extract_pdf(
+    path: Path,
+    *,
+    settings: Settings | None = None,
+    password: str | None = None,
+) -> ExtractedPdf:
+    # PDFium is process-global and not thread-safe, even across separate documents.
+    # Imports run in worker threads, so every call into pypdfium2 must share one mutex.
+    with _PDFIUM_LOCK:
+        return _extract_pdf_unlocked(path, settings=settings, password=password)
+
+
+def _extract_pdf_unlocked(
     path: Path,
     *,
     settings: Settings | None = None,
