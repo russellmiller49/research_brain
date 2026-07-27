@@ -12,6 +12,8 @@ bootstrap:
 install: bootstrap
 
 lint:
+	$(VENV)/bin/python scripts/validate_taxonomy_catalog.py
+	$(VENV)/bin/python scripts/generate_taxonomy_types.py --check
 	$(VENV)/bin/ruff check src tests scripts
 	$(VENV)/bin/ruff format --check src tests scripts
 	$(VENV)/bin/mypy src/research_memory

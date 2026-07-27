@@ -466,6 +466,254 @@ def _migration_007(connection: sqlite3.Connection) -> None:
     )
 
 
+def _migration_008(connection: sqlite3.Connection) -> None:
+    _execute_script(
+        connection,
+        """
+        CREATE TABLE taxonomy_catalog_versions (
+            version TEXT PRIMARY KEY,
+            source_date TEXT NOT NULL,
+            content_sha256 TEXT NOT NULL,
+            installed_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+        );
+
+        CREATE TABLE taxonomy_nodes (
+            id TEXT PRIMARY KEY,
+            node_type TEXT NOT NULL CHECK (
+                node_type IN (
+                    'certifying_board', 'specialty', 'subspecialty',
+                    'focused_practice', 'research_interest', 'clinical_domain',
+                    'disease_family', 'disease', 'phenotype',
+                    'clinical_activity', 'procedure', 'diagnostic_test',
+                    'device_category', 'population', 'care_setting',
+                    'methodology', 'evidence_field', 'work_product',
+                    'personal_intent', 'state_dimension'
+                )
+            ),
+            canonical_name TEXT NOT NULL,
+            description TEXT NOT NULL DEFAULT '',
+            status TEXT NOT NULL DEFAULT 'active',
+            source_system TEXT NOT NULL DEFAULT 'research_memory',
+            source_code TEXT NOT NULL DEFAULT '',
+            source_version TEXT NOT NULL DEFAULT '',
+            metadata_json TEXT NOT NULL DEFAULT '{}',
+            catalog_version TEXT NOT NULL
+                REFERENCES taxonomy_catalog_versions(version),
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+        );
+        CREATE INDEX idx_taxonomy_nodes_type_name
+            ON taxonomy_nodes(node_type, canonical_name);
+
+        CREATE TABLE taxonomy_synonyms (
+            node_id TEXT NOT NULL REFERENCES taxonomy_nodes(id) ON DELETE CASCADE,
+            synonym TEXT NOT NULL,
+            normalized_synonym TEXT NOT NULL,
+            language_code TEXT NOT NULL DEFAULT 'en',
+            source TEXT NOT NULL DEFAULT 'research_memory',
+            PRIMARY KEY (node_id, normalized_synonym, language_code)
+        );
+        CREATE INDEX idx_taxonomy_synonyms_normalized
+            ON taxonomy_synonyms(normalized_synonym);
+
+        CREATE TABLE taxonomy_edges (
+            parent_node_id TEXT NOT NULL
+                REFERENCES taxonomy_nodes(id) ON DELETE CASCADE,
+            child_node_id TEXT NOT NULL
+                REFERENCES taxonomy_nodes(id) ON DELETE CASCADE,
+            edge_type TEXT NOT NULL CHECK (
+                edge_type IN (
+                    'is_a', 'part_of', 'offered_by', 'has_subspecialty',
+                    'inherits', 'relevant_to', 'commonly_managed_by',
+                    'commonly_researched_in', 'has_state_archetype',
+                    'diagnosed_by', 'treated_by', 'overlaps_with',
+                    'display_under'
+                )
+            ),
+            source TEXT NOT NULL DEFAULT 'research_memory',
+            confidence REAL NOT NULL DEFAULT 1.0
+                CHECK (confidence BETWEEN 0 AND 1),
+            sort_order INTEGER NOT NULL DEFAULT 0,
+            metadata_json TEXT NOT NULL DEFAULT '{}',
+            PRIMARY KEY (parent_node_id, child_node_id, edge_type)
+        );
+        CREATE INDEX idx_taxonomy_edges_child_type
+            ON taxonomy_edges(child_node_id, edge_type);
+
+        CREATE TABLE specialty_packs (
+            pack_id TEXT PRIMARY KEY,
+            display_name TEXT NOT NULL,
+            pack_type TEXT NOT NULL,
+            selection_node_id TEXT NOT NULL REFERENCES taxonomy_nodes(id),
+            version TEXT NOT NULL,
+            curation_status TEXT NOT NULL DEFAULT 'starter',
+            manifest_json TEXT NOT NULL,
+            active INTEGER NOT NULL DEFAULT 1 CHECK (active IN (0, 1))
+        );
+
+        CREATE TABLE specialty_pack_memberships (
+            pack_id TEXT NOT NULL
+                REFERENCES specialty_packs(pack_id) ON DELETE CASCADE,
+            node_id TEXT NOT NULL REFERENCES taxonomy_nodes(id),
+            membership_role TEXT NOT NULL,
+            display_parent_node_id TEXT,
+            sort_order INTEGER NOT NULL DEFAULT 0,
+            config_json TEXT NOT NULL DEFAULT '{}',
+            PRIMARY KEY (
+                pack_id, node_id, membership_role, display_parent_node_id
+            )
+        );
+        CREATE INDEX idx_specialty_pack_memberships_node_role
+            ON specialty_pack_memberships(node_id, membership_role);
+        CREATE UNIQUE INDEX idx_specialty_pack_memberships_null_parent
+            ON specialty_pack_memberships(pack_id, node_id, membership_role)
+            WHERE display_parent_node_id IS NULL;
+
+        CREATE TABLE research_profile (
+            id INTEGER PRIMARY KEY CHECK (id = 1),
+            role_type TEXT NOT NULL DEFAULT 'physician_researcher',
+            automation_mode TEXT NOT NULL DEFAULT 'balanced'
+                CHECK (automation_mode IN ('conservative', 'balanced', 'aggressive')),
+            hierarchy_depth TEXT NOT NULL DEFAULT 'balanced'
+                CHECK (hierarchy_depth IN ('broad', 'balanced', 'detailed')),
+            questionnaire_version TEXT NOT NULL,
+            raw_answers_json TEXT NOT NULL DEFAULT '{}',
+            catalog_version TEXT NOT NULL
+                REFERENCES taxonomy_catalog_versions(version),
+            onboarding_completed INTEGER NOT NULL DEFAULT 0
+                CHECK (onboarding_completed IN (0, 1)),
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+        );
+
+        CREATE TABLE research_profile_selections (
+            profile_id INTEGER NOT NULL
+                REFERENCES research_profile(id) ON DELETE CASCADE,
+            node_id TEXT NOT NULL REFERENCES taxonomy_nodes(id),
+            relationship_type TEXT NOT NULL CHECK (
+                relationship_type IN (
+                    'primary_specialty', 'secondary_specialty', 'subspecialty',
+                    'focused_practice', 'research_interest',
+                    'disease_interest', 'clinical_activity',
+                    'population_interest', 'work_product', 'evidence_priority'
+                )
+            ),
+            priority_weight REAL NOT NULL DEFAULT 0.5
+                CHECK (priority_weight BETWEEN 0 AND 1),
+            visibility TEXT NOT NULL DEFAULT 'normal',
+            source TEXT NOT NULL DEFAULT 'user',
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (profile_id, node_id, relationship_type)
+        );
+        CREATE INDEX idx_research_profile_selections_node_relationship
+            ON research_profile_selections(node_id, relationship_type);
+
+        CREATE TABLE research_profile_preferences (
+            profile_id INTEGER NOT NULL
+                REFERENCES research_profile(id) ON DELETE CASCADE,
+            key TEXT NOT NULL,
+            value_json TEXT NOT NULL,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (profile_id, key)
+        );
+
+        CREATE TABLE user_navigation_overrides (
+            id TEXT PRIMARY KEY,
+            profile_id INTEGER NOT NULL
+                REFERENCES research_profile(id) ON DELETE CASCADE,
+            node_id TEXT NOT NULL REFERENCES taxonomy_nodes(id),
+            action TEXT NOT NULL CHECK (action IN ('pin', 'hide', 'move', 'alias')),
+            display_parent_node_id TEXT,
+            display_alias TEXT NOT NULL DEFAULT '',
+            sort_order INTEGER NOT NULL DEFAULT 0,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE (profile_id, node_id, action, display_parent_node_id)
+        );
+        CREATE UNIQUE INDEX idx_navigation_overrides_null_parent
+            ON user_navigation_overrides(profile_id, node_id, action)
+            WHERE display_parent_node_id IS NULL;
+
+        CREATE TABLE article_taxonomy_assignments (
+            id TEXT PRIMARY KEY,
+            document_id INTEGER NOT NULL
+                REFERENCES documents(id) ON DELETE CASCADE,
+            node_id TEXT NOT NULL REFERENCES taxonomy_nodes(id),
+            node_name_snapshot TEXT NOT NULL,
+            node_type TEXT NOT NULL,
+            role TEXT NOT NULL,
+            confidence REAL NOT NULL DEFAULT 1.0
+                CHECK (confidence BETWEEN 0 AND 1),
+            source TEXT NOT NULL CHECK (
+                source IN (
+                    'user', 'import_metadata', 'deterministic_rule',
+                    'classifier', 'external_import'
+                )
+            ),
+            verification_status TEXT NOT NULL CHECK (
+                verification_status IN (
+                    'suggested', 'auto_applied', 'accepted',
+                    'rejected', 'human_verified'
+                )
+            ),
+            state_json TEXT NOT NULL DEFAULT '{}',
+            classifier_version TEXT NOT NULL DEFAULT '',
+            input_fingerprint TEXT NOT NULL DEFAULT '',
+            locked_by_user INTEGER NOT NULL DEFAULT 0
+                CHECK (locked_by_user IN (0, 1)),
+            display_priority INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE (document_id, node_id, role)
+        );
+        CREATE INDEX idx_article_taxonomy_document_status
+            ON article_taxonomy_assignments(document_id, verification_status);
+        CREATE INDEX idx_article_taxonomy_node_status_document
+            ON article_taxonomy_assignments(
+                node_id, verification_status, document_id
+            );
+        CREATE INDEX idx_article_taxonomy_role_status
+            ON article_taxonomy_assignments(role, verification_status);
+
+        CREATE TABLE article_taxonomy_evidence (
+            id TEXT PRIMARY KEY,
+            assignment_id TEXT NOT NULL
+                REFERENCES article_taxonomy_assignments(id) ON DELETE CASCADE,
+            file_id INTEGER REFERENCES document_files(id) ON DELETE CASCADE,
+            page_number INTEGER CHECK (page_number IS NULL OR page_number > 0),
+            chunk_id INTEGER REFERENCES document_chunks(id) ON DELETE SET NULL,
+            supporting_text TEXT NOT NULL DEFAULT ''
+                CHECK (length(supporting_text) <= 2000),
+            bounding_boxes_json TEXT NOT NULL DEFAULT '[]',
+            section_type TEXT NOT NULL DEFAULT 'unknown',
+            evidence_kind TEXT NOT NULL,
+            score REAL NOT NULL DEFAULT 0 CHECK (score BETWEEN 0 AND 1),
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+        );
+        CREATE INDEX idx_article_taxonomy_evidence_assignment_page
+            ON article_taxonomy_evidence(assignment_id, page_number);
+
+        CREATE TABLE taxonomy_decision_history (
+            id TEXT PRIMARY KEY,
+            assignment_id TEXT
+                REFERENCES article_taxonomy_assignments(id) ON DELETE SET NULL,
+            document_id INTEGER NOT NULL
+                REFERENCES documents(id) ON DELETE CASCADE,
+            node_id TEXT NOT NULL,
+            action TEXT NOT NULL,
+            prior_value_json TEXT NOT NULL DEFAULT '{}',
+            new_value_json TEXT NOT NULL DEFAULT '{}',
+            reason TEXT NOT NULL DEFAULT '',
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+        );
+        CREATE INDEX idx_taxonomy_decision_history_document_created
+            ON taxonomy_decision_history(document_id, created_at DESC);
+        """,
+    )
+
+
 MIGRATIONS = (
     Migration(1, "legacy-baseline", _migration_001),
     Migration(2, "managed-assets-and-jobs", _migration_002),
@@ -474,6 +722,7 @@ MIGRATIONS = (
     Migration(5, "review-decisions", _migration_005),
     Migration(6, "job-issues", _migration_006),
     Migration(7, "zotero-attachment-relationships", _migration_007),
+    Migration(8, "taxonomy-catalog-and-local-persistence", _migration_008),
 )
 CURRENT_SCHEMA_VERSION = MIGRATIONS[-1].version
 

@@ -1,0 +1,67 @@
+{
+  "id": "state_archetype.autoimmune_inflammatory",
+  "display_name": "Autoimmune and inflammatory",
+  "version": "1.0.0",
+  "dimensions": [
+    {
+      "id": "state.clinical_phenotype",
+      "display_name": "Clinical phenotype",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.serologic_phenotype",
+      "display_name": "Serologic phenotype",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.organ_involvement",
+      "display_name": "Organ involvement",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.disease_activity",
+      "display_name": "Disease activity",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.flare_versus_remission",
+      "display_name": "Flare versus remission",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.accumulated_damage",
+      "display_name": "Accumulated damage",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.treatment_exposure",
+      "display_name": "Treatment exposure",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.steroid_dependence",
+      "display_name": "Steroid dependence",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.refractory_status",
+      "display_name": "Refractory status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.extra_organ_manifestations",
+      "display_name": "Extra-organ manifestations",
+      "value_type": "structured_text",
+      "required_evidence": true
+    }
+  ]
+}

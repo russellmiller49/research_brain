@@ -1,0 +1,73 @@
+{
+  "id": "state_archetype.infectious_disease",
+  "display_name": "Infectious disease",
+  "version": "1.0.0",
+  "dimensions": [
+    {
+      "id": "state.organism",
+      "display_name": "Organism",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.syndrome_or_site",
+      "display_name": "Syndrome or site",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.community_versus_health_care_acquisition",
+      "display_name": "Community versus health care acquisition",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.host_immune_status",
+      "display_name": "Host immune status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.resistance_profile",
+      "display_name": "Resistance profile",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.acute_versus_chronic",
+      "display_name": "Acute versus chronic",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.localized_versus_disseminated",
+      "display_name": "Localized versus disseminated",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.severity",
+      "display_name": "Severity",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.source_control_status",
+      "display_name": "Source-control status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.treatment_status",
+      "display_name": "Treatment status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.recurrence_or_persistence",
+      "display_name": "Recurrence or persistence",
+      "value_type": "structured_text",
+      "required_evidence": true
+    }
+  ]
+}

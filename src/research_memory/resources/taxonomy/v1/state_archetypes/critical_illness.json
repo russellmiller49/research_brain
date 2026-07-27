@@ -1,0 +1,67 @@
+{
+  "id": "state_archetype.critical_illness",
+  "display_name": "Critical illness",
+  "version": "1.0.0",
+  "dimensions": [
+    {
+      "id": "state.primary_syndrome",
+      "display_name": "Primary syndrome",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.etiology",
+      "display_name": "Etiology",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.severity",
+      "display_name": "Severity",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.organ_failures",
+      "display_name": "Organ failures",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.organ_support_devices",
+      "display_name": "Organ-support devices",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.illness_phase",
+      "display_name": "Illness phase",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.rescue_therapies",
+      "display_name": "Rescue therapies",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.icu_complications",
+      "display_name": "ICU complications",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.recovery_state",
+      "display_name": "Recovery state",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.mortality_or_functional_outcome_timepoint",
+      "display_name": "Mortality or functional-outcome timepoint",
+      "value_type": "number",
+      "required_evidence": true
+    }
+  ]
+}

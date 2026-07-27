@@ -1,0 +1,134 @@
+[
+  {
+    "node_id": "activity.crrt",
+    "synonym": "CRRT",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "activity.ecmo",
+    "synonym": "ECMO",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "activity.mediastinal_staging",
+    "synonym": "EBUS mediastinal staging",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "activity.mediastinal_staging",
+    "synonym": "endobronchial ultrasound staging",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "diagnostic_test.radial_ebus",
+    "synonym": "rEBUS",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "diagnostic_test.radial_ebus",
+    "synonym": "radial endobronchial ultrasound",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "disease.ards",
+    "synonym": "ARDS",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "disease.copd",
+    "synonym": "COPD",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "disease.copd",
+    "synonym": "chronic obstructive lung disease",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "disease.ctd_ild",
+    "synonym": "CTD-ILD",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "disease.ctd_ild",
+    "synonym": "connective tissue disease ILD",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "disease.cteph",
+    "synonym": "CTEPH",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "disease.cteph",
+    "synonym": "chronic thromboembolic disease",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "disease.idiopathic_pulmonary_fibrosis",
+    "synonym": "IPF",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "disease.nsclc",
+    "synonym": "NSCLC",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "disease.nsclc",
+    "synonym": "non-small-cell lung carcinoma",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "disease.pulmonary_arterial_hypertension",
+    "synonym": "PAH",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "disease.pulmonary_hypertension",
+    "synonym": "PH",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "disease.sclc",
+    "synonym": "SCLC",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "disease.sclc",
+    "synonym": "small-cell lung carcinoma",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "disease_family.cancer_treatment_complications",
+    "synonym": "Treatment complications",
+    "language_code": "en",
+    "source": "research_memory"
+  },
+  {
+    "node_id": "procedure.robotic_bronchoscopy",
+    "synonym": "robot-assisted bronchoscopy",
+    "language_code": "en",
+    "source": "research_memory"
+  }
+]

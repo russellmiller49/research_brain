@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-memory.local/taxonomy/schemas/v1/contracts.schema.json",
+  "title": "Research Memory cross-language taxonomy contract enums",
+  "$defs": {
+    "AutomationMode": {
+      "type": "string",
+      "enum": [
+        "conservative",
+        "balanced",
+        "aggressive"
+      ]
+    },
+    "HierarchyDepth": {
+      "type": "string",
+      "enum": [
+        "broad",
+        "balanced",
+        "detailed"
+      ]
+    },
+    "ProfileRelationshipType": {
+      "type": "string",
+      "enum": [
+        "primary_specialty",
+        "secondary_specialty",
+        "subspecialty",
+        "focused_practice",
+        "research_interest",
+        "disease_interest",
+        "clinical_activity",
+        "population_interest",
+        "work_product",
+        "evidence_priority"
+      ]
+    },
+    "NavigationOverrideAction": {
+      "type": "string",
+      "enum": [
+        "pin",
+        "hide",
+        "move",
+        "alias"
+      ]
+    },
+    "AssignmentSource": {
+      "type": "string",
+      "enum": [
+        "user",
+        "import_metadata",
+        "deterministic_rule",
+        "classifier",
+        "external_import"
+      ]
+    },
+    "VerificationStatus": {
+      "type": "string",
+      "enum": [
+        "suggested",
+        "auto_applied",
+        "accepted",
+        "rejected",
+        "human_verified"
+      ]
+    },
+    "AssignmentRole": {
+      "type": "string",
+      "enum": [
+        "primary_focus",
+        "target_condition",
+        "study_population",
+        "subgroup",
+        "intervention_indication",
+        "outcome_condition",
+        "complication",
+        "comorbidity",
+        "exclusion_condition",
+        "differential_diagnosis",
+        "background_mention",
+        "reference_only",
+        "clinical_activity",
+        "methodology",
+        "population",
+        "care_setting",
+        "evidence_role",
+        "personal_intent"
+      ]
+    },
+    "ExternalVocabulary": {
+      "type": "string",
+      "enum": [
+        "SNOMED_CT",
+        "MeSH",
+        "UMLS",
+        "ICD_11",
+        "RxNorm",
+        "LOINC",
+        "HGNC",
+        "NCBI_Gene",
+        "HPO",
+        "NCI_Thesaurus",
+        "Orphanet",
+        "GUDID"
+      ]
+    },
+    "MappingStatus": {
+      "type": "string",
+      "enum": [
+        "unmapped",
+        "candidate",
+        "verified",
+        "deprecated"
+      ]
+    }
+  }
+}

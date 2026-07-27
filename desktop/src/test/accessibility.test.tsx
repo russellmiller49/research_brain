@@ -6,7 +6,7 @@ import { App, ReaderErrorBoundary } from "../App";
 const status = {
   status: "ok" as const,
   version: "0.2.0",
-  schema_version: 7,
+  schema_version: 8,
   documents: 0,
   review_needed: 0,
   jobs_running: 0,
@@ -15,6 +15,10 @@ const status = {
   ocr_available: true,
   network_metadata_enabled: false,
   diagnostics_enabled: false,
+  taxonomy_profile_enabled: true,
+  taxonomy_suggestions_enabled: false,
+  taxonomy_auto_apply_enabled: false,
+  taxonomy_disease_state_extraction_enabled: false,
 };
 
 vi.mock("../lib/api", () => ({

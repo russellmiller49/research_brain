@@ -1,3 +1,30 @@
+import type {
+  ExternalVocabulary,
+  MappingStatus,
+  PackCurationStatus,
+  SpecialtyPackType,
+  TaxonomyNodeStatus,
+  TaxonomyNodeType,
+} from "./generated/taxonomyCatalog";
+
+export type {
+  AssignmentRole,
+  AssignmentSource,
+  AutomationMode,
+  ExternalVocabulary,
+  HierarchyDepth,
+  MappingStatus,
+  NavigationOverrideAction,
+  PackCurationStatus,
+  ProfileRelationshipType,
+  SpecialtyPackType,
+  StateValueType,
+  TaxonomyEdgeType,
+  TaxonomyNodeStatus,
+  TaxonomyNodeType,
+  VerificationStatus,
+} from "./generated/taxonomyCatalog";
+
 export type View =
   | "home"
   | "library"
@@ -142,6 +169,10 @@ export interface CoreStatus {
   ocr_available: boolean;
   network_metadata_enabled: boolean;
   diagnostics_enabled: boolean;
+  taxonomy_profile_enabled: boolean;
+  taxonomy_suggestions_enabled: boolean;
+  taxonomy_auto_apply_enabled: boolean;
+  taxonomy_disease_state_extraction_enabled: boolean;
 }
 
 export interface Project {
@@ -171,4 +202,70 @@ export interface SearchQuery {
   project_id?: EntityId;
   document_ids?: EntityId[];
   limit?: number;
+}
+
+export interface TaxonomyNodeSummary {
+  id: string;
+  node_type: TaxonomyNodeType;
+  canonical_name: string;
+  status: TaxonomyNodeStatus;
+}
+
+export interface ExternalMapping {
+  vocabulary: ExternalVocabulary;
+  code: string;
+  display_name: string;
+  version: string;
+  provenance: string;
+  status: MappingStatus;
+}
+
+export interface TaxonomyNode extends TaxonomyNodeSummary {
+  description: string;
+  source_system: string;
+  source_code: string;
+  source_version: string;
+  external_mappings: ExternalMapping[];
+  metadata: Record<string, unknown>;
+}
+
+export interface TaxonomyCatalogPage {
+  items: TaxonomyNodeSummary[];
+  total: number;
+  limit: number;
+  offset: number;
+  catalog_version: string;
+}
+
+export interface SpecialtyPackSummary {
+  pack_id: string;
+  display_name: string;
+  pack_type: SpecialtyPackType;
+  version: string;
+  selection_node_id: string;
+  curation_status: PackCurationStatus;
+  inherits: string[];
+  membership_count: number;
+  state_archetypes: string[];
+}
+
+export interface PersonalizedTaxonomyNode {
+  canonical_node_id: string;
+  display_instance_id: string;
+  parent_display_instance_id: string | null;
+  display_name: string;
+  node_type: TaxonomyNodeType;
+  weight: number;
+  depth: number;
+  visible: boolean;
+  pinned: boolean;
+  children: PersonalizedTaxonomyNode[];
+}
+
+export interface PersonalizedTaxonomyTree {
+  catalog_version: string;
+  profile_revision: string;
+  warnings: string[];
+  roots: PersonalizedTaxonomyNode[];
+  total_canonical_nodes: number;
 }

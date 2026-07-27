@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-memory.local/taxonomy/schemas/v1/state_archetype.schema.json",
+  "title": "Research Memory disease-state archetype",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "display_name",
+    "version",
+    "dimensions"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^state_archetype\\.[a-z0-9_]+$"
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "dimensions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "display_name",
+          "value_type",
+          "required_evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^state\\.[a-z0-9_]+$"
+          },
+          "display_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value_type": {
+            "type": "string",
+            "enum": [
+              "concept_or_text",
+              "structured_text",
+              "number",
+              "boolean"
+            ]
+          },
+          "required_evidence": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

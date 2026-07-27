@@ -1,0 +1,67 @@
+{
+  "id": "state_archetype.genetic_metabolic",
+  "display_name": "Genetic and metabolic",
+  "version": "1.0.0",
+  "dimensions": [
+    {
+      "id": "state.gene_or_chromosome",
+      "display_name": "Gene or chromosome",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.variant_class",
+      "display_name": "Variant class",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.inheritance",
+      "display_name": "Inheritance",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.penetrance",
+      "display_name": "Penetrance",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.phenotype",
+      "display_name": "Phenotype",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.age_of_onset",
+      "display_name": "Age of onset",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.biochemical_pathway",
+      "display_name": "Biochemical pathway",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.carrier_versus_affected",
+      "display_name": "Carrier versus affected",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.organ_involvement",
+      "display_name": "Organ involvement",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.newborn_screen_status",
+      "display_name": "Newborn-screen status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    }
+  ]
+}

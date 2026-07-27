@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-memory.local/taxonomy/schemas/v1/synonyms.schema.json",
+  "title": "Research Memory taxonomy synonyms",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "node_id",
+      "synonym",
+      "language_code",
+      "source"
+    ],
+    "properties": {
+      "node_id": {
+        "type": "string"
+      },
+      "synonym": {
+        "type": "string",
+        "minLength": 1
+      },
+      "language_code": {
+        "type": "string",
+        "pattern": "^[a-z]{2}$"
+      },
+      "source": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

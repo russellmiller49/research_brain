@@ -1,0 +1,297 @@
+[
+  {
+    "pack_id": "pack.overlay.critical_care",
+    "display_name": "Critical Care",
+    "pack_type": "overlay",
+    "version": "1.0.0",
+    "selection_node_id": "clinical_domain.critical_care",
+    "curation_status": "curated",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "clinical_domain.critical_care",
+        "membership_role": "clinical_domain_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "activity.mechanical_ventilation",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease.ards",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.shock_and_hemodynamics",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease.sepsis",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease.acute_kidney_injury",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "activity.crrt",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "activity.ecmo",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "activity.mechanical_circulatory_support",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "clinical_domain.neurocritical_care",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "activity.icu_procedures",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 10,
+        "config": {}
+      },
+      {
+        "node_id": "disease.icu_acquired_weakness",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 11,
+        "config": {}
+      },
+      {
+        "node_id": "disease.delirium",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 12,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.nosocomial_infection",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 13,
+        "config": {}
+      },
+      {
+        "node_id": "activity.post_icu_recovery",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 14,
+        "config": {}
+      },
+      {
+        "node_id": "activity.end_of_life_care",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 15,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [
+      "state_archetype.critical_illness"
+    ],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.overlay.pain_medicine",
+    "display_name": "Pain Medicine",
+    "pack_type": "overlay",
+    "version": "1.0.0",
+    "selection_node_id": "clinical_domain.pain_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.overlay.sleep_medicine",
+    "display_name": "Sleep Medicine",
+    "pack_type": "overlay",
+    "version": "1.0.0",
+    "selection_node_id": "clinical_domain.sleep_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.overlay.hospice_and_palliative_medicine",
+    "display_name": "Hospice and Palliative Medicine",
+    "pack_type": "overlay",
+    "version": "1.0.0",
+    "selection_node_id": "clinical_domain.hospice_and_palliative_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.overlay.sports_medicine",
+    "display_name": "Sports Medicine",
+    "pack_type": "overlay",
+    "version": "1.0.0",
+    "selection_node_id": "clinical_domain.sports_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.overlay.clinical_informatics",
+    "display_name": "Clinical Informatics",
+    "pack_type": "overlay",
+    "version": "1.0.0",
+    "selection_node_id": "clinical_domain.clinical_informatics",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.overlay.medical_toxicology",
+    "display_name": "Medical Toxicology",
+    "pack_type": "overlay",
+    "version": "1.0.0",
+    "selection_node_id": "clinical_domain.medical_toxicology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.overlay.geriatric_medicine",
+    "display_name": "Geriatric Medicine",
+    "pack_type": "overlay",
+    "version": "1.0.0",
+    "selection_node_id": "clinical_domain.geriatric_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.overlay.adolescent_medicine",
+    "display_name": "Adolescent Medicine",
+    "pack_type": "overlay",
+    "version": "1.0.0",
+    "selection_node_id": "clinical_domain.adolescent_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.overlay.health_care_administration_leadership_and_management",
+    "display_name": "Health Care Administration, Leadership, and Management",
+    "pack_type": "overlay",
+    "version": "1.0.0",
+    "selection_node_id": "clinical_domain.health_care_administration_leadership_and_management",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.overlay.neurocritical_care",
+    "display_name": "Neurocritical Care",
+    "pack_type": "overlay",
+    "version": "1.0.0",
+    "selection_node_id": "clinical_domain.neurocritical_care",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.overlay.addiction_medicine",
+    "display_name": "Addiction Medicine",
+    "pack_type": "overlay",
+    "version": "1.0.0",
+    "selection_node_id": "clinical_domain.addiction_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.overlay.undersea_and_hyperbaric_medicine",
+    "display_name": "Undersea and Hyperbaric Medicine",
+    "pack_type": "overlay",
+    "version": "1.0.0",
+    "selection_node_id": "clinical_domain.undersea_and_hyperbaric_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.overlay.procedural_medicine",
+    "display_name": "Procedural Medicine",
+    "pack_type": "overlay",
+    "version": "1.0.0",
+    "selection_node_id": "clinical_domain.procedural_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.overlay.oncology",
+    "display_name": "Oncology",
+    "pack_type": "overlay",
+    "version": "1.0.0",
+    "selection_node_id": "clinical_domain.oncology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  }
+]

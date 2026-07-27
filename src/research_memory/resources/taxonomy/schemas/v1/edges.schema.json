@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-memory.local/taxonomy/schemas/v1/edges.schema.json",
+  "title": "Research Memory canonical taxonomy edges",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "parent_id",
+      "child_id",
+      "edge_type",
+      "source",
+      "confidence",
+      "sort_order",
+      "metadata"
+    ],
+    "properties": {
+      "parent_id": {
+        "type": "string"
+      },
+      "child_id": {
+        "type": "string"
+      },
+      "edge_type": {
+        "type": "string",
+        "enum": [
+          "is_a",
+          "part_of",
+          "offered_by",
+          "has_subspecialty",
+          "inherits",
+          "relevant_to",
+          "commonly_managed_by",
+          "commonly_researched_in",
+          "has_state_archetype",
+          "diagnosed_by",
+          "treated_by",
+          "overlaps_with",
+          "display_under"
+        ]
+      },
+      "source": {
+        "type": "string",
+        "minLength": 1
+      },
+      "confidence": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "sort_order": {
+        "type": "integer"
+      },
+      "metadata": {
+        "type": "object"
+      }
+    }
+  }
+}

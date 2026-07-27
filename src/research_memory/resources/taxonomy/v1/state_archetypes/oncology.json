@@ -1,0 +1,91 @@
+{
+  "id": "state_archetype.oncology",
+  "display_name": "Oncology",
+  "version": "1.0.0",
+  "dimensions": [
+    {
+      "id": "state.primary_site",
+      "display_name": "Primary site",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.histology",
+      "display_name": "Histology",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.grade",
+      "display_name": "Grade",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.anatomic_stage",
+      "display_name": "Anatomic stage",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.molecular_subtype",
+      "display_name": "Molecular subtype",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.biomarker_status",
+      "display_name": "Biomarker status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.resectability",
+      "display_name": "Resectability",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.metastatic_sites",
+      "display_name": "Metastatic sites",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.treatment_line",
+      "display_name": "Treatment line",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.prior_treatments",
+      "display_name": "Prior treatments",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.response_state",
+      "display_name": "Response state",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.recurrence_state",
+      "display_name": "Recurrence state",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.performance_status",
+      "display_name": "Performance status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.intent_curative_or_palliative",
+      "display_name": "Intent: curative or palliative",
+      "value_type": "structured_text",
+      "required_evidence": true
+    }
+  ]
+}

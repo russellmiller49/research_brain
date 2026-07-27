@@ -52,6 +52,18 @@ The user can create projects/collections, add papers, and export Markdown, RIS, 
 XFDF, or a new annotated PDF. Backup exports are passphrase-encrypted and restore verifies
 database and object integrity.
 
+### Personalized taxonomy foundation
+
+Phase 1 provides a versioned broad specialty and disease-family starter catalog, local
+profile persistence, and a deterministic personalized navigation projection. Canonical
+concept identity remains separate from display placement, and profile relevance must never
+change neutral article truth.
+
+The questionnaire, taxonomy browser, manual reader organization, automatic suggestions,
+review queue, and cloud synchronization are later-phase requirements and are not exposed by
+the current implementation. The catalog is not clinically complete and the product does not
+make patient-specific recommendations.
+
 ## Data and provenance rules
 
 Every search hit identifies its article, asset version, page, passage, snippet, bounding
@@ -78,6 +90,8 @@ opt-in and exclude user content and identifiers that could reveal library conten
 - Windows, mobile, and browser capture
 - Table and figure understanding
 - Autonomous clinical or research recommendations
+- Automated taxonomy classification or disease-state extraction before its acceptance gates
+  pass
 
 The dormant v0.1 browser prototype is retained only to support migration/debugging and is
 disabled in the desktop sidecar.

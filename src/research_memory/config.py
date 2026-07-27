@@ -44,6 +44,10 @@ class Settings(BaseSettings):
     allow_legacy_web: bool = False
     enable_network_metadata: bool = False
     diagnostics_enabled: bool = False
+    taxonomy_profile_enabled: bool = True
+    taxonomy_suggestions_enabled: bool = False
+    taxonomy_auto_apply_enabled: bool = False
+    taxonomy_disease_state_extraction_enabled: bool = False
 
     @field_validator("data_dir", mode="before")
     @classmethod

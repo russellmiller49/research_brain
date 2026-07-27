@@ -3,6 +3,12 @@
 These are release blockers. CI passing alone does not satisfy the corpus, human, or
 observation gates.
 
+The taxonomy foundation has additional catalog, profile, classification, privacy,
+accessibility, performance, and durability gates in
+[`TAXONOMY_ACCEPTANCE_GATES.md`](TAXONOMY_ACCEPTANCE_GATES.md). Phase 1 test completion does
+not authorize automatic suggestions, auto-apply, disease-state extraction, questionnaire
+UI, or cloud taxonomy persistence.
+
 ## Retrieval quality
 
 - At least 300 natural half-memory queries from five biomedical users.
@@ -60,3 +66,8 @@ corrupt, encrypted, oversized, missing, duplicate-version, and multi-article PDF
 - No data-loss incident for two consecutive weeks.
 - At least 99.5% crash-free beta sessions over the observation window.
 - All unresolved Critical/High security findings are closed or accepted in writing.
+- The taxonomy catalog has zero missing references/cycles, every credential pack resolves,
+  and removed nodes preserve user assignments.
+- `taxonomy_auto_apply_enabled` and
+  `taxonomy_disease_state_extraction_enabled` remain false until their physician-reviewed,
+  evidence-specific gates pass.

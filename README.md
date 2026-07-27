@@ -35,11 +35,15 @@ gates in [`docs/ACCEPTANCE_GATES.md`](docs/ACCEPTANCE_GATES.md).
 - Numbered transactional migrations, pre-migration snapshots, encrypted portable backups,
   restore verification, 30-day app trash, redacted support bundles, and opt-in network
   metadata.
+- A validated, versioned broad specialty and disease-family starter catalog with local
+  profile persistence, deterministic personalized-tree generation, and typed read-only
+  catalog APIs. Questionnaire and organization UI are not part of the current phase.
 - Signed/notarized DMG and signed-update workflows, license policy checks, dependency
   audits, and CycloneDX SBOM generation.
 
-Study cards, topic synthesis, Q&A, cloud AI, alerts, collaboration, Windows, browser
-capture, and table/figure understanding are deliberately outside this beta. Direct Google
+Automated taxonomy suggestions, study cards, topic synthesis, Q&A, cloud AI, alerts,
+collaboration, Windows, browser capture, and table/figure understanding are deliberately
+outside this phase. Direct Google
 Drive and OneDrive authorization and backup policy are scaffolded; remote file browsing
 and the replication worker remain beta work.
 
@@ -76,7 +80,11 @@ capabilities rather than exposing local paths.
 
 See [`docs/TECHNICAL_ARCHITECTURE.md`](docs/TECHNICAL_ARCHITECTURE.md),
 [`docs/DATA_MODEL.md`](docs/DATA_MODEL.md), and
-[`docs/PRIVACY.md`](docs/PRIVACY.md). The repository-grounded security assessment and
+[`docs/PRIVACY.md`](docs/PRIVACY.md). Taxonomy design, catalog provenance, and release
+criteria are in [`docs/TAXONOMY_ARCHITECTURE.md`](docs/TAXONOMY_ARCHITECTURE.md),
+[`docs/TAXONOMY_CATALOG.md`](docs/TAXONOMY_CATALOG.md), and
+[`docs/TAXONOMY_ACCEPTANCE_GATES.md`](docs/TAXONOMY_ACCEPTANCE_GATES.md). The
+repository-grounded security assessment and
 tracked residual risks are in [`docs/SECURITY_REVIEW.md`](docs/SECURITY_REVIEW.md).
 
 ## Synced web beta
@@ -191,6 +199,10 @@ also opt-in and exclude PDF text, filenames, paths, searches, notes, and annotat
 Research Memory is for legally obtained published literature. It is not for PHI, clinical
 records, autonomous recommendations, or validated systematic-review adjudication. Use the
 macOS account boundary and FileVault; app-specific vault encryption is deferred.
+
+The taxonomy seed organizes literature and is not clinically complete. It does not make
+clinical recommendations. Automatic suggestions and automatic disease-state extraction are
+disabled by default and remain subject to separate validation gates.
 
 ## License
 

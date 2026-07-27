@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-memory.local/taxonomy/schemas/v1/catalog.schema.json",
+  "title": "Research Memory taxonomy catalog manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "catalog_version",
+    "semantic_version",
+    "source_date",
+    "content_sha256",
+    "files",
+    "starter_catalog",
+    "description"
+  ],
+  "properties": {
+    "catalog_version": {
+      "type": "string",
+      "pattern": "^taxonomy-v[1-9][0-9]*$"
+    },
+    "semantic_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "source_date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "content_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9_./-]+\\.json$"
+      }
+    },
+    "starter_catalog": {
+      "type": "boolean"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

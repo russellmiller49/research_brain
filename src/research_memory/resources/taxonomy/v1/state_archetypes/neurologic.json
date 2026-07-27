@@ -1,0 +1,67 @@
+{
+  "id": "state_archetype.neurologic",
+  "display_name": "Neurologic",
+  "version": "1.0.0",
+  "dimensions": [
+    {
+      "id": "state.anatomic_localization",
+      "display_name": "Anatomic localization",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.syndrome",
+      "display_name": "Syndrome",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.etiology",
+      "display_name": "Etiology",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.acute_versus_chronic",
+      "display_name": "Acute versus chronic",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.severity_scale",
+      "display_name": "Severity scale",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.recurrence",
+      "display_name": "Recurrence",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.disability",
+      "display_name": "Disability",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.cognitive_state",
+      "display_name": "Cognitive state",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.seizure_burden",
+      "display_name": "Seizure burden",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.treatment_resistance",
+      "display_name": "Treatment resistance",
+      "value_type": "structured_text",
+      "required_evidence": true
+    }
+  ]
+}

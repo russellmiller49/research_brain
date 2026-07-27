@@ -1,0 +1,67 @@
+{
+  "id": "state_archetype.psychiatric",
+  "display_name": "Psychiatric",
+  "version": "1.0.0",
+  "dimensions": [
+    {
+      "id": "state.diagnostic_syndrome",
+      "display_name": "Diagnostic syndrome",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.episode_type",
+      "display_name": "Episode type",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.current_episode_state",
+      "display_name": "Current episode state",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.severity",
+      "display_name": "Severity",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.course",
+      "display_name": "Course",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.psychotic_features",
+      "display_name": "Psychotic features",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.suicidality_or_safety_state",
+      "display_name": "Suicidality or safety state",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.substance_comorbidity",
+      "display_name": "Substance comorbidity",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.treatment_resistance",
+      "display_name": "Treatment resistance",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.functional_impairment",
+      "display_name": "Functional impairment",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    }
+  ]
+}

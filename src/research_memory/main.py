@@ -32,8 +32,12 @@ from research_memory.services.export import (
 from research_memory.services.ingest import IngestionService
 from research_memory.services.jobs import BackgroundJobManager, JobContext, JobStore
 from research_memory.services.library import LibraryService
+from research_memory.services.personalized_taxonomy import PersonalizedTaxonomyBuilder
+from research_memory.services.research_profile import ResearchProfileService
 from research_memory.services.search import SearchFilters, SearchService
 from research_memory.services.support import SupportBundleService
+from research_memory.services.taxonomy_assignments import TaxonomyAssignmentService
+from research_memory.services.taxonomy_catalog import TaxonomyCatalog
 from research_memory.services.zotero import ZoteroImporter
 from research_memory.utils import normalize_title, safe_filename, truncate
 
@@ -97,6 +101,11 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     settings.ensure_directories()
     db = Database(settings.database_path, settings.backups_dir)
     db.initialize()
+    taxonomy_catalog = TaxonomyCatalog.load()
+    taxonomy_catalog.install(db)
+    research_profile = ResearchProfileService(db, taxonomy_catalog)
+    personalized_taxonomy = PersonalizedTaxonomyBuilder(taxonomy_catalog)
+    taxonomy_assignments = TaxonomyAssignmentService(db, taxonomy_catalog)
     # Reader capabilities are scoped to one desktop-core session. A stale URL
     # copied from a prior process must never become valid after restart.
     db.execute("DELETE FROM asset_access_tokens")
@@ -280,6 +289,10 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     app.state.job_manager = job_manager
     app.state.backup_lock = backup_lock
     app.state.zotero = zotero
+    app.state.taxonomy_catalog = taxonomy_catalog
+    app.state.research_profile = research_profile
+    app.state.personalized_taxonomy = personalized_taxonomy
+    app.state.taxonomy_assignments = taxonomy_assignments
 
     @app.middleware("http")
     async def private_ipc_boundary(request: Request, call_next):

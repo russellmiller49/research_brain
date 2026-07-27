@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-memory.local/taxonomy/schemas/v1/nodes.schema.json",
+  "title": "Research Memory canonical taxonomy nodes",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "node_type",
+      "canonical_name",
+      "description",
+      "status",
+      "source",
+      "external_mappings",
+      "metadata"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*\\.[a-z0-9_]+$"
+      },
+      "node_type": {
+        "type": "string",
+        "enum": [
+          "certifying_board",
+          "specialty",
+          "subspecialty",
+          "focused_practice",
+          "research_interest",
+          "clinical_domain",
+          "disease_family",
+          "disease",
+          "phenotype",
+          "clinical_activity",
+          "procedure",
+          "diagnostic_test",
+          "device_category",
+          "population",
+          "care_setting",
+          "methodology",
+          "evidence_field",
+          "work_product",
+          "personal_intent",
+          "state_dimension"
+        ]
+      },
+      "canonical_name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "active",
+          "retired",
+          "approved_not_yet_issued"
+        ]
+      },
+      "source": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "system",
+          "source_id",
+          "source_version"
+        ],
+        "properties": {
+          "system": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "source_version": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "external_mappings": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        }
+      },
+      "metadata": {
+        "type": "object"
+      }
+    }
+  }
+}

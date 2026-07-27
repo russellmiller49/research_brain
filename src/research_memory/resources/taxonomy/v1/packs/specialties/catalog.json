@@ -1,0 +1,3331 @@
+[
+  {
+    "pack_id": "pack.specialty.aerospace_medicine",
+    "display_name": "Aerospace Medicine",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.aerospace_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.population_health",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.screening_and_prevention",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.occupational_exposure",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.environmental_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.injury_prevention",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.addiction",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.travel_and_operational_medicine",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.aerospace_physiology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.diving_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.epidemiology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.health_services_research",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.allergy_and_immunology",
+    "display_name": "Allergy and Immunology",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.allergy_and_immunology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.allergic_rhinitis_and_conjunctivitis",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.asthma",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.food_allergy",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.drug_allergy",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.venom_and_environmental_allergy",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.urticaria_and_angioedema",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.anaphylaxis",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.atopic_dermatitis",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.primary_and_secondary_immunodeficiency",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.immune_dysregulation",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.eosinophilic_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.mast_cell_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 11,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.anesthesiology",
+    "display_name": "Anesthesiology",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.anesthesiology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.airway_and_difficult_airway",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.perioperative_cardiovascular_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.perioperative_pulmonary_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.perioperative_neurologic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.renal_and_hepatic_dysfunction",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pregnancy_and_obstetric_anesthesia",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pediatric_anesthesia",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.trauma_and_hemorrhage",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.shock_and_sepsis",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.obesity_and_sleep_disordered_breathing",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.anesthesia_complications",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.acute_and_chronic_pain",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 11,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.clinical_biochemical_genetics",
+    "display_name": "Clinical Biochemical Genetics",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.clinical_biochemical_genetics",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.chromosomal_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.monogenic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.metabolic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.mitochondrial_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cancer_genetics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.prenatal_genetics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cardiovascular_genetics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neurogenetics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.connective_tissue_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pharmacogenomics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.variant_interpretation",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.clinical_genetics_and_genomics_md",
+    "display_name": "Clinical Genetics and Genomics (MD)",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.clinical_genetics_and_genomics_md",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.chromosomal_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.monogenic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.metabolic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.mitochondrial_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cancer_genetics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.prenatal_genetics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cardiovascular_genetics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neurogenetics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.connective_tissue_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pharmacogenomics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.variant_interpretation",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.colon_and_rectal_surgery",
+    "display_name": "Colon and Rectal Surgery",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.colon_and_rectal_surgery",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.colorectal_neoplasia",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.inflammatory_bowel_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.diverticular_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.anorectal_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pelvic_floor_dysfunction",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.fistula",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.ostomy",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.colorectal_emergency",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.hereditary_colorectal_cancer_syndromes",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.dermatology",
+    "display_name": "Dermatology",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.dermatology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.inflammatory_dermatoses",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.autoimmune_blistering_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.connective_tissue_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cutaneous_infection",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pigmentary_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.hair_and_nail_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cutaneous_malignancy",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.vascular_lesions",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.genetic_dermatologic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.drug_reactions",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.wounds",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.diagnostic_medical_physics",
+    "display_name": "Diagnostic Medical Physics",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.diagnostic_medical_physics",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.neuroimaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.thoracic_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cardiac_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.abdominal_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.genitourinary_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.musculoskeletal_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.breast_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pediatric_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.emergency_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.vascular_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.disease_specific_imaging_phenotypes",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.diagnostic_radiology",
+    "display_name": "Diagnostic Radiology",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.diagnostic_radiology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.neuroimaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.thoracic_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cardiac_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.abdominal_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.genitourinary_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.musculoskeletal_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.breast_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pediatric_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.emergency_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.vascular_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.disease_specific_imaging_phenotypes",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.emergency_medicine",
+    "display_name": "Emergency Medicine",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.emergency_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.resuscitation_and_cardiac_arrest",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.shock",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.respiratory_failure",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.chest_pain_and_acute_coronary_syndrome",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.stroke_and_neurologic_emergency",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.sepsis_and_infection",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.trauma",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.toxicology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.environmental_emergency",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.obstetric_emergency",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pediatric_emergency",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.psychiatric_emergency",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 11,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.disaster_and_mass_casualty",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 12,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.family_medicine",
+    "display_name": "Family Medicine",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.family_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.cardiometabolic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.respiratory_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.gastrointestinal_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.musculoskeletal_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.mental_health",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.women_s_health",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.men_s_health",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pediatrics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.geriatrics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.preventive_care",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.multimorbidity",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.undifferentiated_symptoms",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 11,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.social_determinants_of_health",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 12,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.general_surgery",
+    "display_name": "General Surgery",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.general_surgery",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.acute_care_surgery",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.trauma",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.gastrointestinal_surgery",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.hepatobiliary_and_pancreatic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.endocrine_surgery",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.breast_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.hernia_and_abdominal_wall",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.surgical_oncology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.transplantation",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.perioperative_complications",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.internal_medicine",
+    "display_name": "Internal Medicine",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.internal_medicine",
+    "curation_status": "curated",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.cardiovascular_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pulmonary_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.gastrointestinal_and_liver_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.endocrine_and_metabolic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.renal_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.infectious_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.hematologic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.oncology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.rheumatologic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neurologic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.geriatric_syndromes",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.multimorbidity",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 11,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.perioperative_medicine",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 12,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.diagnostic_reasoning",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 13,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.interventional_radiology_and_diagnostic_radiology",
+    "display_name": "Interventional Radiology and Diagnostic Radiology",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.interventional_radiology_and_diagnostic_radiology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.vascular_intervention",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.interventional_oncology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.hepatobiliary_intervention",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.genitourinary_intervention",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.venous_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.embolization",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.access_procedures",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.drainage",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.image_guided_biopsy",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.procedure_complications",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.laboratory_genetics_and_genomics",
+    "display_name": "Laboratory Genetics and Genomics",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.laboratory_genetics_and_genomics",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.chromosomal_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.monogenic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.metabolic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.mitochondrial_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cancer_genetics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.prenatal_genetics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cardiovascular_genetics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neurogenetics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.connective_tissue_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pharmacogenomics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.variant_interpretation",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.neurological_surgery",
+    "display_name": "Neurological Surgery",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.neurological_surgery",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.brain_tumors",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cerebrovascular_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.degenerative_spine_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.traumatic_spine_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.hydrocephalus",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.epilepsy_surgery",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.functional_neurosurgery",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.peripheral_nerve_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.congenital_neurologic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neurotrauma",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.neurology",
+    "display_name": "Neurology",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.neurology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.cerebrovascular_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.epilepsy",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.movement_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cognitive_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.demyelinating_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neuromuscular_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.headache",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neuroinfectious_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neuro_oncology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.autonomic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.sleep_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.congenital_and_neurogenetic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 11,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.neurology_with_special_qualification_in_child_neurology",
+    "display_name": "Neurology with Special Qualification in Child Neurology",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.neurology_with_special_qualification_in_child_neurology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.cerebrovascular_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.epilepsy",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.movement_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cognitive_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.demyelinating_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neuromuscular_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.headache",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neuroinfectious_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neuro_oncology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.autonomic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.sleep_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.congenital_and_neurogenetic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 11,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.nuclear_medical_physics",
+    "display_name": "Nuclear Medical Physics",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.nuclear_medical_physics",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.neuroimaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.thoracic_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cardiac_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.abdominal_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.genitourinary_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.musculoskeletal_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.breast_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pediatric_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.emergency_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.vascular_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.disease_specific_imaging_phenotypes",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.nuclear_medicine",
+    "display_name": "Nuclear Medicine",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.nuclear_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.oncologic_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cardiac_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neurologic_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.endocrine_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.renal_studies",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.infection_and_inflammation_imaging",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.theranostics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.radiopharmaceutical_effects",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.obstetrics_and_gynecology",
+    "display_name": "Obstetrics and Gynecology",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.obstetrics_and_gynecology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.pregnancy",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.maternal_complications",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.fetal_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.labor_and_delivery",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.benign_gynecologic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.abnormal_uterine_bleeding",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.endometriosis",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pelvic_pain",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.infertility",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.menopause",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.contraception",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.gynecologic_cancer",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 11,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pelvic_floor_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 12,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.occupational_and_environmental_medicine",
+    "display_name": "Occupational and Environmental Medicine",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.occupational_and_environmental_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.population_health",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.screening_and_prevention",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.occupational_exposure",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.environmental_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.injury_prevention",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.addiction",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.travel_and_operational_medicine",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.aerospace_physiology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.diving_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.epidemiology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.health_services_research",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.ophthalmology",
+    "display_name": "Ophthalmology",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.ophthalmology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.cornea_and_external_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cataract",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.glaucoma",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.retina_and_vitreous_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.uveitis",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neuro_ophthalmology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.orbit_and_oculoplastics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pediatric_ophthalmology_and_strabismus",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.ocular_oncology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.refractive_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.orthopaedic_surgery",
+    "display_name": "Orthopaedic Surgery",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.orthopaedic_surgery",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.fracture_and_trauma",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.degenerative_joint_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.sports_and_soft_tissue_injury",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.spine_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.hand_and_upper_extremity_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.hip_and_knee_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.foot_and_ankle_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pediatric_orthopaedics",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.musculoskeletal_oncology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.bone_and_joint_infection",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.otolaryngology_head_and_neck_surgery",
+    "display_name": "Otolaryngology – Head and Neck Surgery",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.otolaryngology_head_and_neck_surgery",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.otologic_and_vestibular_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.sinonasal_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.laryngeal_voice_and_swallowing_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.airway_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.head_and_neck_cancer",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.sleep_disordered_breathing",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.salivary_and_thyroid_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pediatric_and_congenital_ent",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.facial_trauma",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.pathology_anatomic",
+    "display_name": "Pathology – Anatomic",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.pathology_anatomic",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.organ_based_pathology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neoplasia",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.inflammatory_pathology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.infectious_pathology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.hematologic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.transfusion_reactions",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.biochemical_abnormalities",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.microbiologic_organisms",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.molecular_alterations",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.specimen_and_assay_classification",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.pathology_anatomic_pathology_clinical",
+    "display_name": "Pathology – Anatomic/Pathology – Clinical",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.pathology_anatomic_pathology_clinical",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.organ_based_pathology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neoplasia",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.inflammatory_pathology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.infectious_pathology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.hematologic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.transfusion_reactions",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.biochemical_abnormalities",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.microbiologic_organisms",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.molecular_alterations",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.specimen_and_assay_classification",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.pathology_clinical",
+    "display_name": "Pathology – Clinical",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.pathology_clinical",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.organ_based_pathology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neoplasia",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.inflammatory_pathology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.infectious_pathology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.hematologic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.transfusion_reactions",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.biochemical_abnormalities",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.microbiologic_organisms",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.molecular_alterations",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.specimen_and_assay_classification",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.pediatrics",
+    "display_name": "Pediatrics",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.pediatrics",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.neonatal_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.congenital_and_genetic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.growth_and_development",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pediatric_organ_system_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.childhood_infection",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pediatric_malignancy",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.complex_chronic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.abuse_and_neglect",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.adolescent_health",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.physical_medicine_and_rehabilitation",
+    "display_name": "Physical Medicine and Rehabilitation",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.physical_medicine_and_rehabilitation",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.stroke_rehabilitation",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.spinal_cord_injury",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.traumatic_brain_injury",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neuromuscular_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.musculoskeletal_disability",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.amputation",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.spasticity",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.chronic_pain",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pediatric_disability",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cancer_rehabilitation",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cardiopulmonary_rehabilitation",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.plastic_surgery",
+    "display_name": "Plastic Surgery",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.plastic_surgery",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.reconstructive_surgery",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.craniofacial_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.breast_reconstruction",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.hand_and_upper_extremity_reconstruction",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.burns_and_wounds",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.microsurgery",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.aesthetic_surgery",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.peripheral_nerve_injury",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.congenital_anomalies",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.psychiatry",
+    "display_name": "Psychiatry",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.psychiatry",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.mood_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.anxiety_obsessive_compulsive_and_trauma_related_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.psychotic_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.substance_use_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.neurodevelopmental_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.personality_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.eating_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.somatic_symptom_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.cognitive_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.psychiatric_emergencies",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.public_health_and_general_preventive_medicine",
+    "display_name": "Public Health and General Preventive Medicine",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.public_health_and_general_preventive_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.population_health",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.screening_and_prevention",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.occupational_exposure",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.environmental_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.injury_prevention",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.addiction",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.travel_and_operational_medicine",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.aerospace_physiology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.diving_disorders",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.epidemiology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.health_services_research",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.radiation_oncology",
+    "display_name": "Radiation Oncology",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.radiation_oncology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.disease_site_malignancies",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.stage",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.histology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.radiation_intent",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.modality",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.fractionation",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.treatment_field",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.toxicity",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.recurrence_and_reirradiation",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.therapeutic_medical_physics",
+    "display_name": "Therapeutic Medical Physics",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.therapeutic_medical_physics",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.disease_site_malignancies",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.stage",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.histology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.radiation_intent",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.modality",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.fractionation",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.treatment_field",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.toxicity",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.recurrence_and_reirradiation",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.thoracic_and_cardiac_surgery",
+    "display_name": "Thoracic and Cardiac Surgery",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.thoracic_and_cardiac_surgery",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.coronary_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.valvular_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.aortic_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.heart_failure_transplantation_and_mechanical_support",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.congenital_cardiac_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.lung_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.esophageal_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.mediastinal_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pleural_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.airway_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.thoracic_oncology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.urology",
+    "display_name": "Urology",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.urology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.benign_prostatic_hyperplasia_and_lower_urinary_tract_symptoms",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.urolithiasis",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.urologic_malignancy",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.voiding_dysfunction",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.female_pelvic_medicine",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.male_infertility_and_andrology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.erectile_dysfunction",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.reconstruction",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pediatric_and_congenital_urology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.transplantation",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.urinary_infection",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.specialty.vascular_surgery",
+    "display_name": "Vascular Surgery",
+    "pack_type": "specialty",
+    "version": "1.0.0",
+    "selection_node_id": "specialty.vascular_surgery",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "disease_family.aortic_aneurysm_and_dissection",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.peripheral_arterial_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.carotid_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.venous_thromboembolism",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.chronic_venous_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.dialysis_access",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.limb_ischemia",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.vascular_malformation",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.endovascular_complications",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  }
+]

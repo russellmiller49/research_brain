@@ -25,10 +25,19 @@ from research_memory.contracts import (
     ImportJob,
     ImportPathRequest,
     MatchReason,
+    PersonalizedTaxonomyTree,
     SearchHit,
     SearchQuery,
+    SpecialtyPackSummary,
+    TaxonomyCatalogPage,
+    TaxonomyNode,
+    TaxonomyNodeSummary,
     TrashArticle,
     ZoteroSyncRequest,
+)
+from research_memory.generated.taxonomy_catalog import (
+    SpecialtyPackType,
+    TaxonomyNodeType,
 )
 from research_memory.services.backup import BackupError
 from research_memory.services.export import documents_to_bibtex, documents_to_ris
@@ -129,6 +138,32 @@ def _state(request: Request, name: str) -> Any:
     return getattr(request.app.state, name)
 
 
+def _require_taxonomy(request: Request) -> None:
+    if not _state(request, "settings").taxonomy_profile_enabled:
+        raise HTTPException(404, "Taxonomy profile feature is disabled")
+
+
+def _taxonomy_node_summary(node: Any) -> TaxonomyNodeSummary:
+    return TaxonomyNodeSummary(
+        id=node.id,
+        node_type=node.node_type,
+        canonical_name=node.canonical_name,
+        status=node.status,
+    )
+
+
+def _taxonomy_node(node: Any) -> TaxonomyNode:
+    return TaxonomyNode(
+        **_taxonomy_node_summary(node).model_dump(),
+        description=node.description,
+        source_system=node.source.system,
+        source_code=node.source.source_id,
+        source_version=node.source.source_version,
+        external_mappings=node.external_mappings,
+        metadata=node.metadata,
+    )
+
+
 def _asset(row: Any) -> ArticleAsset:
     return ArticleAsset(
         id=int(row["id"]),
@@ -211,7 +246,77 @@ async def status(request: Request) -> dict[str, Any]:
         "ocr_available": bool(settings.resolved_tesseract_path),
         "network_metadata_enabled": settings.enable_network_metadata,
         "diagnostics_enabled": settings.diagnostics_enabled,
+        "taxonomy_profile_enabled": settings.taxonomy_profile_enabled,
+        "taxonomy_suggestions_enabled": settings.taxonomy_suggestions_enabled,
+        "taxonomy_auto_apply_enabled": settings.taxonomy_auto_apply_enabled,
+        "taxonomy_disease_state_extraction_enabled": (
+            settings.taxonomy_disease_state_extraction_enabled
+        ),
     }
+
+
+@router.get("/taxonomy/catalog", response_model=TaxonomyCatalogPage)
+async def taxonomy_catalog(
+    request: Request,
+    query: str = Query(default="", max_length=500),
+    node_type: TaxonomyNodeType | None = None,
+    parent_id: str | None = Query(default=None, alias="parent"),
+    limit: int = Query(default=100, ge=1, le=250),
+    offset: int = Query(default=0, ge=0),
+) -> TaxonomyCatalogPage:
+    _require_taxonomy(request)
+    catalog = _state(request, "taxonomy_catalog")
+    items = catalog.list_nodes(
+        query=query,
+        node_type=node_type,
+        parent_id=parent_id,
+    )
+    return TaxonomyCatalogPage(
+        items=[_taxonomy_node_summary(node) for node in items[offset : offset + limit]],
+        total=len(items),
+        limit=limit,
+        offset=offset,
+        catalog_version=catalog.manifest.catalog_version,
+    )
+
+
+@router.get("/taxonomy/nodes/{node_id}", response_model=TaxonomyNode)
+async def taxonomy_node(request: Request, node_id: str) -> TaxonomyNode:
+    _require_taxonomy(request)
+    node = _state(request, "taxonomy_catalog").get_node(node_id)
+    if node is None:
+        raise HTTPException(404, "Taxonomy node not found")
+    return _taxonomy_node(node)
+
+
+@router.get("/taxonomy/packs", response_model=list[SpecialtyPackSummary])
+async def taxonomy_packs(
+    request: Request,
+    pack_type: SpecialtyPackType | None = None,
+) -> list[SpecialtyPackSummary]:
+    _require_taxonomy(request)
+    packs = _state(request, "taxonomy_catalog").list_packs(pack_type=pack_type)
+    return [
+        SpecialtyPackSummary(
+            pack_id=pack.pack_id,
+            display_name=pack.display_name,
+            pack_type=pack.pack_type,
+            version=pack.version,
+            selection_node_id=pack.selection_node_id,
+            curation_status=pack.curation_status,
+            inherits=pack.inherits,
+            membership_count=len(pack.memberships),
+            state_archetypes=pack.state_archetypes,
+        )
+        for pack in packs
+    ]
+
+
+@router.get("/taxonomy/tree", response_model=PersonalizedTaxonomyTree)
+async def taxonomy_tree(request: Request) -> PersonalizedTaxonomyTree:
+    _require_taxonomy(request)
+    profile = _state(request, "research_profile").get_or_default()
+    return _state(request, "personalized_taxonomy").build(profile)
 
 
 @router.get("/articles", response_model=list[ArticleSummary])

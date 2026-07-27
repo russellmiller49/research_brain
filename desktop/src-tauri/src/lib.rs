@@ -41,6 +41,87 @@ struct CoreStatus {
     ocr_available: bool,
     network_metadata_enabled: bool,
     diagnostics_enabled: bool,
+    taxonomy_profile_enabled: bool,
+    taxonomy_suggestions_enabled: bool,
+    taxonomy_auto_apply_enabled: bool,
+    taxonomy_disease_state_extraction_enabled: bool,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct TaxonomyNodeSummary {
+    id: String,
+    node_type: String,
+    canonical_name: String,
+    status: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct ExternalMapping {
+    vocabulary: String,
+    code: String,
+    display_name: String,
+    version: String,
+    provenance: String,
+    status: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct TaxonomyNode {
+    id: String,
+    node_type: String,
+    canonical_name: String,
+    status: String,
+    description: String,
+    source_system: String,
+    source_code: String,
+    source_version: String,
+    external_mappings: Vec<ExternalMapping>,
+    metadata: Value,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct TaxonomyCatalogPage {
+    items: Vec<TaxonomyNodeSummary>,
+    total: i64,
+    limit: i64,
+    offset: i64,
+    catalog_version: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct SpecialtyPackSummary {
+    pack_id: String,
+    display_name: String,
+    pack_type: String,
+    version: String,
+    selection_node_id: String,
+    curation_status: String,
+    inherits: Vec<String>,
+    membership_count: i64,
+    state_archetypes: Vec<String>,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct PersonalizedTaxonomyNode {
+    canonical_node_id: String,
+    display_instance_id: String,
+    parent_display_instance_id: Option<String>,
+    display_name: String,
+    node_type: String,
+    weight: f64,
+    depth: i64,
+    visible: bool,
+    pinned: bool,
+    children: Vec<PersonalizedTaxonomyNode>,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct PersonalizedTaxonomyTree {
+    catalog_version: String,
+    profile_revision: String,
+    warnings: Vec<String>,
+    roots: Vec<PersonalizedTaxonomyNode>,
+    total_canonical_nodes: i64,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -279,6 +360,67 @@ async fn api<T: DeserializeOwned>(
 #[tauri::command]
 async fn core_status(state: State<'_, CoreState>) -> Result<CoreStatus, String> {
     api(&state, Method::GET, "/api/v1/status", None).await
+}
+
+#[tauri::command]
+async fn taxonomy_catalog(
+    state: State<'_, CoreState>,
+    query: String,
+    node_type: Option<String>,
+    parent: Option<String>,
+    limit: i64,
+    offset: i64,
+) -> Result<TaxonomyCatalogPage, String> {
+    let mut path = format!(
+        "/api/v1/taxonomy/catalog?query={}&limit={limit}&offset={offset}",
+        urlencoding::encode(&query)
+    );
+    if let Some(node_type) = node_type {
+        path.push_str("&node_type=");
+        path.push_str(&urlencoding::encode(&node_type));
+    }
+    if let Some(parent) = parent {
+        path.push_str("&parent=");
+        path.push_str(&urlencoding::encode(&parent));
+    }
+    api(&state, Method::GET, &path, None).await
+}
+
+#[tauri::command]
+async fn taxonomy_node(
+    state: State<'_, CoreState>,
+    node_id: String,
+) -> Result<TaxonomyNode, String> {
+    let node_id = validated_taxonomy_id(&node_id)?;
+    api(
+        &state,
+        Method::GET,
+        &format!("/api/v1/taxonomy/nodes/{node_id}"),
+        None,
+    )
+    .await
+}
+
+#[tauri::command]
+async fn taxonomy_packs(
+    state: State<'_, CoreState>,
+    pack_type: Option<String>,
+) -> Result<Vec<SpecialtyPackSummary>, String> {
+    let path = pack_type.map_or_else(
+        || "/api/v1/taxonomy/packs".to_string(),
+        |value| {
+            format!(
+                "/api/v1/taxonomy/packs?pack_type={}",
+                urlencoding::encode(&value)
+            )
+        },
+    );
+    api(&state, Method::GET, &path, None).await
+}
+
+#[tauri::command]
+async fn taxonomy_tree(state: State<'_, CoreState>) -> Result<PersonalizedTaxonomyTree, String> {
+    api(&state, Method::GET, "/api/v1/taxonomy/tree", None).await
 }
 
 #[tauri::command]
@@ -595,6 +737,23 @@ fn validated_uuid(value: &str, label: &str) -> Result<String, String> {
     Uuid::parse_str(value)
         .map(|parsed| parsed.to_string())
         .map_err(|_| format!("Invalid {label} identifier"))
+}
+
+fn validated_taxonomy_id(value: &str) -> Result<String, String> {
+    let Some((prefix, identifier)) = value.split_once('.') else {
+        return Err("Invalid taxonomy identifier".to_string());
+    };
+    let valid_segment = |segment: &str| {
+        !segment.is_empty()
+            && segment.chars().all(|character| {
+                character.is_ascii_lowercase() || character.is_ascii_digit() || character == '_'
+            })
+    };
+    if value.len() <= 200 && valid_segment(prefix) && valid_segment(identifier) {
+        Ok(value.to_string())
+    } else {
+        Err("Invalid taxonomy identifier".to_string())
+    }
 }
 
 #[tauri::command]
@@ -1204,6 +1363,10 @@ pub fn run() {
         })
         .invoke_handler(tauri::generate_handler![
             core_status,
+            taxonomy_catalog,
+            taxonomy_node,
+            taxonomy_packs,
+            taxonomy_tree,
             list_articles,
             get_article,
             list_trash,
@@ -1255,8 +1418,9 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::{
-        ArticleDetail, available_port, ensure_external_destination, is_pdf_path, validated_uuid,
-        write_atomic,
+        ArticleDetail, PersonalizedTaxonomyTree, SpecialtyPackSummary, TaxonomyCatalogPage,
+        TaxonomyNode, available_port, ensure_external_destination, is_pdf_path,
+        validated_taxonomy_id, validated_uuid, write_atomic,
     };
     use std::path::Path;
 
@@ -1265,6 +1429,11 @@ mod tests {
         let value = "8ba076a7-49bc-4244-84cf-5f60164f2ba2";
         assert_eq!(validated_uuid(value, "job").expect("valid UUID"), value);
         assert!(validated_uuid("../assets/1", "job").is_err());
+        assert_eq!(
+            validated_taxonomy_id("disease.pulmonary_hypertension").expect("valid taxonomy ID"),
+            "disease.pulmonary_hypertension"
+        );
+        assert!(validated_taxonomy_id("../taxonomy/catalog").is_err());
     }
 
     #[test]
@@ -1305,6 +1474,83 @@ mod tests {
         .expect("valid article detail");
         let renderer_value = serde_json::to_value(article).expect("serialize article detail");
         assert_eq!(renderer_value["review_state"], "ready");
+    }
+
+    #[test]
+    fn taxonomy_contracts_round_trip_without_untyped_bridge_values() {
+        let page: TaxonomyCatalogPage = serde_json::from_value(serde_json::json!({
+            "items": [{
+                "id": "disease.copd",
+                "node_type": "disease",
+                "canonical_name": "Chronic obstructive pulmonary disease",
+                "status": "active"
+            }],
+            "total": 1,
+            "limit": 100,
+            "offset": 0,
+            "catalog_version": "taxonomy-v1"
+        }))
+        .expect("valid taxonomy page");
+        let node: TaxonomyNode = serde_json::from_value(serde_json::json!({
+            "id": "disease.copd",
+            "node_type": "disease",
+            "canonical_name": "Chronic obstructive pulmonary disease",
+            "status": "active",
+            "description": "",
+            "source_system": "research_memory",
+            "source_code": "",
+            "source_version": "taxonomy-v1",
+            "external_mappings": [],
+            "metadata": {"curation_status": "starter"}
+        }))
+        .expect("valid taxonomy node");
+        let pack: SpecialtyPackSummary = serde_json::from_value(serde_json::json!({
+            "pack_id": "pack.subspecialty.pulmonary_disease",
+            "display_name": "Pulmonary Disease",
+            "pack_type": "subspecialty",
+            "version": "1.0.0",
+            "selection_node_id": "subspecialty.pulmonary_disease",
+            "curation_status": "curated",
+            "inherits": ["pack.specialty.internal_medicine"],
+            "membership_count": 11,
+            "state_archetypes": ["state_archetype.pulmonary"]
+        }))
+        .expect("valid pack summary");
+        let tree: PersonalizedTaxonomyTree = serde_json::from_value(serde_json::json!({
+            "catalog_version": "taxonomy-v1",
+            "profile_revision": "revision",
+            "warnings": [],
+            "roots": [{
+                "canonical_node_id": "subspecialty.pulmonary_disease",
+                "display_instance_id": "display.123",
+                "parent_display_instance_id": null,
+                "display_name": "Pulmonary Disease",
+                "node_type": "subspecialty",
+                "weight": 0.95,
+                "depth": 0,
+                "visible": true,
+                "pinned": false,
+                "children": []
+            }],
+            "total_canonical_nodes": 1
+        }))
+        .expect("valid personalized tree");
+        assert_eq!(
+            serde_json::to_value(page).expect("serialize page")["catalog_version"],
+            "taxonomy-v1"
+        );
+        assert_eq!(
+            serde_json::to_value(node).expect("serialize node")["id"],
+            "disease.copd"
+        );
+        assert_eq!(
+            serde_json::to_value(pack).expect("serialize pack")["membership_count"],
+            11
+        );
+        assert_eq!(
+            serde_json::to_value(tree).expect("serialize tree")["roots"][0]["canonical_node_id"],
+            "subspecialty.pulmonary_disease"
+        );
     }
 
     #[test]

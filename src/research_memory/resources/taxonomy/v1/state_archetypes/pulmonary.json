@@ -1,0 +1,67 @@
+{
+  "id": "state_archetype.pulmonary",
+  "display_name": "Pulmonary",
+  "version": "1.0.0",
+  "dimensions": [
+    {
+      "id": "state.physiologic_phenotype",
+      "display_name": "Physiologic phenotype",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.imaging_phenotype",
+      "display_name": "Imaging phenotype",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.severity",
+      "display_name": "Severity",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.exacerbation_status",
+      "display_name": "Exacerbation status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.oxygen_requirement",
+      "display_name": "Oxygen requirement",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.ventilatory_support",
+      "display_name": "Ventilatory support",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.exercise_limitation",
+      "display_name": "Exercise limitation",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.airway_or_parenchymal_distribution",
+      "display_name": "Airway or parenchymal distribution",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.transplant_status",
+      "display_name": "Transplant status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.environmental_or_occupational_exposure",
+      "display_name": "Environmental or occupational exposure",
+      "value_type": "structured_text",
+      "required_evidence": true
+    }
+  ]
+}

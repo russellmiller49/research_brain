@@ -1,0 +1,190 @@
+[
+  {
+    "pack_id": "pack.focused_practice.interventional_pulmonology",
+    "display_name": "Interventional Pulmonology",
+    "pack_type": "focused_practice",
+    "version": "1.0.0",
+    "selection_node_id": "focused_practice.interventional_pulmonology",
+    "curation_status": "curated",
+    "inherits": [
+      "pack.specialty.internal_medicine",
+      "pack.subspecialty.pulmonary_disease",
+      "pack.overlay.procedural_medicine",
+      "pack.overlay.diagnostic_accuracy"
+    ],
+    "memberships": [
+      {
+        "node_id": "clinical_domain.interventional_pulmonology",
+        "membership_role": "clinical_domain_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "activity.diagnostic_bronchoscopy",
+        "membership_role": "clinical_activity_root",
+        "display_parent_node_id": "clinical_domain.interventional_pulmonology",
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "activity.mediastinal_staging",
+        "membership_role": "clinical_activity_root",
+        "display_parent_node_id": "clinical_domain.interventional_pulmonology",
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "activity.therapeutic_bronchoscopy",
+        "membership_role": "clinical_activity_root",
+        "display_parent_node_id": "clinical_domain.interventional_pulmonology",
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "activity.pleural_procedure",
+        "membership_role": "clinical_activity_root",
+        "display_parent_node_id": "clinical_domain.interventional_pulmonology",
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "activity.percutaneous_tracheostomy",
+        "membership_role": "clinical_activity_root",
+        "display_parent_node_id": "clinical_domain.interventional_pulmonology",
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "procedure.whole_lung_lavage",
+        "membership_role": "clinical_activity_root",
+        "display_parent_node_id": "clinical_domain.interventional_pulmonology",
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.bronchoscopy_complications",
+        "membership_role": "clinical_activity_root",
+        "display_parent_node_id": "clinical_domain.interventional_pulmonology",
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.study_design",
+        "membership_role": "evidence_priority",
+        "display_parent_node_id": null,
+        "sort_order": 100,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.population",
+        "membership_role": "evidence_priority",
+        "display_parent_node_id": null,
+        "sort_order": 101,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.lesion_characteristics",
+        "membership_role": "evidence_priority",
+        "display_parent_node_id": null,
+        "sort_order": 102,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.bronchus_sign",
+        "membership_role": "evidence_priority",
+        "display_parent_node_id": null,
+        "sort_order": 103,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.tool_in_lesion_confirmation",
+        "membership_role": "evidence_priority",
+        "display_parent_node_id": null,
+        "sort_order": 104,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.navigation_success",
+        "membership_role": "evidence_priority",
+        "display_parent_node_id": null,
+        "sort_order": 105,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.diagnostic_yield",
+        "membership_role": "evidence_priority",
+        "display_parent_node_id": null,
+        "sort_order": 106,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.diagnostic_yield_definition",
+        "membership_role": "evidence_priority",
+        "display_parent_node_id": null,
+        "sort_order": 107,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.reference_standard",
+        "membership_role": "evidence_priority",
+        "display_parent_node_id": null,
+        "sort_order": 108,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.benign_follow_up",
+        "membership_role": "evidence_priority",
+        "display_parent_node_id": null,
+        "sort_order": 109,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.complication_definition",
+        "membership_role": "evidence_priority",
+        "display_parent_node_id": null,
+        "sort_order": 110,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.operator_experience",
+        "membership_role": "evidence_priority",
+        "display_parent_node_id": null,
+        "sort_order": 111,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.device_generation",
+        "membership_role": "evidence_priority",
+        "display_parent_node_id": null,
+        "sort_order": 112,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [
+      "state_archetype.pulmonary",
+      "state_archetype.oncology"
+    ],
+    "suggested_project_templates": [
+      "work_product.diagnostic_accuracy_review",
+      "work_product.device_comparison",
+      "work_product.guideline",
+      "work_product.journal_club",
+      "work_product.procedural_lecture"
+    ]
+  },
+  {
+    "pack_id": "pack.focused_practice.hospital_medicine",
+    "display_name": "Hospital Medicine",
+    "pack_type": "focused_practice",
+    "version": "1.0.0",
+    "selection_node_id": "focused_practice.hospital_medicine",
+    "curation_status": "starter",
+    "inherits": [
+      "pack.specialty.internal_medicine"
+    ],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  }
+]

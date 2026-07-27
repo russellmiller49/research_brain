@@ -1,0 +1,67 @@
+{
+  "id": "state_archetype.cardiovascular",
+  "display_name": "Cardiovascular",
+  "version": "1.0.0",
+  "dimensions": [
+    {
+      "id": "state.anatomic_lesion",
+      "display_name": "Anatomic lesion",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.physiologic_mechanism",
+      "display_name": "Physiologic mechanism",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.acute_versus_chronic",
+      "display_name": "Acute versus chronic",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.stage_or_functional_class",
+      "display_name": "Stage or functional class",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.ischemic_burden",
+      "display_name": "Ischemic burden",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.hemodynamic_significance",
+      "display_name": "Hemodynamic significance",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.rhythm_status",
+      "display_name": "Rhythm status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.ventricular_function",
+      "display_name": "Ventricular function",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.device_status",
+      "display_name": "Device status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.revascularization_intervention_status",
+      "display_name": "Revascularization/intervention status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    }
+  ]
+}

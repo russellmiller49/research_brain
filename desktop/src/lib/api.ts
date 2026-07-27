@@ -8,10 +8,16 @@ import type {
   EntityId,
   ImportIssue,
   ImportJob,
+  PersonalizedTaxonomyTree,
   Project,
   ProjectArticlesBulkResult,
   SearchHit,
   SearchQuery,
+  SpecialtyPackSummary,
+  SpecialtyPackType,
+  TaxonomyCatalogPage,
+  TaxonomyNode,
+  TaxonomyNodeType,
   TrashArticle,
 } from "../types";
 import { invokeBrowserTest } from "./browser-test-core";
@@ -31,6 +37,26 @@ function invoke<T>(
 
 export const core = {
   status: () => invoke<CoreStatus>("core_status"),
+  taxonomyCatalog: (
+    query = "",
+    nodeType?: TaxonomyNodeType,
+    parent?: string,
+    limit = 100,
+    offset = 0,
+  ) =>
+    invoke<TaxonomyCatalogPage>("taxonomy_catalog", {
+      query,
+      nodeType,
+      parent,
+      limit,
+      offset,
+    }),
+  taxonomyNode: (nodeId: string) =>
+    invoke<TaxonomyNode>("taxonomy_node", { nodeId }),
+  taxonomyPacks: (packType?: SpecialtyPackType) =>
+    invoke<SpecialtyPackSummary[]>("taxonomy_packs", { packType }),
+  taxonomyTree: () =>
+    invoke<PersonalizedTaxonomyTree>("taxonomy_tree"),
   articles: (query = "", limit = 100, offset = 0) =>
     invoke<ArticlePage>("list_articles", { query, limit, offset }),
   article: (articleId: EntityId) =>

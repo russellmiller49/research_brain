@@ -1,0 +1,61 @@
+{
+  "id": "state_archetype.renal",
+  "display_name": "Renal",
+  "version": "1.0.0",
+  "dimensions": [
+    {
+      "id": "state.acute_versus_chronic",
+      "display_name": "Acute versus chronic",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.kdigo_or_ckd_stage",
+      "display_name": "KDIGO or CKD stage",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.etiology",
+      "display_name": "Etiology",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.proteinuria_or_albuminuria",
+      "display_name": "Proteinuria or albuminuria",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.glomerular_versus_tubular_versus_vascular",
+      "display_name": "Glomerular versus tubular versus vascular",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.electrolyte_and_acid_base_state",
+      "display_name": "Electrolyte and acid-base state",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.dialysis_dependence",
+      "display_name": "Dialysis dependence",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.transplant_status",
+      "display_name": "Transplant status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.recovery_trajectory",
+      "display_name": "Recovery trajectory",
+      "value_type": "structured_text",
+      "required_evidence": true
+    }
+  ]
+}

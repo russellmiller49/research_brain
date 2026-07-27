@@ -56,7 +56,12 @@ research-memory-core = "research_memory.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-research_memory = ["templates/*.html", "static/*.css", "static/*.js"]
+research_memory = [
+  "templates/*.html",
+  "static/*.css",
+  "static/*.js",
+  "resources/taxonomy/**/*.json",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

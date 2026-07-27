@@ -4,8 +4,12 @@ import type {
   ArticleSummary,
   CoreStatus,
   ImportJob,
+  PersonalizedTaxonomyTree,
   Project,
   SearchHit,
+  SpecialtyPackSummary,
+  TaxonomyCatalogPage,
+  TaxonomyNode,
   TrashArticle,
 } from "../types";
 
@@ -59,7 +63,7 @@ const articles: ArticleSummary[] = [
 const status: CoreStatus = {
   status: "ok",
   version: "0.2.0-browser-test",
-  schema_version: 7,
+  schema_version: 8,
   documents: articles.length,
   review_needed: 1,
   jobs_running: 1,
@@ -68,6 +72,10 @@ const status: CoreStatus = {
   ocr_available: true,
   network_metadata_enabled: false,
   diagnostics_enabled: false,
+  taxonomy_profile_enabled: true,
+  taxonomy_suggestions_enabled: false,
+  taxonomy_auto_apply_enabled: false,
+  taxonomy_disease_state_extraction_enabled: false,
 };
 
 const jobs: ImportJob[] = [
@@ -100,6 +108,55 @@ const projects: Project[] = [
     article_count: 2,
   },
 ];
+
+const taxonomyNodes: TaxonomyNode[] = [
+  {
+    id: "specialty.internal_medicine",
+    node_type: "specialty",
+    canonical_name: "Internal Medicine",
+    status: "active",
+    description: "",
+    source_system: "ABMS",
+    source_code: "Internal Medicine",
+    source_version: "taxonomy-v1",
+    external_mappings: [],
+    metadata: { curation_status: "verified_snapshot" },
+  },
+  {
+    id: "subspecialty.pulmonary_disease",
+    node_type: "subspecialty",
+    canonical_name: "Pulmonary Disease",
+    status: "active",
+    description: "",
+    source_system: "ABMS",
+    source_code: "Pulmonary Disease",
+    source_version: "taxonomy-v1",
+    external_mappings: [],
+    metadata: { curation_status: "verified_snapshot" },
+  },
+];
+
+const taxonomyPacks: SpecialtyPackSummary[] = [
+  {
+    pack_id: "pack.subspecialty.pulmonary_disease",
+    display_name: "Pulmonary Disease",
+    pack_type: "subspecialty",
+    version: "1.0.0",
+    selection_node_id: "subspecialty.pulmonary_disease",
+    curation_status: "curated",
+    inherits: ["pack.specialty.internal_medicine"],
+    membership_count: 11,
+    state_archetypes: ["state_archetype.pulmonary"],
+  },
+];
+
+const taxonomyTree: PersonalizedTaxonomyTree = {
+  catalog_version: "taxonomy-v1",
+  profile_revision: "browser-test-profile",
+  warnings: [],
+  roots: [],
+  total_canonical_nodes: 0,
+};
 
 let pdfUrl = "";
 
@@ -241,6 +298,42 @@ export async function invokeBrowserTest<T>(
   switch (command) {
     case "core_status":
       value = status;
+      break;
+    case "taxonomy_catalog": {
+      const offset = Number(args?.offset ?? 0);
+      const limit = Number(args?.limit ?? 100);
+      const query = String(args?.query ?? "").toLowerCase();
+      const filtered = taxonomyNodes.filter(
+        (node) =>
+          (!query || node.canonical_name.toLowerCase().includes(query)) &&
+          (!args?.nodeType || node.node_type === args.nodeType),
+      );
+      value = {
+        items: filtered.slice(offset, offset + limit).map((node) => ({
+          id: node.id,
+          node_type: node.node_type,
+          canonical_name: node.canonical_name,
+          status: node.status,
+        })),
+        total: filtered.length,
+        limit,
+        offset,
+        catalog_version: "taxonomy-v1",
+      } satisfies TaxonomyCatalogPage;
+      break;
+    }
+    case "taxonomy_node":
+      value =
+        taxonomyNodes.find((node) => node.id === args?.nodeId) ??
+        taxonomyNodes[0];
+      break;
+    case "taxonomy_packs":
+      value = taxonomyPacks.filter(
+        (pack) => !args?.packType || pack.pack_type === args.packType,
+      );
+      break;
+    case "taxonomy_tree":
+      value = taxonomyTree;
       break;
     case "list_articles": {
       const offset = Number(args?.offset ?? 0);

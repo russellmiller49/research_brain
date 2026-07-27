@@ -1,0 +1,32 @@
+{
+  "catalog_version": "taxonomy-v1",
+  "semantic_version": "1.0.0",
+  "source_date": "2026-07-27",
+  "content_sha256": "3cd164d585654d1d74267f70e441a558b75b8f000ca4b56616df6da86a0ce8e0",
+  "files": [
+    "credential_catalog.json",
+    "clinical_nodes.json",
+    "synonyms.json",
+    "edges.json",
+    "state_archetypes/oncology.json",
+    "state_archetypes/infectious_disease.json",
+    "state_archetypes/autoimmune_inflammatory.json",
+    "state_archetypes/cardiovascular.json",
+    "state_archetypes/pulmonary.json",
+    "state_archetypes/renal.json",
+    "state_archetypes/neurologic.json",
+    "state_archetypes/psychiatric.json",
+    "state_archetypes/trauma_musculoskeletal.json",
+    "state_archetypes/obstetric_fetal.json",
+    "state_archetypes/genetic_metabolic.json",
+    "state_archetypes/critical_illness.json",
+    "state_archetypes/rehabilitation.json",
+    "packs/specialties/catalog.json",
+    "packs/subspecialties/catalog.json",
+    "packs/overlays/catalog.json",
+    "packs/focused_practice/catalog.json",
+    "packs/research_methods/catalog.json"
+  ],
+  "starter_catalog": true,
+  "description": "Versioned broad specialty and disease-family starter catalog with deeper curated pulmonary disease, critical care, and interventional pulmonology packs. It is not a complete clinical ontology."
+}

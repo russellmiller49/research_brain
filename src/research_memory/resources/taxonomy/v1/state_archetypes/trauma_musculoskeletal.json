@@ -1,0 +1,73 @@
+{
+  "id": "state_archetype.trauma_musculoskeletal",
+  "display_name": "Trauma and musculoskeletal",
+  "version": "1.0.0",
+  "dimensions": [
+    {
+      "id": "state.anatomic_site",
+      "display_name": "Anatomic site",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.mechanism",
+      "display_name": "Mechanism",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.classification_or_grade",
+      "display_name": "Classification or grade",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.open_versus_closed",
+      "display_name": "Open versus closed",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.stable_versus_unstable",
+      "display_name": "Stable versus unstable",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.neurovascular_involvement",
+      "display_name": "Neurovascular involvement",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.acute_versus_chronic",
+      "display_name": "Acute versus chronic",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.operative_status",
+      "display_name": "Operative status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.healing_status",
+      "display_name": "Healing status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.complication_status",
+      "display_name": "Complication status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.functional_limitation",
+      "display_name": "Functional limitation",
+      "value_type": "structured_text",
+      "required_evidence": true
+    }
+  ]
+}

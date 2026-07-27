@@ -12,6 +12,10 @@
 | Page layout and passages | `document_pages`, `document_chunks` | Yes |
 | Lexical index | `document_chunks_fts` | Yes |
 | Semantic index | memory-mapped USearch files + `index_state` | Yes |
+| Versioned taxonomy catalog | bundled JSON + `taxonomy_*` catalog tables | Release-managed |
+| Research profile and navigation | `research_profile*`, `user_navigation_overrides` | No |
+| Manual/accepted/rejected taxonomy truth | `article_taxonomy_assignments`, `taxonomy_decision_history` | No |
+| Unaccepted classifier suggestions/evidence | taxonomy assignment/evidence rows | Yes |
 
 ## Article and asset separation
 
@@ -68,6 +72,23 @@ SQLite database.
 
 Pydantic and Rust mirror these contracts. API inputs reject unknown fields.
 
+## Taxonomy identity and persistence
+
+`taxonomy_nodes` stores one canonical concept per stable ID. `taxonomy_edges` stores semantic
+and navigation relationships, while `specialty_packs` and memberships describe versioned
+views selected by a profile. Several display instances may reference one canonical node;
+article assignments never reference display-instance IDs.
+
+`research_profile`, selections, preferences, and navigation overrides are user-authored and
+non-rebuildable. Manual, accepted, human-verified, and rejected assignments; decision
+history; node-name snapshots; and manual state corrections are also non-rebuildable.
+Unaccepted classifier suggestions, classifier evidence, candidate scores, input
+fingerprints, and view/facet caches may be rebuilt.
+
+Catalog installation is idempotent. A later release updates stable IDs in place and marks
+removed concepts retired. It never deletes a canonical node referenced by user data. See
+[`TAXONOMY_ARCHITECTURE.md`](TAXONOMY_ARCHITECTURE.md) for the full boundary.
+
 ## Review states
 
 `ready` is the only no-review state. Other states include password required, malformed,
@@ -81,3 +102,7 @@ clearing a review state.
 transactional and preceded by a SQLite snapshot. Derived data carries an index/model
 version. When extraction or model behavior changes, derived rows are discarded and rebuilt;
 user-authored or bibliographic records are migrated in place.
+
+Migration 008 adds taxonomy catalog, profile, navigation, assignment, evidence, and decision
+tables without changing migrations 1–7. Catalog JSON remains the release source of truth;
+SQLite is the installed local representation.

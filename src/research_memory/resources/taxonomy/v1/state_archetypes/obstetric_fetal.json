@@ -1,0 +1,67 @@
+{
+  "id": "state_archetype.obstetric_fetal",
+  "display_name": "Obstetric and fetal",
+  "version": "1.0.0",
+  "dimensions": [
+    {
+      "id": "state.gestational_age",
+      "display_name": "Gestational age",
+      "value_type": "number",
+      "required_evidence": true
+    },
+    {
+      "id": "state.antepartum_intrapartum_or_postpartum",
+      "display_name": "Antepartum, intrapartum, or postpartum",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.maternal_versus_fetal_condition",
+      "display_name": "Maternal versus fetal condition",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.singleton_versus_multifetal",
+      "display_name": "Singleton versus multifetal",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.fetal_viability",
+      "display_name": "Fetal viability",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.severity",
+      "display_name": "Severity",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.prior_obstetric_history",
+      "display_name": "Prior obstetric history",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.mode_of_delivery_implications",
+      "display_name": "Mode-of-delivery implications",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.maternal_complication",
+      "display_name": "Maternal complication",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.fetal_complication",
+      "display_name": "Fetal complication",
+      "value_type": "structured_text",
+      "required_evidence": true
+    }
+  ]
+}

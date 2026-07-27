@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-memory.local/taxonomy/schemas/v1/packs.schema.json",
+  "title": "Research Memory specialty and overlay packs",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "pack_id",
+      "display_name",
+      "pack_type",
+      "version",
+      "selection_node_id",
+      "curation_status",
+      "inherits",
+      "memberships",
+      "state_archetypes",
+      "suggested_project_templates"
+    ],
+    "properties": {
+      "pack_id": {
+        "type": "string",
+        "pattern": "^pack\\.[a-z0-9_.]+$"
+      },
+      "display_name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "pack_type": {
+        "type": "string",
+        "enum": [
+          "specialty",
+          "subspecialty",
+          "overlay",
+          "focused_practice",
+          "research_methods"
+        ]
+      },
+      "version": {
+        "type": "string",
+        "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+      },
+      "selection_node_id": {
+        "type": "string"
+      },
+      "curation_status": {
+        "type": "string",
+        "enum": [
+          "starter",
+          "curated"
+        ]
+      },
+      "inherits": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "memberships": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "node_id",
+            "membership_role",
+            "display_parent_node_id",
+            "sort_order",
+            "config"
+          ],
+          "properties": {
+            "node_id": {
+              "type": "string"
+            },
+            "membership_role": {
+              "type": "string",
+              "minLength": 1
+            },
+            "display_parent_node_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "sort_order": {
+              "type": "integer"
+            },
+            "config": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "state_archetypes": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "suggested_project_templates": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

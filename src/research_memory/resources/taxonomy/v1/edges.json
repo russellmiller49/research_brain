@@ -1,0 +1,4262 @@
+[
+  {
+    "parent_id": "activity.diagnostic_bronchoscopy",
+    "child_id": "diagnostic_test.cone_beam_ct",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "activity.diagnostic_bronchoscopy",
+    "child_id": "diagnostic_test.radial_ebus",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "activity.diagnostic_bronchoscopy",
+    "child_id": "procedure.electromagnetic_navigation",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "activity.diagnostic_bronchoscopy",
+    "child_id": "procedure.robotic_bronchoscopy",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "activity.diagnostic_bronchoscopy",
+    "child_id": "procedure.transbronchial_biopsy",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "activity.mediastinal_staging",
+    "child_id": "evidence_field.false_negative_staging",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "activity.mediastinal_staging",
+    "child_id": "evidence_field.reference_standard",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "activity.mediastinal_staging",
+    "child_id": "evidence_field.staging_sensitivity",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "activity.mediastinal_staging",
+    "child_id": "procedure.nodal_sampling",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "activity.mediastinal_staging",
+    "child_id": "procedure.surgical_confirmation",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "activity.therapeutic_bronchoscopy",
+    "child_id": "device_category.airway_stents",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "activity.therapeutic_bronchoscopy",
+    "child_id": "disease.benign_airway_stenosis",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "activity.therapeutic_bronchoscopy",
+    "child_id": "disease.hemoptysis",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "activity.therapeutic_bronchoscopy",
+    "child_id": "disease.malignant_airway_obstruction",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "activity.therapeutic_bronchoscopy",
+    "child_id": "procedure.bronchoscopic_lung_volume_reduction",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "activity.therapeutic_bronchoscopy",
+    "child_id": "procedure.debulking_modalities",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "certifying_board.allergy_and_immunology",
+    "child_id": "specialty.allergy_and_immunology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.anesthesiology",
+    "child_id": "specialty.anesthesiology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.anesthesiology",
+    "child_id": "subspecialty.adult_cardiac_anesthesiology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Adult Cardiac Anesthesiology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.anesthesiology",
+    "child_id": "subspecialty.critical_care_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Critical Care Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.anesthesiology",
+    "child_id": "subspecialty.health_care_administration_leadership_and_management",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Health Care Administration, Leadership, and Management",
+      "offering_status": "approved_not_yet_issued"
+    }
+  },
+  {
+    "parent_id": "certifying_board.anesthesiology",
+    "child_id": "subspecialty.hospice_and_palliative_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Hospice and Palliative Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.anesthesiology",
+    "child_id": "subspecialty.neurocritical_care",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Neurocritical Care",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.anesthesiology",
+    "child_id": "subspecialty.pain_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pain Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.anesthesiology",
+    "child_id": "subspecialty.pediatric_anesthesiology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 6,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Anesthesiology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.anesthesiology",
+    "child_id": "subspecialty.sleep_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 7,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Sleep Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.colon_and_rectal_surgery",
+    "child_id": "specialty.colon_and_rectal_surgery",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.dermatology",
+    "child_id": "specialty.dermatology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.dermatology",
+    "child_id": "subspecialty.dermatopathology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Dermatopathology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.dermatology",
+    "child_id": "subspecialty.micrographic_dermatologic_surgery",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Micrographic Dermatologic Surgery",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.dermatology",
+    "child_id": "subspecialty.pediatric_dermatology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Dermatology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.emergency_medicine",
+    "child_id": "specialty.emergency_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.emergency_medicine",
+    "child_id": "subspecialty.critical_care_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Internal Medicine-Critical Care Medicine",
+      "source_offering_names": [
+        "Anesthesiology Critical Care Medicine",
+        "Internal Medicine-Critical Care Medicine"
+      ],
+      "source_sort_orders": [
+        0,
+        4
+      ],
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.emergency_medicine",
+    "child_id": "subspecialty.emergency_medical_services",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Emergency Medical Services",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.emergency_medicine",
+    "child_id": "subspecialty.health_care_administration_leadership_and_management",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Health Care Administration, Leadership, and Management",
+      "offering_status": "approved_not_yet_issued"
+    }
+  },
+  {
+    "parent_id": "certifying_board.emergency_medicine",
+    "child_id": "subspecialty.hospice_and_palliative_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Hospice and Palliative Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.emergency_medicine",
+    "child_id": "subspecialty.medical_toxicology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Medical Toxicology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.emergency_medicine",
+    "child_id": "subspecialty.neurocritical_care",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 6,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Neurocritical Care",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.emergency_medicine",
+    "child_id": "subspecialty.pain_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 7,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pain Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.emergency_medicine",
+    "child_id": "subspecialty.pediatric_emergency_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 8,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Emergency Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.emergency_medicine",
+    "child_id": "subspecialty.sports_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 9,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Sports Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.emergency_medicine",
+    "child_id": "subspecialty.undersea_and_hyperbaric_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 10,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Undersea and Hyperbaric Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.family_medicine",
+    "child_id": "specialty.family_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.family_medicine",
+    "child_id": "subspecialty.adolescent_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Adolescent Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.family_medicine",
+    "child_id": "subspecialty.geriatric_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Geriatric Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.family_medicine",
+    "child_id": "subspecialty.health_care_administration_leadership_and_management",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Health Care Administration, Leadership, and Management",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.family_medicine",
+    "child_id": "subspecialty.hospice_and_palliative_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Hospice and Palliative Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.family_medicine",
+    "child_id": "subspecialty.pain_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pain Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.family_medicine",
+    "child_id": "subspecialty.sleep_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Sleep Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.family_medicine",
+    "child_id": "subspecialty.sports_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 6,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Sports Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "specialty.internal_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.adolescent_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Adolescent Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.adult_congenital_heart_disease",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Adult Congenital Heart Disease",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.advanced_heart_failure_and_transplant_cardiology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Advanced Heart Failure and Transplant Cardiology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.cardiovascular_disease",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Cardiovascular Disease",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.clinical_cardiac_electrophysiology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Clinical Cardiac Electrophysiology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.critical_care_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Critical Care Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.endocrinology_diabetes_and_metabolism",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 6,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Endocrinology, Diabetes and Metabolism",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.gastroenterology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 7,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Gastroenterology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.geriatric_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 8,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Geriatric Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.hematology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 9,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Hematology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.hospice_and_palliative_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 10,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Hospice and Palliative Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.infectious_disease",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 11,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Infectious Disease",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.interventional_cardiology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 12,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Interventional Cardiology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.medical_oncology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 13,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Medical Oncology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.nephrology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 14,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Nephrology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.neurocritical_care",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 15,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Neurocritical Care",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.pulmonary_disease",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 16,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pulmonary Disease",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.rheumatology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 17,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Rheumatology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.sleep_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 18,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Sleep Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.sports_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 19,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Sports Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.internal_medicine",
+    "child_id": "subspecialty.transplant_hepatology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 20,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Transplant Hepatology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.medical_genetics_and_genomics",
+    "child_id": "specialty.clinical_biochemical_genetics",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.medical_genetics_and_genomics",
+    "child_id": "specialty.clinical_genetics_and_genomics_md",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.medical_genetics_and_genomics",
+    "child_id": "specialty.laboratory_genetics_and_genomics",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.medical_genetics_and_genomics",
+    "child_id": "subspecialty.medical_biochemical_genetics",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Medical Biochemical Genetics",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.medical_genetics_and_genomics",
+    "child_id": "subspecialty.molecular_genetic_pathology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Molecular Genetic Pathology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.neurological_surgery",
+    "child_id": "specialty.neurological_surgery",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.neurological_surgery",
+    "child_id": "subspecialty.neurocritical_care",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Neurocritical Care",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.nuclear_medicine",
+    "child_id": "specialty.nuclear_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.obstetrics_and_gynecology",
+    "child_id": "specialty.obstetrics_and_gynecology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.obstetrics_and_gynecology",
+    "child_id": "subspecialty.complex_family_planning",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Complex Family Planning",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.obstetrics_and_gynecology",
+    "child_id": "subspecialty.critical_care_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Critical Care Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.obstetrics_and_gynecology",
+    "child_id": "subspecialty.gynecologic_oncology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Gynecologic Oncology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.obstetrics_and_gynecology",
+    "child_id": "subspecialty.maternal_fetal_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Maternal-Fetal Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.obstetrics_and_gynecology",
+    "child_id": "subspecialty.reproductive_endocrinology_and_infertility",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Reproductive Endocrinology and Infertility",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.obstetrics_and_gynecology",
+    "child_id": "subspecialty.urogynecology_and_reconstructive_pelvic_surgery",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Urogynecology and Reconstructive Pelvic Surgery",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.ophthalmology",
+    "child_id": "specialty.ophthalmology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.orthopaedic_surgery",
+    "child_id": "specialty.orthopaedic_surgery",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.orthopaedic_surgery",
+    "child_id": "subspecialty.orthopaedic_sports_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Orthopaedic Sports Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.orthopaedic_surgery",
+    "child_id": "subspecialty.surgery_of_the_hand",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Surgery of the Hand",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.otolaryngology_head_and_neck_surgery",
+    "child_id": "specialty.otolaryngology_head_and_neck_surgery",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.otolaryngology_head_and_neck_surgery",
+    "child_id": "subspecialty.complex_pediatric_otolaryngology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Complex Pediatric Otolaryngology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.otolaryngology_head_and_neck_surgery",
+    "child_id": "subspecialty.neurotology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Neurotology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.otolaryngology_head_and_neck_surgery",
+    "child_id": "subspecialty.plastic_surgery_within_the_head_and_neck",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Plastic Surgery Within the Head and Neck",
+      "offering_status": "approved_not_yet_issued"
+    }
+  },
+  {
+    "parent_id": "certifying_board.otolaryngology_head_and_neck_surgery",
+    "child_id": "subspecialty.sleep_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Sleep Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pathology",
+    "child_id": "specialty.pathology_anatomic",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pathology",
+    "child_id": "specialty.pathology_anatomic_pathology_clinical",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pathology",
+    "child_id": "specialty.pathology_clinical",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pathology",
+    "child_id": "subspecialty.blood_banking_transfusion_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Blood Banking/Transfusion Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pathology",
+    "child_id": "subspecialty.clinical_informatics",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Clinical Informatics",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pathology",
+    "child_id": "subspecialty.cytopathology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Cytopathology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pathology",
+    "child_id": "subspecialty.dermatopathology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Dermatopathology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pathology",
+    "child_id": "subspecialty.hematopathology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Hematopathology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pathology",
+    "child_id": "subspecialty.molecular_genetic_pathology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 9,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pathology – Molecular Genetic",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pathology",
+    "child_id": "subspecialty.neuropathology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Neuropathology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pathology",
+    "child_id": "subspecialty.pathology_chemical",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 6,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pathology – Chemical",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pathology",
+    "child_id": "subspecialty.pathology_forensic",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 7,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pathology – Forensic",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pathology",
+    "child_id": "subspecialty.pathology_medical_microbiology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 8,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pathology – Medical Microbiology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pathology",
+    "child_id": "subspecialty.pathology_pediatric",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 10,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pathology – Pediatric",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "specialty.pediatrics",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.adolescent_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Adolescent Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.child_abuse_pediatrics",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Child Abuse Pediatrics",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.developmental_behavioral_pediatrics",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Developmental-Behavioral Pediatrics",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.hospice_and_palliative_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Hospice and Palliative Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.medical_toxicology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Medical Toxicology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.neonatal_perinatal_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Neonatal-Perinatal Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.pediatric_cardiology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 6,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Cardiology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.pediatric_critical_care_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 7,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Critical Care Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.pediatric_emergency_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 8,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Emergency Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.pediatric_endocrinology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 9,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Endocrinology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.pediatric_gastroenterology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 10,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Gastroenterology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.pediatric_hematology_oncology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 11,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Hematology-Oncology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.pediatric_hospital_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 12,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Hospital Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.pediatric_infectious_diseases",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 13,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Infectious Diseases",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.pediatric_nephrology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 14,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Nephrology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.pediatric_pulmonology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 15,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Pulmonology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.pediatric_rheumatology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 16,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Rheumatology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.pediatric_transplant_hepatology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 17,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Transplant Hepatology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.sleep_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 18,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Sleep Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.pediatrics",
+    "child_id": "subspecialty.sports_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 19,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Sports Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.physical_medicine_and_rehabilitation",
+    "child_id": "specialty.physical_medicine_and_rehabilitation",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.physical_medicine_and_rehabilitation",
+    "child_id": "subspecialty.brain_injury_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Brain Injury Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.physical_medicine_and_rehabilitation",
+    "child_id": "subspecialty.neuromuscular_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Neuromuscular Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.physical_medicine_and_rehabilitation",
+    "child_id": "subspecialty.pain_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pain Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.physical_medicine_and_rehabilitation",
+    "child_id": "subspecialty.pediatric_rehabilitation_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Rehabilitation Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.physical_medicine_and_rehabilitation",
+    "child_id": "subspecialty.spinal_cord_injury_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Spinal Cord Injury Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.physical_medicine_and_rehabilitation",
+    "child_id": "subspecialty.sports_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Sports Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.plastic_surgery",
+    "child_id": "specialty.plastic_surgery",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.plastic_surgery",
+    "child_id": "subspecialty.plastic_surgery_within_the_head_and_neck",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Plastic Surgery Within the Head and Neck",
+      "offering_status": "approved_not_yet_issued"
+    }
+  },
+  {
+    "parent_id": "certifying_board.plastic_surgery",
+    "child_id": "subspecialty.surgery_of_the_hand",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Surgery of the Hand",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.preventive_medicine",
+    "child_id": "specialty.aerospace_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.preventive_medicine",
+    "child_id": "specialty.occupational_and_environmental_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.preventive_medicine",
+    "child_id": "specialty.public_health_and_general_preventive_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.preventive_medicine",
+    "child_id": "subspecialty.addiction_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Addiction Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.preventive_medicine",
+    "child_id": "subspecialty.clinical_informatics",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Clinical Informatics",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.preventive_medicine",
+    "child_id": "subspecialty.health_care_administration_leadership_and_management",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Health Care Administration, Leadership, and Management",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.preventive_medicine",
+    "child_id": "subspecialty.medical_toxicology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Medical Toxicology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.preventive_medicine",
+    "child_id": "subspecialty.undersea_and_hyperbaric_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Undersea and Hyperbaric Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "specialty.neurology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "specialty.neurology_with_special_qualification_in_child_neurology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "specialty.psychiatry",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "subspecialty.addiction_psychiatry",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Addiction Psychiatry",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "subspecialty.brain_injury_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Brain Injury Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "subspecialty.child_and_adolescent_psychiatry",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Child and Adolescent Psychiatry",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "subspecialty.clinical_neurophysiology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Clinical Neurophysiology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "subspecialty.consultation_liaison_psychiatry",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Consultation-Liaison Psychiatry",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "subspecialty.epilepsy",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Epilepsy",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "subspecialty.forensic_psychiatry",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 6,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Forensic Psychiatry",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "subspecialty.geriatric_psychiatry",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 7,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Geriatric Psychiatry",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "subspecialty.neurocritical_care",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 8,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Neurocritical Care",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "subspecialty.neurodevelopmental_disabilities",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 9,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Neurodevelopmental Disabilities",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "subspecialty.neuromuscular_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 10,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Neuromuscular Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "subspecialty.pain_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 11,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pain Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "subspecialty.sleep_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 12,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Sleep Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.psychiatry_and_neurology",
+    "child_id": "subspecialty.vascular_neurology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 13,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Vascular Neurology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.radiology",
+    "child_id": "specialty.diagnostic_medical_physics",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.radiology",
+    "child_id": "specialty.diagnostic_radiology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.radiology",
+    "child_id": "specialty.interventional_radiology_and_diagnostic_radiology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.radiology",
+    "child_id": "specialty.nuclear_medical_physics",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.radiology",
+    "child_id": "specialty.radiation_oncology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.radiology",
+    "child_id": "specialty.therapeutic_medical_physics",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.radiology",
+    "child_id": "subspecialty.neuroradiology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Neuroradiology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.radiology",
+    "child_id": "subspecialty.nuclear_radiology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Nuclear Radiology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.radiology",
+    "child_id": "subspecialty.pain_medicine",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pain Medicine",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.radiology",
+    "child_id": "subspecialty.pediatric_radiology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Radiology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.surgery",
+    "child_id": "specialty.general_surgery",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.surgery",
+    "child_id": "specialty.vascular_surgery",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.surgery",
+    "child_id": "subspecialty.complex_general_surgical_oncology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Complex General Surgical Oncology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.surgery",
+    "child_id": "subspecialty.pediatric_surgery",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Surgery",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.surgery",
+    "child_id": "subspecialty.surgical_critical_care",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Surgical Critical Care",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.thoracic_surgery",
+    "child_id": "specialty.thoracic_and_cardiac_surgery",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.thoracic_surgery",
+    "child_id": "subspecialty.congenital_cardiac_surgery",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Congenital Cardiac Surgery",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.urology",
+    "child_id": "specialty.urology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "specialty"
+    }
+  },
+  {
+    "parent_id": "certifying_board.urology",
+    "child_id": "subspecialty.pediatric_urology",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Pediatric Urology",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "certifying_board.urology",
+    "child_id": "subspecialty.urogynecology_and_reconstructive_pelvic_surgery",
+    "edge_type": "offered_by",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "credential_level": "subspecialty",
+      "source_offering_name": "Urogynecology and Reconstructive Pelvic Surgery",
+      "offering_status": "active"
+    }
+  },
+  {
+    "parent_id": "clinical_domain.critical_care",
+    "child_id": "activity.crrt",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.critical_care",
+    "child_id": "activity.ecmo",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.critical_care",
+    "child_id": "activity.end_of_life_care",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.critical_care",
+    "child_id": "activity.icu_procedures",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.critical_care",
+    "child_id": "activity.mechanical_circulatory_support",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.critical_care",
+    "child_id": "activity.mechanical_ventilation",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.critical_care",
+    "child_id": "activity.post_icu_recovery",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.critical_care",
+    "child_id": "clinical_domain.neurocritical_care",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.critical_care",
+    "child_id": "disease.acute_kidney_injury",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.critical_care",
+    "child_id": "disease.ards",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.critical_care",
+    "child_id": "disease.delirium",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.critical_care",
+    "child_id": "disease.icu_acquired_weakness",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.critical_care",
+    "child_id": "disease.sepsis",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.critical_care",
+    "child_id": "disease_family.nosocomial_infection",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.critical_care",
+    "child_id": "disease_family.shock_and_hemodynamics",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.interventional_pulmonology",
+    "child_id": "activity.diagnostic_bronchoscopy",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.interventional_pulmonology",
+    "child_id": "activity.mediastinal_staging",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.interventional_pulmonology",
+    "child_id": "activity.percutaneous_tracheostomy",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.interventional_pulmonology",
+    "child_id": "activity.pleural_procedure",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.interventional_pulmonology",
+    "child_id": "activity.therapeutic_bronchoscopy",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.interventional_pulmonology",
+    "child_id": "disease_family.bronchoscopy_complications",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "clinical_domain.interventional_pulmonology",
+    "child_id": "procedure.whole_lung_lavage",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease.primary_lung_cancer",
+    "child_id": "disease.nsclc",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease.primary_lung_cancer",
+    "child_id": "disease.sclc",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease.pulmonary_hypertension",
+    "child_id": "disease.cteph",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease.pulmonary_hypertension",
+    "child_id": "disease.pulmonary_arterial_hypertension",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.airway_disease",
+    "child_id": "disease.asthma",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.airway_disease",
+    "child_id": "disease.bronchiectasis",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.airway_disease",
+    "child_id": "disease.central_airway_disorders",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.airway_disease",
+    "child_id": "disease.copd",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.cardiovascular_disease",
+    "child_id": "disease.pulmonary_hypertension",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.congenital_cardiac_disease",
+    "child_id": "disease.pulmonary_hypertension",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.interstitial_lung_disease",
+    "child_id": "disease.acute_exacerbation_of_interstitial_lung_disease",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.interstitial_lung_disease",
+    "child_id": "disease.ctd_ild",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.interstitial_lung_disease",
+    "child_id": "disease.hypersensitivity_pneumonitis",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.interstitial_lung_disease",
+    "child_id": "disease.idiopathic_pulmonary_fibrosis",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.interstitial_lung_disease",
+    "child_id": "disease.occupational_interstitial_lung_disease",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.interstitial_lung_disease",
+    "child_id": "disease.progressive_pulmonary_fibrosis",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.pleural_disease",
+    "child_id": "disease.chylothorax",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.pleural_disease",
+    "child_id": "disease.indwelling_pleural_catheter",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.pleural_disease",
+    "child_id": "disease.malignant_pleural_effusion",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.pleural_disease",
+    "child_id": "disease.nonexpandable_lung",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.pleural_disease",
+    "child_id": "disease.pleural_infection",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.pleural_disease",
+    "child_id": "disease.pneumothorax",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.pulmonary_vascular_disease",
+    "child_id": "disease.acute_pulmonary_embolism",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.pulmonary_vascular_disease",
+    "child_id": "disease.pulmonary_hypertension",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.respiratory_failure",
+    "child_id": "disease.ards",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.respiratory_infection",
+    "child_id": "disease.pneumonia",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.rheumatologic_disease",
+    "child_id": "disease.pulmonary_hypertension",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.thoracic_oncology",
+    "child_id": "activity.screening",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.thoracic_oncology",
+    "child_id": "activity.staging",
+    "edge_type": "part_of",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.thoracic_oncology",
+    "child_id": "disease.airway_malignancy",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.thoracic_oncology",
+    "child_id": "disease.mediastinal_tumors",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.thoracic_oncology",
+    "child_id": "disease.metastatic_disease_to_lung",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.thoracic_oncology",
+    "child_id": "disease.pleural_malignancy",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.thoracic_oncology",
+    "child_id": "disease.primary_lung_cancer",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.thoracic_oncology",
+    "child_id": "disease.pulmonary_nodules",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "disease_family.thoracic_oncology",
+    "child_id": "disease_family.cancer_treatment_complications",
+    "edge_type": "is_a",
+    "source": "research_memory",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {}
+  },
+  {
+    "parent_id": "specialty.aerospace_medicine",
+    "child_id": "subspecialty.addiction_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.aerospace_medicine",
+    "child_id": "subspecialty.clinical_informatics",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.aerospace_medicine",
+    "child_id": "subspecialty.health_care_administration_leadership_and_management",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.aerospace_medicine",
+    "child_id": "subspecialty.medical_toxicology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.aerospace_medicine",
+    "child_id": "subspecialty.undersea_and_hyperbaric_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.anesthesiology",
+    "child_id": "subspecialty.adult_cardiac_anesthesiology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.anesthesiology",
+    "child_id": "subspecialty.critical_care_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.anesthesiology",
+    "child_id": "subspecialty.health_care_administration_leadership_and_management",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.anesthesiology",
+    "child_id": "subspecialty.hospice_and_palliative_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.anesthesiology",
+    "child_id": "subspecialty.neurocritical_care",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.anesthesiology",
+    "child_id": "subspecialty.pain_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.anesthesiology",
+    "child_id": "subspecialty.pediatric_anesthesiology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 6,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.anesthesiology",
+    "child_id": "subspecialty.sleep_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 7,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.clinical_biochemical_genetics",
+    "child_id": "subspecialty.medical_biochemical_genetics",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.clinical_biochemical_genetics",
+    "child_id": "subspecialty.molecular_genetic_pathology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.dermatology",
+    "child_id": "subspecialty.dermatopathology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.dermatology",
+    "child_id": "subspecialty.micrographic_dermatologic_surgery",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.dermatology",
+    "child_id": "subspecialty.pediatric_dermatology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.diagnostic_radiology",
+    "child_id": "subspecialty.neuroradiology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.diagnostic_radiology",
+    "child_id": "subspecialty.nuclear_radiology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.diagnostic_radiology",
+    "child_id": "subspecialty.pain_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.diagnostic_radiology",
+    "child_id": "subspecialty.pediatric_radiology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.emergency_medicine",
+    "child_id": "subspecialty.critical_care_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.emergency_medicine",
+    "child_id": "subspecialty.emergency_medical_services",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.emergency_medicine",
+    "child_id": "subspecialty.health_care_administration_leadership_and_management",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.emergency_medicine",
+    "child_id": "subspecialty.hospice_and_palliative_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.emergency_medicine",
+    "child_id": "subspecialty.medical_toxicology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.emergency_medicine",
+    "child_id": "subspecialty.neurocritical_care",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 6,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.emergency_medicine",
+    "child_id": "subspecialty.pain_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 7,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.emergency_medicine",
+    "child_id": "subspecialty.pediatric_emergency_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 8,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.emergency_medicine",
+    "child_id": "subspecialty.sports_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 9,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.emergency_medicine",
+    "child_id": "subspecialty.undersea_and_hyperbaric_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 10,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.family_medicine",
+    "child_id": "subspecialty.adolescent_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.family_medicine",
+    "child_id": "subspecialty.geriatric_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.family_medicine",
+    "child_id": "subspecialty.health_care_administration_leadership_and_management",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.family_medicine",
+    "child_id": "subspecialty.hospice_and_palliative_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.family_medicine",
+    "child_id": "subspecialty.pain_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.family_medicine",
+    "child_id": "subspecialty.sleep_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.family_medicine",
+    "child_id": "subspecialty.sports_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 6,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.general_surgery",
+    "child_id": "subspecialty.complex_general_surgical_oncology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.general_surgery",
+    "child_id": "subspecialty.pediatric_surgery",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.general_surgery",
+    "child_id": "subspecialty.surgical_critical_care",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.adolescent_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.adult_congenital_heart_disease",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.advanced_heart_failure_and_transplant_cardiology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.cardiovascular_disease",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.clinical_cardiac_electrophysiology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.critical_care_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.endocrinology_diabetes_and_metabolism",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 6,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.gastroenterology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 7,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.geriatric_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 8,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.hematology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 9,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.hospice_and_palliative_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 10,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.infectious_disease",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 11,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.interventional_cardiology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 12,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.medical_oncology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 13,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.nephrology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 14,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.neurocritical_care",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 15,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.pulmonary_disease",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 16,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.rheumatology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 17,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.sleep_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 18,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.sports_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 19,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.internal_medicine",
+    "child_id": "subspecialty.transplant_hepatology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 20,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.neurological_surgery",
+    "child_id": "subspecialty.neurocritical_care",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.obstetrics_and_gynecology",
+    "child_id": "subspecialty.complex_family_planning",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.obstetrics_and_gynecology",
+    "child_id": "subspecialty.critical_care_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.obstetrics_and_gynecology",
+    "child_id": "subspecialty.gynecologic_oncology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.obstetrics_and_gynecology",
+    "child_id": "subspecialty.maternal_fetal_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.obstetrics_and_gynecology",
+    "child_id": "subspecialty.reproductive_endocrinology_and_infertility",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.obstetrics_and_gynecology",
+    "child_id": "subspecialty.urogynecology_and_reconstructive_pelvic_surgery",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.orthopaedic_surgery",
+    "child_id": "subspecialty.orthopaedic_sports_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.orthopaedic_surgery",
+    "child_id": "subspecialty.surgery_of_the_hand",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.otolaryngology_head_and_neck_surgery",
+    "child_id": "subspecialty.complex_pediatric_otolaryngology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.otolaryngology_head_and_neck_surgery",
+    "child_id": "subspecialty.neurotology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.otolaryngology_head_and_neck_surgery",
+    "child_id": "subspecialty.plastic_surgery_within_the_head_and_neck",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.otolaryngology_head_and_neck_surgery",
+    "child_id": "subspecialty.sleep_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pathology_anatomic_pathology_clinical",
+    "child_id": "subspecialty.blood_banking_transfusion_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pathology_anatomic_pathology_clinical",
+    "child_id": "subspecialty.clinical_informatics",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pathology_anatomic_pathology_clinical",
+    "child_id": "subspecialty.cytopathology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pathology_anatomic_pathology_clinical",
+    "child_id": "subspecialty.dermatopathology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pathology_anatomic_pathology_clinical",
+    "child_id": "subspecialty.hematopathology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pathology_anatomic_pathology_clinical",
+    "child_id": "subspecialty.molecular_genetic_pathology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 9,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pathology_anatomic_pathology_clinical",
+    "child_id": "subspecialty.neuropathology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pathology_anatomic_pathology_clinical",
+    "child_id": "subspecialty.pathology_chemical",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 6,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pathology_anatomic_pathology_clinical",
+    "child_id": "subspecialty.pathology_forensic",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 7,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pathology_anatomic_pathology_clinical",
+    "child_id": "subspecialty.pathology_medical_microbiology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 8,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pathology_anatomic_pathology_clinical",
+    "child_id": "subspecialty.pathology_pediatric",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 10,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.adolescent_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.child_abuse_pediatrics",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.developmental_behavioral_pediatrics",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.hospice_and_palliative_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.medical_toxicology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.neonatal_perinatal_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.pediatric_cardiology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 6,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.pediatric_critical_care_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 7,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.pediatric_emergency_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 8,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.pediatric_endocrinology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 9,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.pediatric_gastroenterology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 10,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.pediatric_hematology_oncology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 11,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.pediatric_hospital_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 12,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.pediatric_infectious_diseases",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 13,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.pediatric_nephrology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 14,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.pediatric_pulmonology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 15,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.pediatric_rheumatology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 16,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.pediatric_transplant_hepatology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 17,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.sleep_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 18,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.pediatrics",
+    "child_id": "subspecialty.sports_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 19,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.physical_medicine_and_rehabilitation",
+    "child_id": "subspecialty.brain_injury_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.physical_medicine_and_rehabilitation",
+    "child_id": "subspecialty.neuromuscular_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.physical_medicine_and_rehabilitation",
+    "child_id": "subspecialty.pain_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.physical_medicine_and_rehabilitation",
+    "child_id": "subspecialty.pediatric_rehabilitation_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.physical_medicine_and_rehabilitation",
+    "child_id": "subspecialty.spinal_cord_injury_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.physical_medicine_and_rehabilitation",
+    "child_id": "subspecialty.sports_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.plastic_surgery",
+    "child_id": "subspecialty.plastic_surgery_within_the_head_and_neck",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.plastic_surgery",
+    "child_id": "subspecialty.surgery_of_the_hand",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.psychiatry",
+    "child_id": "subspecialty.addiction_psychiatry",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.psychiatry",
+    "child_id": "subspecialty.brain_injury_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.psychiatry",
+    "child_id": "subspecialty.child_and_adolescent_psychiatry",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 2,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.psychiatry",
+    "child_id": "subspecialty.clinical_neurophysiology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 3,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.psychiatry",
+    "child_id": "subspecialty.consultation_liaison_psychiatry",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 4,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.psychiatry",
+    "child_id": "subspecialty.epilepsy",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 5,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.psychiatry",
+    "child_id": "subspecialty.forensic_psychiatry",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 6,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.psychiatry",
+    "child_id": "subspecialty.geriatric_psychiatry",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 7,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.psychiatry",
+    "child_id": "subspecialty.neurocritical_care",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 8,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.psychiatry",
+    "child_id": "subspecialty.neurodevelopmental_disabilities",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 9,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.psychiatry",
+    "child_id": "subspecialty.neuromuscular_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 10,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.psychiatry",
+    "child_id": "subspecialty.pain_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 11,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.psychiatry",
+    "child_id": "subspecialty.sleep_medicine",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 12,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.psychiatry",
+    "child_id": "subspecialty.vascular_neurology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 13,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.thoracic_and_cardiac_surgery",
+    "child_id": "subspecialty.congenital_cardiac_surgery",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.urology",
+    "child_id": "subspecialty.pediatric_urology",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 0,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  },
+  {
+    "parent_id": "specialty.urology",
+    "child_id": "subspecialty.urogynecology_and_reconstructive_pelvic_surgery",
+    "edge_type": "has_subspecialty",
+    "source": "ABMS",
+    "confidence": 1.0,
+    "sort_order": 1,
+    "metadata": {
+      "relationship_scope": "board_catalog_grouping"
+    }
+  }
+]

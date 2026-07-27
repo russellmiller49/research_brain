@@ -1,0 +1,355 @@
+[
+  {
+    "pack_id": "pack.overlay.diagnostic_accuracy",
+    "display_name": "Diagnostic Accuracy",
+    "pack_type": "research_methods",
+    "version": "1.0.0",
+    "selection_node_id": "research_interest.diagnostic_accuracy",
+    "curation_status": "curated",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "methodology.diagnostic_accuracy",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.reference_standard",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.diagnostic_yield",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.diagnostic_yield_definition",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.research_methods.systematic_review_and_meta_analysis",
+    "display_name": "Systematic Review and Meta-analysis",
+    "pack_type": "research_methods",
+    "version": "1.0.0",
+    "selection_node_id": "research_interest.systematic_review_and_meta_analysis",
+    "curation_status": "curated",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "methodology.systematic_review",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "methodology.meta_analysis",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.risk_of_bias_fields",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.research_methods.guideline_development",
+    "display_name": "Guideline Development",
+    "pack_type": "research_methods",
+    "version": "1.0.0",
+    "selection_node_id": "research_interest.guideline_development",
+    "curation_status": "curated",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "methodology.guideline_development",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "methodology.grade",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.clinical_applicability",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.research_methods.medical_education",
+    "display_name": "Medical Education",
+    "pack_type": "research_methods",
+    "version": "1.0.0",
+    "selection_node_id": "research_interest.medical_education",
+    "curation_status": "curated",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "research_interest.medical_education",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "research_interest.simulation",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "work_product.educational_module",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "work_product.lecture",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.study_design",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.population",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.intervention_and_comparator",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.outcome_definition",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": [
+      "work_product.educational_module",
+      "work_product.lecture"
+    ]
+  },
+  {
+    "pack_id": "pack.research_methods.ai_in_medicine",
+    "display_name": "AI in Medicine",
+    "pack_type": "research_methods",
+    "version": "1.0.0",
+    "selection_node_id": "research_interest.ai_in_medicine",
+    "curation_status": "curated",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "research_interest.ai_in_medicine",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.study_design",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.population_and_eligibility",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.reference_standard",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.primary_outcome",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.effect_estimate",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.clinical_applicability",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "evidence_field.funding_and_conflicts",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": [
+      "work_product.original_manuscript",
+      "work_product.device_evaluation"
+    ]
+  },
+  {
+    "pack_id": "pack.research_methods.implementation_science",
+    "display_name": "Implementation Science",
+    "pack_type": "research_methods",
+    "version": "1.0.0",
+    "selection_node_id": "research_interest.implementation_science",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "research_interest.implementation_science",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.research_methods.quality_improvement",
+    "display_name": "Quality Improvement",
+    "pack_type": "research_methods",
+    "version": "1.0.0",
+    "selection_node_id": "research_interest.quality_improvement",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "research_interest.quality_improvement",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.research_methods.global_health",
+    "display_name": "Global Health",
+    "pack_type": "research_methods",
+    "version": "1.0.0",
+    "selection_node_id": "research_interest.global_health",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "research_interest.global_health",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.research_methods.military_and_operational_medicine",
+    "display_name": "Military and Operational Medicine",
+    "pack_type": "research_methods",
+    "version": "1.0.0",
+    "selection_node_id": "research_interest.military_and_operational_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "research_interest.military_and_operational_medicine",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.research_methods.simulation",
+    "display_name": "Simulation",
+    "pack_type": "research_methods",
+    "version": "1.0.0",
+    "selection_node_id": "research_interest.simulation",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [
+      {
+        "node_id": "research_interest.simulation",
+        "membership_role": "methodology_or_interest",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  }
+]

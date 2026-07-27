@@ -1,0 +1,1315 @@
+[
+  {
+    "pack_id": "pack.subspecialty.addiction_medicine",
+    "display_name": "Addiction Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.addiction_medicine",
+    "curation_status": "starter",
+    "inherits": [
+      "pack.overlay.addiction_medicine"
+    ],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.addiction_psychiatry",
+    "display_name": "Addiction Psychiatry",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.addiction_psychiatry",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.adolescent_medicine",
+    "display_name": "Adolescent Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.adolescent_medicine",
+    "curation_status": "starter",
+    "inherits": [
+      "pack.overlay.adolescent_medicine"
+    ],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.adult_cardiac_anesthesiology",
+    "display_name": "Adult Cardiac Anesthesiology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.adult_cardiac_anesthesiology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.adult_congenital_heart_disease",
+    "display_name": "Adult Congenital Heart Disease",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.adult_congenital_heart_disease",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.advanced_heart_failure_and_transplant_cardiology",
+    "display_name": "Advanced Heart Failure and Transplant Cardiology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.advanced_heart_failure_and_transplant_cardiology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.blood_banking_transfusion_medicine",
+    "display_name": "Blood Banking/Transfusion Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.blood_banking_transfusion_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.brain_injury_medicine",
+    "display_name": "Brain Injury Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.brain_injury_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.cardiovascular_disease",
+    "display_name": "Cardiovascular Disease",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.cardiovascular_disease",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.child_abuse_pediatrics",
+    "display_name": "Child Abuse Pediatrics",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.child_abuse_pediatrics",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.child_and_adolescent_psychiatry",
+    "display_name": "Child and Adolescent Psychiatry",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.child_and_adolescent_psychiatry",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.clinical_cardiac_electrophysiology",
+    "display_name": "Clinical Cardiac Electrophysiology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.clinical_cardiac_electrophysiology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.clinical_informatics",
+    "display_name": "Clinical Informatics",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.clinical_informatics",
+    "curation_status": "starter",
+    "inherits": [
+      "pack.overlay.clinical_informatics"
+    ],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.clinical_neurophysiology",
+    "display_name": "Clinical Neurophysiology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.clinical_neurophysiology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.complex_family_planning",
+    "display_name": "Complex Family Planning",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.complex_family_planning",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.complex_general_surgical_oncology",
+    "display_name": "Complex General Surgical Oncology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.complex_general_surgical_oncology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.complex_pediatric_otolaryngology",
+    "display_name": "Complex Pediatric Otolaryngology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.complex_pediatric_otolaryngology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.congenital_cardiac_surgery",
+    "display_name": "Congenital Cardiac Surgery",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.congenital_cardiac_surgery",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.consultation_liaison_psychiatry",
+    "display_name": "Consultation-Liaison Psychiatry",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.consultation_liaison_psychiatry",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.critical_care_medicine",
+    "display_name": "Critical Care Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.critical_care_medicine",
+    "curation_status": "curated",
+    "inherits": [
+      "pack.overlay.critical_care"
+    ],
+    "memberships": [
+      {
+        "node_id": "clinical_domain.critical_care",
+        "membership_role": "clinical_domain_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "activity.mechanical_ventilation",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease.ards",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.shock_and_hemodynamics",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease.sepsis",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease.acute_kidney_injury",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "activity.crrt",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "activity.ecmo",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "activity.mechanical_circulatory_support",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "clinical_domain.neurocritical_care",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "activity.icu_procedures",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 10,
+        "config": {}
+      },
+      {
+        "node_id": "disease.icu_acquired_weakness",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 11,
+        "config": {}
+      },
+      {
+        "node_id": "disease.delirium",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 12,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.nosocomial_infection",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 13,
+        "config": {}
+      },
+      {
+        "node_id": "activity.post_icu_recovery",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 14,
+        "config": {}
+      },
+      {
+        "node_id": "activity.end_of_life_care",
+        "membership_role": "clinical_concept",
+        "display_parent_node_id": "clinical_domain.critical_care",
+        "sort_order": 15,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [
+      "state_archetype.critical_illness"
+    ],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.cytopathology",
+    "display_name": "Cytopathology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.cytopathology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.dermatopathology",
+    "display_name": "Dermatopathology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.dermatopathology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.developmental_behavioral_pediatrics",
+    "display_name": "Developmental-Behavioral Pediatrics",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.developmental_behavioral_pediatrics",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.emergency_medical_services",
+    "display_name": "Emergency Medical Services",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.emergency_medical_services",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.endocrinology_diabetes_and_metabolism",
+    "display_name": "Endocrinology, Diabetes and Metabolism",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.endocrinology_diabetes_and_metabolism",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.epilepsy",
+    "display_name": "Epilepsy",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.epilepsy",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.forensic_psychiatry",
+    "display_name": "Forensic Psychiatry",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.forensic_psychiatry",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.gastroenterology",
+    "display_name": "Gastroenterology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.gastroenterology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.geriatric_medicine",
+    "display_name": "Geriatric Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.geriatric_medicine",
+    "curation_status": "starter",
+    "inherits": [
+      "pack.overlay.geriatric_medicine"
+    ],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.geriatric_psychiatry",
+    "display_name": "Geriatric Psychiatry",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.geriatric_psychiatry",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.gynecologic_oncology",
+    "display_name": "Gynecologic Oncology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.gynecologic_oncology",
+    "curation_status": "starter",
+    "inherits": [
+      "pack.specialty.obstetrics_and_gynecology",
+      "pack.overlay.oncology"
+    ],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.health_care_administration_leadership_and_management",
+    "display_name": "Health Care Administration, Leadership, and Management",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.health_care_administration_leadership_and_management",
+    "curation_status": "starter",
+    "inherits": [
+      "pack.overlay.health_care_administration_leadership_and_management"
+    ],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.hematology",
+    "display_name": "Hematology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.hematology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.hematopathology",
+    "display_name": "Hematopathology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.hematopathology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.hospice_and_palliative_medicine",
+    "display_name": "Hospice and Palliative Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.hospice_and_palliative_medicine",
+    "curation_status": "starter",
+    "inherits": [
+      "pack.overlay.hospice_and_palliative_medicine"
+    ],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.infectious_disease",
+    "display_name": "Infectious Disease",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.infectious_disease",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.interventional_cardiology",
+    "display_name": "Interventional Cardiology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.interventional_cardiology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.maternal_fetal_medicine",
+    "display_name": "Maternal–Fetal Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.maternal_fetal_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.medical_biochemical_genetics",
+    "display_name": "Medical Biochemical Genetics",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.medical_biochemical_genetics",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.medical_oncology",
+    "display_name": "Medical Oncology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.medical_oncology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.medical_toxicology",
+    "display_name": "Medical Toxicology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.medical_toxicology",
+    "curation_status": "starter",
+    "inherits": [
+      "pack.overlay.medical_toxicology"
+    ],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.micrographic_dermatologic_surgery",
+    "display_name": "Micrographic Dermatologic Surgery",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.micrographic_dermatologic_surgery",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.molecular_genetic_pathology",
+    "display_name": "Molecular Genetic Pathology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.molecular_genetic_pathology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.neonatal_perinatal_medicine",
+    "display_name": "Neonatal-Perinatal Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.neonatal_perinatal_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.nephrology",
+    "display_name": "Nephrology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.nephrology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.neurocritical_care",
+    "display_name": "Neurocritical Care",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.neurocritical_care",
+    "curation_status": "starter",
+    "inherits": [
+      "pack.overlay.neurocritical_care"
+    ],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.neurodevelopmental_disabilities",
+    "display_name": "Neurodevelopmental Disabilities",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.neurodevelopmental_disabilities",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.neuromuscular_medicine",
+    "display_name": "Neuromuscular Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.neuromuscular_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.neuropathology",
+    "display_name": "Neuropathology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.neuropathology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.neuroradiology",
+    "display_name": "Neuroradiology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.neuroradiology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.neurotology",
+    "display_name": "Neurotology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.neurotology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.nuclear_radiology",
+    "display_name": "Nuclear Radiology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.nuclear_radiology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.orthopaedic_sports_medicine",
+    "display_name": "Orthopaedic Sports Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.orthopaedic_sports_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pain_medicine",
+    "display_name": "Pain Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pain_medicine",
+    "curation_status": "starter",
+    "inherits": [
+      "pack.overlay.pain_medicine"
+    ],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pathology_chemical",
+    "display_name": "Pathology – Chemical",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pathology_chemical",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pathology_forensic",
+    "display_name": "Pathology – Forensic",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pathology_forensic",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pathology_medical_microbiology",
+    "display_name": "Pathology – Medical Microbiology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pathology_medical_microbiology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pathology_pediatric",
+    "display_name": "Pathology – Pediatric",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pathology_pediatric",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_anesthesiology",
+    "display_name": "Pediatric Anesthesiology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_anesthesiology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_cardiology",
+    "display_name": "Pediatric Cardiology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_cardiology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_critical_care_medicine",
+    "display_name": "Pediatric Critical Care Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_critical_care_medicine",
+    "curation_status": "starter",
+    "inherits": [
+      "pack.specialty.pediatrics",
+      "pack.overlay.critical_care"
+    ],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_dermatology",
+    "display_name": "Pediatric Dermatology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_dermatology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_emergency_medicine",
+    "display_name": "Pediatric Emergency Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_emergency_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_endocrinology",
+    "display_name": "Pediatric Endocrinology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_endocrinology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_gastroenterology",
+    "display_name": "Pediatric Gastroenterology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_gastroenterology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_hematology_oncology",
+    "display_name": "Pediatric Hematology-Oncology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_hematology_oncology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_hospital_medicine",
+    "display_name": "Pediatric Hospital Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_hospital_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_infectious_diseases",
+    "display_name": "Pediatric Infectious Diseases",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_infectious_diseases",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_nephrology",
+    "display_name": "Pediatric Nephrology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_nephrology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_pulmonology",
+    "display_name": "Pediatric Pulmonology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_pulmonology",
+    "curation_status": "curated",
+    "inherits": [
+      "pack.specialty.pediatrics",
+      "pack.subspecialty.pulmonary_disease"
+    ],
+    "memberships": [
+      {
+        "node_id": "population.pediatrics",
+        "membership_role": "population_weight",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {
+          "priority_weight": 1.0
+        }
+      }
+    ],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_radiology",
+    "display_name": "Pediatric Radiology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_radiology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_rehabilitation_medicine",
+    "display_name": "Pediatric Rehabilitation Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_rehabilitation_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_rheumatology",
+    "display_name": "Pediatric Rheumatology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_rheumatology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_surgery",
+    "display_name": "Pediatric Surgery",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_surgery",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_transplant_hepatology",
+    "display_name": "Pediatric Transplant Hepatology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_transplant_hepatology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pediatric_urology",
+    "display_name": "Pediatric Urology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pediatric_urology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.plastic_surgery_within_the_head_and_neck",
+    "display_name": "Plastic Surgery Within the Head and Neck",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.plastic_surgery_within_the_head_and_neck",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.pulmonary_disease",
+    "display_name": "Pulmonary Disease",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.pulmonary_disease",
+    "curation_status": "curated",
+    "inherits": [
+      "pack.specialty.internal_medicine"
+    ],
+    "memberships": [
+      {
+        "node_id": "disease_family.airway_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 0,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.interstitial_lung_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 1,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pulmonary_vascular_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 2,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.thoracic_oncology",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 3,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.pleural_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 4,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.respiratory_infection",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 5,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.sleep_disordered_breathing",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 6,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.respiratory_failure",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 7,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.occupational_environmental_lung_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 8,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.lung_transplantation",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 9,
+        "config": {}
+      },
+      {
+        "node_id": "disease_family.rare_lung_disease",
+        "membership_role": "disease_family_root",
+        "display_parent_node_id": null,
+        "sort_order": 10,
+        "config": {}
+      }
+    ],
+    "state_archetypes": [
+      "state_archetype.pulmonary",
+      "state_archetype.oncology"
+    ],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.reproductive_endocrinology_and_infertility",
+    "display_name": "Reproductive Endocrinology and Infertility",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.reproductive_endocrinology_and_infertility",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.rheumatology",
+    "display_name": "Rheumatology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.rheumatology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.sleep_medicine",
+    "display_name": "Sleep Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.sleep_medicine",
+    "curation_status": "starter",
+    "inherits": [
+      "pack.overlay.sleep_medicine"
+    ],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.spinal_cord_injury_medicine",
+    "display_name": "Spinal Cord Injury Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.spinal_cord_injury_medicine",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.sports_medicine",
+    "display_name": "Sports Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.sports_medicine",
+    "curation_status": "starter",
+    "inherits": [
+      "pack.overlay.sports_medicine"
+    ],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.surgery_of_the_hand",
+    "display_name": "Surgery of the Hand",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.surgery_of_the_hand",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.surgical_critical_care",
+    "display_name": "Surgical Critical Care",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.surgical_critical_care",
+    "curation_status": "starter",
+    "inherits": [
+      "pack.overlay.critical_care"
+    ],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.transplant_hepatology",
+    "display_name": "Transplant Hepatology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.transplant_hepatology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.undersea_and_hyperbaric_medicine",
+    "display_name": "Undersea and Hyperbaric Medicine",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.undersea_and_hyperbaric_medicine",
+    "curation_status": "starter",
+    "inherits": [
+      "pack.overlay.undersea_and_hyperbaric_medicine"
+    ],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.urogynecology_and_reconstructive_pelvic_surgery",
+    "display_name": "Urogynecology and Reconstructive Pelvic Surgery",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.urogynecology_and_reconstructive_pelvic_surgery",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  },
+  {
+    "pack_id": "pack.subspecialty.vascular_neurology",
+    "display_name": "Vascular Neurology",
+    "pack_type": "subspecialty",
+    "version": "1.0.0",
+    "selection_node_id": "subspecialty.vascular_neurology",
+    "curation_status": "starter",
+    "inherits": [],
+    "memberships": [],
+    "state_archetypes": [],
+    "suggested_project_templates": []
+  }
+]

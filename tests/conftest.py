@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import os
+import shutil
+import tempfile
 import textwrap
 from pathlib import Path
 
@@ -11,6 +14,15 @@ from research_memory.db import Database
 from research_memory.services.embeddings import HashEmbedder
 from research_memory.services.ingest import IngestionService
 from research_memory.services.search import SearchService
+
+_GLOBAL_TEST_DATA_DIR = Path(tempfile.mkdtemp(prefix="research-memory-tests-"))
+os.environ["RESEARCH_MEMORY_DATA_DIR"] = str(_GLOBAL_TEST_DATA_DIR)
+
+
+@pytest.fixture(scope="session", autouse=True)
+def isolated_global_app_data():
+    yield
+    shutil.rmtree(_GLOBAL_TEST_DATA_DIR, ignore_errors=True)
 
 
 def make_pdf(path: Path, pages: list[str], *, title: str, author: str = "") -> Path:

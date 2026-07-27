@@ -1,0 +1,67 @@
+{
+  "id": "state_archetype.rehabilitation",
+  "display_name": "Rehabilitation and disability",
+  "version": "1.0.0",
+  "dimensions": [
+    {
+      "id": "state.impairment",
+      "display_name": "Impairment",
+      "value_type": "concept_or_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.activity_limitation",
+      "display_name": "Activity limitation",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.participation_restriction",
+      "display_name": "Participation restriction",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.functional_score",
+      "display_name": "Functional score",
+      "value_type": "number",
+      "required_evidence": true
+    },
+    {
+      "id": "state.assistance_level",
+      "display_name": "Assistance level",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.mobility_device",
+      "display_name": "Mobility device",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.caregiver_requirement",
+      "display_name": "Caregiver requirement",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.rehabilitation_phase",
+      "display_name": "Rehabilitation phase",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.recovery_trajectory",
+      "display_name": "Recovery trajectory",
+      "value_type": "structured_text",
+      "required_evidence": true
+    },
+    {
+      "id": "state.return_to_work_or_community_status",
+      "display_name": "Return-to-work or community status",
+      "value_type": "structured_text",
+      "required_evidence": true
+    }
+  ]
+}
