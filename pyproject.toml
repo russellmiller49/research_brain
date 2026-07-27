@@ -45,7 +45,7 @@ dev = [
   "mypy>=1.11,<2.0",
   "pip-audit>=2.7,<3.0",
   "pip-tools>=7.4,<8.0",
-  "reportlab>=4.2,<5.0",
+  "reportlab>=4.2,<6.0",
 ]
 
 [project.scripts]
