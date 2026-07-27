@@ -126,10 +126,20 @@ export interface CloudBackupSettingsPatch {
   copyCloudImports?: boolean;
 }
 
+export interface PasswordSignUpResult {
+  requiresEmailConfirmation: boolean;
+}
+
 export interface CloudLibraryService extends ReaderCore {
   currentUser(): Promise<CloudUser | null>;
   onAuthChange(callback: (user: CloudUser | null) => void): () => void;
-  sendMagicLink(email: string): Promise<void>;
+  signInWithPassword(email: string, password: string): Promise<void>;
+  signUpWithPassword(
+    email: string,
+    password: string,
+  ): Promise<PasswordSignUpResult>;
+  requestPasswordReset(email: string): Promise<void>;
+  updatePassword(password: string): Promise<void>;
   signInWithProvider(provider: "google" | "apple" | "azure"): Promise<void>;
   signOut(): Promise<void>;
   ensurePersonalLibrary(user: CloudUser): Promise<CloudLibrary>;
@@ -554,18 +564,47 @@ export class SupabaseCloudLibraryService implements CloudLibraryService {
     return () => data.subscription.unsubscribe();
   }
 
-  async sendMagicLink(email: string): Promise<void> {
+  async signInWithPassword(email: string, password: string): Promise<void> {
+    const { error } = await this.supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+    if (error) throw new Error(error.message);
+  }
+
+  async signUpWithPassword(
+    email: string,
+    password: string,
+  ): Promise<PasswordSignUpResult> {
     const redirectTo = new URL(
       import.meta.env.BASE_URL || "/",
       window.location.origin,
     ).toString();
-    const { error } = await this.supabase.auth.signInWithOtp({
+    const { data, error } = await this.supabase.auth.signUp({
       email,
+      password,
       options: {
         emailRedirectTo: redirectTo,
         data: { app_scope: "research_memory" },
       },
     });
+    if (error) throw new Error(error.message);
+    return { requiresEmailConfirmation: data.session == null };
+  }
+
+  async requestPasswordReset(email: string): Promise<void> {
+    const redirectTo = new URL(
+      "/reset-password",
+      window.location.origin,
+    ).toString();
+    const { error } = await this.supabase.auth.resetPasswordForEmail(email, {
+      redirectTo,
+    });
+    if (error) throw new Error(error.message);
+  }
+
+  async updatePassword(password: string): Promise<void> {
+    const { error } = await this.supabase.auth.updateUser({ password });
     if (error) throw new Error(error.message);
   }
 

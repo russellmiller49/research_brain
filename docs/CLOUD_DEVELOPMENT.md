@@ -7,7 +7,7 @@ sidecar.
 
 ## What works
 
-- passwordless email sign-in;
+- email-and-password account creation, sign-in, and password recovery;
 - Apple, Google, and Microsoft sign-in entry points (after provider setup);
 - one private library created for each authenticated account;
 - responsive desktop navigation and phone bottom navigation;
@@ -83,7 +83,8 @@ npm run dev:web
 `dev:web` starts both Vite and the local cloud-connector Edge Function. To run
 them in separate terminals instead, use `npm run dev:web-only` and
 `npm run dev:connectors`. The default URL is `http://127.0.0.1:1420`. Local
-magic-link emails appear in Mailpit at `http://127.0.0.1:54324`.
+account-confirmation and password-recovery emails appear in Mailpit at
+`http://127.0.0.1:54324`.
 
 ## Google Drive and OneDrive connector setup
 

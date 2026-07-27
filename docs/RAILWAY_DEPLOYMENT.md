@@ -26,14 +26,15 @@ The Supabase publishable key is intended for browser clients. Never place a Supa
 key, service-role key, database password, OAuth client secret, or connector encryption key
 in a `VITE_` variable.
 
-Railway exposes a generated HTTPS domain after deployment. Add that exact origin to:
+Railway exposes a generated HTTPS domain after deployment. Add the root URL and
+`/reset-password` recovery URL to:
 
 1. Supabase Auth site URL and redirect allow-list;
 2. the `RESEARCH_MEMORY_CLOUD_APP_ORIGINS` Edge Function secret;
 3. Google and Microsoft OAuth app origins after those connectors are registered.
 
 The shared Endoreels beta deliberately keeps Supabase social sign-in disabled.
-Passwordless email signup tags new accounts with
+Email-and-password signup tags new accounts with
 `app_scope=research_memory`, allowing the shared Auth trigger guard to skip
 unrelated Endoreels learner onboarding. Enable social sign-in only after its
 new-user routing has an equivalent project-safe scope.
@@ -72,7 +73,9 @@ configured. Do not distribute an unsigned development DMG to beta testers.
 Before inviting testers:
 
 - `curl -fsS https://<railway-domain>/healthz`;
-- sign in by magic link from a fresh browser profile;
+- create an account, confirm its email, and sign in with a password from a
+  fresh browser profile;
+- complete a forgot-password recovery through `/reset-password`;
 - upload, open, search, annotate, and delete/restore a disposable PDF;
 - verify a second device sees the same library;
 - confirm one user cannot access another user's rows or signed PDF URL;

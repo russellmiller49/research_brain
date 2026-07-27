@@ -50,7 +50,12 @@ function fakeService(
   return {
     currentUser: vi.fn(async () => currentUser),
     onAuthChange: vi.fn(() => () => {}),
-    sendMagicLink: vi.fn(async () => {}),
+    signInWithPassword: vi.fn(async () => {}),
+    signUpWithPassword: vi.fn(async () => ({
+      requiresEmailConfirmation: true,
+    })),
+    requestPasswordReset: vi.fn(async () => {}),
+    updatePassword: vi.fn(async () => {}),
     signInWithProvider: vi.fn(async () => {}),
     signOut: vi.fn(async () => {}),
     ensurePersonalLibrary: vi.fn(async () => ({
@@ -145,9 +150,10 @@ function fakeService(
 afterEach(() => {
   cleanup();
   vi.clearAllMocks();
+  window.history.replaceState({}, "", "/");
 });
 
-test("offers scoped passwordless sign-in without accessibility violations", async () => {
+test("offers email and password sign-in without accessibility violations", async () => {
   const service = fakeService(null);
   const interaction = userEvent.setup();
   const { container } = render(<CloudApp service={service} />);
@@ -163,16 +169,21 @@ test("offers scoped passwordless sign-in without accessibility violations", asyn
     screen.getByRole("textbox", { name: "Email address" }),
     "reader@example.test",
   );
+  await interaction.type(
+    screen.getByLabelText("Password"),
+    "long-test-password",
+  );
   await interaction.click(
-    screen.getByRole("button", { name: "Email me a secure link" }),
+    screen.getByRole("button", { name: "Sign in" }),
   );
 
   await waitFor(() => {
-    expect(service.sendMagicLink).toHaveBeenCalledWith(
+    expect(service.signInWithPassword).toHaveBeenCalledWith(
       "reader@example.test",
+      "long-test-password",
     );
   });
-  expect(screen.getByRole("status")).toHaveTextContent("Check your email");
+  expect(screen.getByRole("status")).toHaveTextContent("Welcome back");
   expect(
     screen.queryByRole("button", { name: "Google" }),
   ).not.toBeInTheDocument();
@@ -183,6 +194,98 @@ test("offers scoped passwordless sign-in without accessibility violations", asyn
     rules: { "color-contrast": { enabled: false } },
   });
   expect(result.violations).toEqual([]);
+});
+
+test("creates a password account and explains email confirmation", async () => {
+  const service = fakeService(null);
+  const interaction = userEvent.setup();
+  render(<CloudApp service={service} />);
+
+  await interaction.click(
+    await screen.findByRole("button", { name: "Create an account" }),
+  );
+  await interaction.type(
+    screen.getByRole("textbox", { name: "Email address" }),
+    "new-reader@example.test",
+  );
+  await interaction.type(
+    screen.getByLabelText("Password"),
+    "long-test-password",
+  );
+  await interaction.type(
+    screen.getByLabelText("Confirm password"),
+    "long-test-password",
+  );
+  await interaction.click(
+    screen.getByRole("button", { name: "Create account" }),
+  );
+
+  await waitFor(() => {
+    expect(service.signUpWithPassword).toHaveBeenCalledWith(
+      "new-reader@example.test",
+      "long-test-password",
+    );
+  });
+  expect(screen.getByRole("status")).toHaveTextContent(
+    "Check your email to confirm the account",
+  );
+});
+
+test("requests a password reset for an existing account", async () => {
+  const service = fakeService(null);
+  const interaction = userEvent.setup();
+  render(<CloudApp service={service} />);
+
+  await interaction.click(
+    await screen.findByRole("button", { name: "Forgot password?" }),
+  );
+  await interaction.type(
+    screen.getByRole("textbox", { name: "Email address" }),
+    "reader@example.test",
+  );
+  await interaction.click(
+    screen.getByRole("button", { name: "Send password reset" }),
+  );
+
+  await waitFor(() => {
+    expect(service.requestPasswordReset).toHaveBeenCalledWith(
+      "reader@example.test",
+    );
+  });
+  expect(screen.getByRole("status")).toHaveTextContent(
+    "Check your email for a password-reset link",
+  );
+});
+
+test("updates a password from the recovery route", async () => {
+  window.history.replaceState({}, "", "/reset-password?code=test-code");
+  const service = fakeService(user);
+  const interaction = userEvent.setup();
+  render(<CloudApp service={service} />);
+
+  await screen.findByRole("heading", { name: "Choose a new password" });
+  await interaction.type(
+    screen.getByLabelText("New password"),
+    "new-long-password",
+  );
+  await interaction.type(
+    screen.getByLabelText("Confirm new password"),
+    "new-long-password",
+  );
+  await interaction.click(
+    screen.getByRole("button", { name: "Update password" }),
+  );
+
+  await waitFor(() => {
+    expect(service.updatePassword).toHaveBeenCalledWith("new-long-password");
+  });
+  await interaction.click(
+    screen.getByRole("button", { name: "Continue to your library" }),
+  );
+  expect(
+    await screen.findByRole("heading", { name: "My Research Library" }),
+  ).toBeInTheDocument();
+  expect(window.location.pathname).toBe("/");
 });
 
 test("loads the signed-in library and imports a PDF through the shared service", async () => {
