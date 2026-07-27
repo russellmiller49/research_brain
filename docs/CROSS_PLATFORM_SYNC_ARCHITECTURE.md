@@ -231,7 +231,8 @@ and [hybrid search](https://supabase.com/docs/guides/ai/hybrid-search) guidance.
 
 Start with:
 
-- email one-time code or magic link;
+- email address and password, with confirmed-email signup and password
+  recovery;
 - Sign in with Apple;
 - Google;
 - Microsoft.

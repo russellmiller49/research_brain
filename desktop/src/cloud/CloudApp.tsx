@@ -18,10 +18,12 @@ import {
   HardDrive,
   Home,
   Inbox,
+  KeyRound,
   Library,
   ListRestart,
   LoaderCircle,
   LogOut,
+  Mail,
   Plus,
   RefreshCw,
   Search,
@@ -29,6 +31,7 @@ import {
   ShieldCheck,
   Smartphone,
   Trash2,
+  UserPlus,
   X,
   XCircle,
 } from "lucide-react";
@@ -132,6 +135,47 @@ function readableError(value: unknown): string {
   return value instanceof Error ? value.message : String(value);
 }
 
+function CloudAuthIntro() {
+  return (
+    <section className="cloud-auth-intro">
+      <div className="cloud-brand">
+        <span className="brand-glyph"><BookOpen /></span>
+        <span>
+          <b>Research Memory</b>
+          <small>One library, every device</small>
+        </span>
+      </div>
+      <div>
+        <span className="eyebrow">Synced research workspace</span>
+        <h1>Your papers should travel with you.</h1>
+        <p>
+          Sign in on the web, desktop, or mobile. Your managed PDFs,
+          bibliographic details, highlights, projects, and notes stay
+          attached to your account.
+        </p>
+        <div className="cloud-auth-download">
+          <a
+            className="button secondary"
+            href={macDownloadUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Download /> Download for Mac
+          </a>
+          <small>Apple silicon · macOS 13 or newer</small>
+        </div>
+      </div>
+      <div className="cloud-auth-benefits">
+        <span><Cloud /><b>Private cloud library</b></span>
+        <span><Smartphone /><b>Responsive reader</b></span>
+        <span><ShieldCheck /><b>Account-isolated data</b></span>
+      </div>
+    </section>
+  );
+}
+
+type AuthMode = "sign-in" | "sign-up" | "forgot-password";
+
 function formatLabel(value: string): string {
   return value
     .replaceAll("_", " ")
@@ -176,80 +220,97 @@ function AuthScreen({
   initialError?: string;
 }) {
   const [email, setEmail] = useState("");
-  const [sending, setSending] = useState(false);
-  const [sent, setSent] = useState(false);
+  const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [mode, setMode] = useState<AuthMode>("sign-in");
+  const [busy, setBusy] = useState(false);
+  const [success, setSuccess] = useState("");
   const [error, setError] = useState(initialError);
 
-  const sendLink = async (event: FormEvent) => {
-    event.preventDefault();
-    if (!email.trim()) return;
-    setSending(true);
+  const switchMode = (nextMode: AuthMode) => {
+    setMode(nextMode);
+    setPassword("");
+    setPasswordConfirmation("");
+    setSuccess("");
     setError("");
+  };
+
+  const submitCredentials = async (event: FormEvent) => {
+    event.preventDefault();
+    const normalizedEmail = email.trim();
+    if (!normalizedEmail) return;
+    if (mode !== "forgot-password" && password.length < 8) {
+      setError("Use at least 8 characters for your password.");
+      return;
+    }
+    if (mode === "sign-up" && password !== passwordConfirmation) {
+      setError("The passwords do not match.");
+      return;
+    }
+
+    setBusy(true);
+    setError("");
+    setSuccess("");
     try {
-      await service.sendMagicLink(email.trim());
-      setSent(true);
+      if (mode === "sign-in") {
+        await service.signInWithPassword(normalizedEmail, password);
+        setSuccess("Signed in. Opening your library…");
+      } else if (mode === "sign-up") {
+        const result = await service.signUpWithPassword(
+          normalizedEmail,
+          password,
+        );
+        setSuccess(
+          result.requiresEmailConfirmation
+            ? "Check your email to confirm the account, then sign in with your password."
+            : "Account created. Opening your library…",
+        );
+      } else {
+        await service.requestPasswordReset(normalizedEmail);
+        setSuccess(
+          "Check your email for a password-reset link. It will return you here to choose a new password.",
+        );
+      }
     } catch (value) {
       setError(readableError(value));
     } finally {
-      setSending(false);
+      setBusy(false);
     }
   };
 
   const signInWith = async (provider: "google" | "apple" | "azure") => {
-    setSending(true);
+    setBusy(true);
     setError("");
     try {
       await service.signInWithProvider(provider);
     } catch (value) {
       setError(readableError(value));
-      setSending(false);
+      setBusy(false);
     }
   };
 
+  const heading =
+    mode === "sign-in"
+      ? "Sign in to your library"
+      : mode === "sign-up"
+        ? "Create your account"
+        : "Reset your password";
+  const description =
+    mode === "sign-in"
+      ? "Your email address is your username on every device."
+      : mode === "sign-up"
+        ? "Create one private account for your web, mobile, and desktop library."
+        : "Enter your account email and we’ll send a secure reset link.";
+
   return (
     <main className="cloud-auth">
-      <section className="cloud-auth-intro">
-        <div className="cloud-brand">
-          <span className="brand-glyph"><BookOpen /></span>
-          <span>
-            <b>Research Memory</b>
-            <small>One library, every device</small>
-          </span>
-        </div>
-        <div>
-          <span className="eyebrow">Synced research workspace</span>
-          <h1>Your papers should travel with you.</h1>
-          <p>
-            Sign in on the web, desktop, or mobile. Your managed PDFs,
-            bibliographic details, highlights, projects, and notes stay
-            attached to your account.
-          </p>
-          <div className="cloud-auth-download">
-            <a
-              className="button secondary"
-              href={macDownloadUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Download /> Download for Mac
-            </a>
-            <small>Apple silicon · macOS 13 or newer</small>
-          </div>
-        </div>
-        <div className="cloud-auth-benefits">
-          <span><Cloud /><b>Private cloud library</b></span>
-          <span><Smartphone /><b>Responsive reader</b></span>
-          <span><ShieldCheck /><b>Account-isolated data</b></span>
-        </div>
-      </section>
+      <CloudAuthIntro />
 
       <section className="cloud-auth-card" aria-labelledby="cloud-sign-in">
         <span className="eyebrow">Welcome</span>
-        <h2 id="cloud-sign-in">Sign in to your library</h2>
-        <p className="muted">
-          Use the same email on every device to open the same private library.
-        </p>
-        <form onSubmit={(event) => void sendLink(event)}>
+        <h2 id="cloud-sign-in">{heading}</h2>
+        <p className="muted">{description}</p>
+        <form onSubmit={(event) => void submitCredentials(event)}>
           <label>
             Email address
             <input
@@ -262,21 +323,83 @@ function AuthScreen({
               placeholder="you@example.com"
             />
           </label>
-          <button className="button primary" disabled={sending}>
-            {sending ? <LoaderCircle className="spin" /> : <Cloud />}
-            Email me a secure link
+          {mode !== "forgot-password" && (
+            <label>
+              Password
+              <input
+                autoComplete={
+                  mode === "sign-up" ? "new-password" : "current-password"
+                }
+                type="password"
+                required
+                minLength={8}
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                placeholder="At least 8 characters"
+              />
+            </label>
+          )}
+          {mode === "sign-up" && (
+            <label>
+              Confirm password
+              <input
+                autoComplete="new-password"
+                type="password"
+                required
+                minLength={8}
+                value={passwordConfirmation}
+                onChange={(event) =>
+                  setPasswordConfirmation(event.target.value)}
+                placeholder="Enter it again"
+              />
+            </label>
+          )}
+          <button className="button primary" disabled={busy}>
+            {busy
+              ? <LoaderCircle className="spin" />
+              : mode === "sign-up"
+                ? <UserPlus />
+                : mode === "forgot-password"
+                  ? <Mail />
+                  : <KeyRound />}
+            {mode === "sign-in"
+              ? "Sign in"
+              : mode === "sign-up"
+                ? "Create account"
+                : "Send password reset"}
           </button>
         </form>
-        {sent && (
+        {success && (
           <div className="cloud-auth-success" role="status">
             <Check />
             <span>
-              <b>Check your email</b>
-              <small>The sign-in link returns you to this library.</small>
+              <b>{mode === "sign-in" ? "Welcome back" : "Request received"}</b>
+              <small>{success}</small>
             </span>
           </div>
         )}
-        {socialAuthEnabled && (
+        <div className="cloud-auth-actions">
+          {mode === "sign-in" && (
+            <>
+              <button
+                type="button"
+                onClick={() => switchMode("forgot-password")}
+              >
+                Forgot password?
+              </button>
+              <span />
+              <button type="button" onClick={() => switchMode("sign-up")}>
+                Create an account
+              </button>
+            </>
+          )}
+          {mode !== "sign-in" && (
+            <button type="button" onClick={() => switchMode("sign-in")}>
+              Back to sign in
+            </button>
+          )}
+        </div>
+        {socialAuthEnabled && mode === "sign-in" && (
           <>
             <div className="cloud-auth-divider">
               <span>or continue with</span>
@@ -284,21 +407,21 @@ function AuthScreen({
             <div className="cloud-provider-grid">
               <button
                 className="button secondary"
-                disabled={sending}
+                disabled={busy}
                 onClick={() => void signInWith("google")}
               >
                 Google
               </button>
               <button
                 className="button secondary"
-                disabled={sending}
+                disabled={busy}
                 onClick={() => void signInWith("apple")}
               >
                 Apple
               </button>
               <button
                 className="button secondary"
-                disabled={sending}
+                disabled={busy}
                 onClick={() => void signInWith("azure")}
               >
                 Microsoft
@@ -311,6 +434,111 @@ function AuthScreen({
           PDFs are private by default and served through short-lived signed
           links. Your account can access only its own database rows and storage
           folder.
+        </small>
+      </section>
+    </main>
+  );
+}
+
+function PasswordResetScreen({
+  service,
+  onComplete,
+}: {
+  service: CloudLibraryService;
+  onComplete: () => void;
+}) {
+  const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [updated, setUpdated] = useState(false);
+  const [error, setError] = useState("");
+
+  const updatePassword = async (event: FormEvent) => {
+    event.preventDefault();
+    if (password.length < 8) {
+      setError("Use at least 8 characters for your password.");
+      return;
+    }
+    if (password !== passwordConfirmation) {
+      setError("The passwords do not match.");
+      return;
+    }
+    setBusy(true);
+    setError("");
+    try {
+      await service.updatePassword(password);
+      setUpdated(true);
+      setPassword("");
+      setPasswordConfirmation("");
+    } catch (value) {
+      setError(readableError(value));
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <main className="cloud-auth">
+      <CloudAuthIntro />
+      <section className="cloud-auth-card" aria-labelledby="reset-password">
+        <span className="eyebrow">Account recovery</span>
+        <h2 id="reset-password">Choose a new password</h2>
+        <p className="muted">
+          Set a password for this account, then use it on every device.
+        </p>
+        {updated ? (
+          <>
+            <div className="cloud-auth-success" role="status">
+              <Check />
+              <span>
+                <b>Password updated</b>
+                <small>Your new password is ready to use.</small>
+              </span>
+            </div>
+            <button
+              className="button primary cloud-auth-continue"
+              onClick={onComplete}
+            >
+              Continue to your library <ArrowRight />
+            </button>
+          </>
+        ) : (
+          <form onSubmit={(event) => void updatePassword(event)}>
+            <label>
+              New password
+              <input
+                autoComplete="new-password"
+                type="password"
+                required
+                minLength={8}
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                placeholder="At least 8 characters"
+              />
+            </label>
+            <label>
+              Confirm new password
+              <input
+                autoComplete="new-password"
+                type="password"
+                required
+                minLength={8}
+                value={passwordConfirmation}
+                onChange={(event) =>
+                  setPasswordConfirmation(event.target.value)}
+                placeholder="Enter it again"
+              />
+            </label>
+            <button className="button primary" disabled={busy}>
+              {busy ? <LoaderCircle className="spin" /> : <KeyRound />}
+              Update password
+            </button>
+          </form>
+        )}
+        {error && <div className="error-banner" role="alert">{error}</div>}
+        <small className="cloud-auth-footnote">
+          Research Memory never receives or stores your password. Supabase Auth
+          verifies it securely.
         </small>
       </section>
     </main>
@@ -1651,6 +1879,9 @@ function SettingsView({
 
 function CloudRuntime({ service }: { service: CloudLibraryService }) {
   const [user, setUser] = useState<CloudUser | null | undefined>(undefined);
+  const [passwordRecovery, setPasswordRecovery] = useState(
+    () => window.location.pathname.replace(/\/+$/, "") === "/reset-password",
+  );
   const [library, setLibrary] = useState<CloudLibrary | null>(null);
   const [view, setView] = useState<View>("home");
   const [articles, setArticles] = useState<ArticleSummary[]>([]);
@@ -1848,6 +2079,21 @@ function CloudRuntime({ service }: { service: CloudLibraryService }) {
     );
   }
   if (!user) return <AuthScreen service={service} initialError={error} />;
+  if (passwordRecovery) {
+    return (
+      <PasswordResetScreen
+        service={service}
+        onComplete={() => {
+          window.history.replaceState(
+            window.history.state,
+            document.title,
+            import.meta.env.BASE_URL || "/",
+          );
+          setPasswordRecovery(false);
+        }}
+      />
+    );
+  }
 
   const progressPercent = uploadProgress?.bytesTotal
     ? Math.round(

@@ -2887,6 +2887,36 @@ kbd {
   background: white;
 }
 
+.cloud-auth-card form .button {
+  min-height: 44px;
+  margin-top: 2px;
+}
+
+.cloud-auth-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 13px;
+}
+
+.cloud-auth-actions span {
+  flex: 1;
+}
+
+.cloud-auth-actions button {
+  padding: 3px 0;
+  border: 0;
+  color: var(--green);
+  background: transparent;
+  font-size: 9px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cloud-auth-actions button:hover {
+  text-decoration: underline;
+}
+
 .cloud-auth-success {
   display: flex;
   align-items: center;
@@ -2954,6 +2984,12 @@ kbd {
 .cloud-auth-card .error-banner {
   margin-top: 13px;
   margin-bottom: 0;
+}
+
+.cloud-auth-continue {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 14px;
 }
 
 .cloud-auth-footnote {

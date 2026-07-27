@@ -1,24 +1,58 @@
 import { expect, test, vi } from "vitest";
 import { SupabaseCloudLibraryService } from "../cloud/service";
 
-test("tags new passwordless users for the shared Supabase project", async () => {
-  const signInWithOtp = vi.fn(async () => ({ error: null }));
+test("uses native password auth with scoped signup and recovery redirects", async () => {
+  const signInWithPassword = vi.fn(async () => ({ error: null }));
+  const signUp = vi.fn(async () => ({
+    data: { session: null },
+    error: null,
+  }));
+  const resetPasswordForEmail = vi.fn(async () => ({ error: null }));
+  const updateUser = vi.fn(async () => ({ error: null }));
   const service = Object.create(
     SupabaseCloudLibraryService.prototype,
   ) as SupabaseCloudLibraryService;
   Object.assign(service, {
     supabase: {
-      auth: { signInWithOtp },
+      auth: {
+        resetPasswordForEmail,
+        signInWithPassword,
+        signUp,
+        updateUser,
+      },
     },
   });
 
-  await service.sendMagicLink("reader@example.test");
+  await service.signInWithPassword(
+    "reader@example.test",
+    "long-test-password",
+  );
+  const result = await service.signUpWithPassword(
+    "new-reader@example.test",
+    "long-test-password",
+  );
+  await service.requestPasswordReset("reader@example.test");
+  await service.updatePassword("replacement-password");
 
-  expect(signInWithOtp).toHaveBeenCalledWith({
+  expect(signInWithPassword).toHaveBeenCalledWith({
     email: "reader@example.test",
+    password: "long-test-password",
+  });
+  expect(signUp).toHaveBeenCalledWith({
+    email: "new-reader@example.test",
+    password: "long-test-password",
     options: expect.objectContaining({
       data: { app_scope: "research_memory" },
+      emailRedirectTo: `${window.location.origin}/`,
     }),
+  });
+  expect(result).toEqual({ requiresEmailConfirmation: true });
+  expect(resetPasswordForEmail).toHaveBeenCalledWith(
+    "reader@example.test",
+    { redirectTo: `${window.location.origin}/reset-password` },
+  );
+  expect(updateUser).toHaveBeenCalledWith({
+    password: "replacement-password",
   });
 });
 
